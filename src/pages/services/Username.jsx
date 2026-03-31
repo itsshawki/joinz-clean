@@ -128,7 +128,7 @@ export default function Username() {
               <textarea className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none" placeholder="Briefly describe why you are entitled to this handle..." rows="4" />
             </div>
             <div className="md:col-span-2 pt-4">
-              <button className="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-headline font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(61,144,255,0.3)] transition-all transform active:scale-[0.98]" type="submit">
+              <button className="w-full bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-headline font-bold py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all transform active:scale-[0.98]" type="submit">
                 Submit Investigation Request
               </button>
             </div>

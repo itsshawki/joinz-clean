@@ -18,7 +18,7 @@ export default function WebDev() {
               We build high-performance, accessible, and scalable digital solutions that transform user engagement into measurable business growth.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/contact" className="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-8 py-4 rounded-xl font-headline font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+              <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-8 py-4 rounded-xl font-headline font-bold text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
                 Start Your Project
               </Link>
               <Link to="/contact" className="px-8 py-4 rounded-xl border border-outline-variant/30 text-white font-headline font-bold text-lg hover:bg-white/5 transition-all">

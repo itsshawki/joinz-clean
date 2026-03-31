@@ -144,7 +144,7 @@ export default function Growth() {
             Join dozens of high-growth brands who have scaled their operations through our Engagement framework.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-6">
-            <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary text-on-primary-container px-10 py-5 rounded-2xl font-bold font-headline text-lg hover:shadow-2xl hover:shadow-secondary/30 transition-all">
+            <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-bold font-headline text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
               Book a Strategy Session
             </Link>
             <Link to="/contact" className="bg-white/5 border border-outline-variant/30 text-white px-10 py-5 rounded-2xl font-bold font-headline text-lg hover:bg-white/10 transition-all">

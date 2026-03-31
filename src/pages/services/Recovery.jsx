@@ -20,7 +20,7 @@ export default function Recovery() {
                 Specializing in professional account recovery for high-value social media assets. We handle the technicalities while you regain focus on your brand.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link to="/contact" className="bg-primary text-on-primary font-bold px-8 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(169,199,255,0.4)] transition-all">
+                <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-bold px-8 py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
                   Start Recovery Process
                 </Link>
                 <Link to="/contact" className="border border-outline-variant hover:bg-surface-container text-on-surface font-bold px-8 py-4 rounded-xl transition-all">
@@ -133,7 +133,7 @@ export default function Recovery() {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6">Ready to regain control?</h2>
             <p className="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">Don't let technical hurdles or platform bureaucracy keep you from your digital presence. Let our experts handle the heavy lifting.</p>
-            <Link to="/contact" className="inline-block bg-secondary-container text-on-secondary-container font-black px-12 py-5 rounded-2xl hover:scale-105 transition-transform">
+            <Link to="/contact" className="inline-block bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-black px-12 py-5 rounded-2xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
               CONTACT OUR RECOVERY TEAM
             </Link>
           </div>

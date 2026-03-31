@@ -140,7 +140,7 @@ export default function Reputation() {
               <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8">Ready to define your narrative?</h2>
               <p className="text-xl text-on-surface-variant mb-12">Don't let others tell your story. Partner with Joinz Agency to build a legacy of trust and excellence.</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/contact" className="bg-secondary-container text-on-secondary-container px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,227,253,0.15)]">
+                <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-black text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
                   Start Your Consultation
                 </Link>
                 <Link to="/contact" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all">
