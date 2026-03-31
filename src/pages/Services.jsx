@@ -13,7 +13,7 @@ export default function Services() {
           Elite Digital Services for <span className="text-accent">Authority & Growth</span>
         </h1>
         <p className="max-w-2xl mx-auto text-on-surface-variant text-lg leading-[1.8]">
-          Elevate your digital footprint with our precision-engineered solutions, from high-tier social verification to complex infrastructure development.
+          Expert solutions to establish, protect, and amplify your digital authority across all major platforms.
         </p>
       </header>
 

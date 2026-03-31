@@ -1,4 +1,54 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+
+const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // easeOutQuint
+      const easedProgress = 1 - Math.pow(1 - progress, 4);
+      
+      const currentCount = Math.floor(easedProgress * target);
+      setCount(currentCount);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [hasAnimated, target, duration]);
+
+  return <span ref={elementRef}>{prefix}{count}{suffix}</span>;
+};
 
 export default function Reputation() {
   return (
@@ -25,9 +75,7 @@ export default function Reputation() {
                 Secure Your Brand
                 <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
-              <Link to="/contact" className="px-8 py-4 rounded-xl font-bold border border-outline-variant hover:bg-surface-container transition-colors">
-                View Case Studies
-              </Link>
+
             </div>
           </div>
           <div className="relative group">
@@ -40,7 +88,7 @@ export default function Reputation() {
               />
               <div className="absolute bottom-8 left-8 right-8 glass-card p-6 rounded-2xl flex justify-between items-center">
                 <div>
-                  <div className="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Recovery Rate</div>
+                  <div className="text-xs text-secondary uppercase font-bold tracking-widest mb-1">Success Rate</div>
                   <div className="text-2xl font-black text-white font-headline tracking-tighter">98.4%</div>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center">
@@ -112,16 +160,18 @@ export default function Reputation() {
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: 'SENTIMENT', value: '+42%', sub: 'Positive Shift' },
-            { label: 'VISIBILITY', value: 'Top 3', sub: 'SERP Placement' },
-            { label: 'REMOVALS', value: '124', sub: 'Negative Links' },
-            { label: 'REACH', value: '1.2M', sub: 'Positive Impressions' },
+            { label: 'SENTIMENT', target: 42, prefix: '+', suffix: '%', sub: 'Positive Shift' },
+            { label: 'VISIBILITY', target: 3, prefix: 'Top ', suffix: '', sub: 'SERP Placement' },
+            { label: 'REMOVALS', target: 600, prefix: '+', suffix: '', sub: 'Negative Links' },
+            { label: 'SUCCESS RATE', target: 90, prefix: '', suffix: '%', sub: 'Campaign Success Rate' },
           ].map((stat, i) => (
             <div key={i} className="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 flex flex-col items-center text-center">
               <div className="mb-4 inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-secondary-fixed-dim/10 text-secondary-fixed-dim font-bold text-xs tracking-tighter">
                 {stat.label}
               </div>
-              <div className="text-4xl font-black text-white font-headline mb-2">{stat.value}</div>
+              <div className="text-4xl font-black text-white font-headline mb-2">
+                <CountUp target={stat.target} prefix={stat.prefix} suffix={stat.suffix} duration={2000} />
+              </div>
               <div className="text-xs text-on-surface-variant uppercase tracking-widest">{stat.sub}</div>
             </div>
           ))}
@@ -139,12 +189,9 @@ export default function Reputation() {
             <div className="relative z-10 max-w-3xl">
               <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8">Ready to define your narrative?</h2>
               <p className="text-xl text-on-surface-variant mb-12">Don't let others tell your story. Partner with Joinz Agency to build a legacy of trust and excellence.</p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex justify-center">
                 <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-black text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
-                  Start Your Consultation
-                </Link>
-                <Link to="/contact" className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all">
-                  Request Audit
+                  Protect Your Reputation
                 </Link>
               </div>
             </div>

@@ -123,7 +123,7 @@ export default function Verification() {
             <div className="p-10 rounded-3xl bg-primary text-on-primary-container">
               <span className="material-symbols-outlined text-5xl mb-6">id_card</span>
               <h3 className="text-2xl font-bold mb-4">Authenticity</h3>
-              <p className="text-sm font-medium">Must represent a real person, registered business, or entity. Government-issued ID or official documentation is required for all applications.</p>
+              <p className="text-sm font-medium">Must represent a real person, registered business, or entity.</p>
             </div>
             <div className="p-10 rounded-3xl bg-surface-container-highest flex flex-col justify-center border border-outline-variant/20">
               <h3 className="text-2xl font-bold mb-4">Completeness</h3>

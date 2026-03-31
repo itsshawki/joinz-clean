@@ -1,4 +1,54 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+
+const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+      // easeOutQuint
+      const easedProgress = 1 - Math.pow(1 - progress, 4);
+
+      const currentCount = Math.floor(easedProgress * target);
+      setCount(currentCount);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [hasAnimated, target, duration]);
+
+  return <span ref={elementRef}>{prefix}{count}{suffix}</span>;
+};
 
 export default function About() {
   return (
@@ -12,13 +62,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto w-full relative z-10 text-center">
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-secondary-container/10 text-secondary-container mb-8 border border-secondary-container/20">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse" />
-            <span className="text-xs font-label tracking-[0.2em] uppercase font-semibold">The Collective</span>
+            <span className="text-xs font-label tracking-[0.2em] uppercase font-semibold">THE NETWORK</span>
           </div>
-            <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tighter text-on-surface mb-8 max-w-4xl mx-auto leading-[0.9]">
-              Who <span className="text-accent">We Are</span>
-            </h1>
+          <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tighter text-on-surface mb-8 max-w-4xl mx-auto leading-[0.9]">
+            Who <span className="text-accent">We Are</span>
+          </h1>
           <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            We are your <span className="text-white font-semibold">silent partners</span>, architects of digital influence working behind the scenes to turn complex challenges into seamless victories.
+            We are the silent partners behind the worlds leading digital profiles. Joinz is a premier digital service agency specializing in secure, confidential, and guaranteed social media solutions.
           </p>
         </div>
       </section>
@@ -42,8 +92,11 @@ export default function About() {
               <div className="h-1 w-20 bg-secondary-container" />
             </div>
             <div className="space-y-8 font-body text-lg text-on-surface-variant leading-relaxed">
-              <p>Founded on the principle of curated excellence, our agency began as a boutique collective of specialists dedicated to high-stakes digital execution. We don't just build products; we craft legacies.</p>
-              <p>Our expertise spans the intersection of strategy, design, and technical mastery. We prioritize the "how" as much as the "what," ensuring every deliverable meets the highest standards of the global market.</p>
+              <p>Joinz was built on one simple principle control.</p>
+              <p>In today's digital world, your online presence defines your reputation, opportunities, and influence. We created Joinz to give individuals and brands full control over how they appear, grow, and protect themselves online.</p>
+              <p>Over the years, we've developed a strong network across media platforms, legal channels, and private communication lines that allow us to deliver results beyond traditional methods.</p>
+              <p>Whether it's securing verification, removing harmful content, or handling sensitive digital issues we operate with discretion, precision, and results-driven execution.</p>
+              <p>At Joinz, we don't rely on automated systems or generic support forms. Every case is handled strategically, ensuring the highest success rate possible.</p>
             </div>
           </div>
         </div>
@@ -54,18 +107,24 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-12 rounded-2xl bg-surface-container border border-white/5 flex flex-col items-center text-center group hover:bg-surface-container-high transition-all duration-500">
-              <span className="text-6xl font-headline font-black text-secondary-container mb-4 glow-text">98%</span>
+              <span className="text-6xl font-headline font-black text-secondary-container mb-4 glow-text">
+                <CountUp target={98} suffix="%" />
+              </span>
               <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Success Rate</span>
             </div>
             <div className="p-12 rounded-2xl bg-surface-container border border-white/5 flex flex-col items-center text-center group hover:bg-surface-container-high transition-all duration-500">
-              <span className="text-6xl font-headline font-black text-white mb-4">500+</span>
+              <span className="text-6xl font-headline font-black text-white mb-4">
+                <CountUp target={500} suffix="+" />
+              </span>
               <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Cases Handled</span>
             </div>
             <div className="p-12 rounded-2xl bg-surface-container border border-white/5 flex flex-col items-center text-center group hover:bg-surface-container-high transition-all duration-500">
               <div className="flex items-center space-x-2 text-secondary-container mb-4">
                 <span className="material-symbols-outlined text-5xl">support_agent</span>
               </div>
-              <span className="text-3xl font-headline font-bold text-white mb-2">24/7 Support</span>
+              <span className="text-3xl font-headline font-bold text-white mb-2">
+                <CountUp target={24} suffix="/7" /> Support
+              </span>
               <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Dedicated Support</span>
             </div>
           </div>
@@ -86,9 +145,9 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-outline-variant/10 rounded-2xl overflow-hidden">
             {[
-              { icon: 'bolt', color: 'secondary-container', title: 'Speed Without Compromise', desc: 'Rapid deployment cycles that maintain elite-level quality control. We move as fast as your market demands.' },
-              { icon: 'shield', color: 'secondary-container', title: 'Absolute Confidentiality', desc: 'Your intellectual property and strategic initiatives are protected with enterprise-grade security protocols.' },
-              { icon: 'auto_graph', color: 'secondary-container', title: 'Result-Driven Assurance', desc: "We don't just deliver reports; we deliver tangible growth and measurable impact for every single partner." },
+              { icon: 'bolt', color: 'secondary-container', title: 'Speed Without Compromise', desc: 'Direct portal access means we bypass level 1 support entirely, cutting response times from months to days.' },
+              { icon: 'shield', color: 'secondary-container', title: 'Absolute Confidentiality', desc: 'We work under strict NDAs. We never boast about our high-profile clients on public forums. Your privacy is paramount.' },
+              { icon: 'auto_graph', color: 'secondary-container', title: 'Result-Driven Assurance', desc: 'We pre-vet every single case. If we take your case, it means we know we can deliver it.' },
             ].map((item, i) => (
               <div key={i} className="p-12 bg-surface hover:bg-surface-container transition-colors duration-500 group">
                 <div className={`w-12 h-12 rounded-xl bg-${item.color}-container/10 flex items-center justify-center text-${item.color} mb-8 group-hover:scale-110 transition-transform`}>
@@ -107,12 +166,9 @@ export default function About() {
         <div className="max-w-4xl mx-auto p-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-3xl">
           <div className="bg-surface-container-lowest p-16 md:p-24 rounded-3xl">
             <h2 className="font-headline text-4xl md:text-5xl font-bold text-white mb-12 leading-tight">Ready to build your digital legacy?</h2>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <div className="flex justify-center">
               <Link to="/contact" className="w-full md:w-auto btn-primary">
                 Get Started
-              </Link>
-              <Link to="/services" className="w-full md:w-auto btn-secondary">
-                View Process
               </Link>
             </div>
           </div>

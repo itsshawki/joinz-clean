@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,61 @@ export default function Contact() {
     service: '',
     details: ''
   })
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    if (!formData.name || !formData.email || !formData.service) {
+      setStatus({ type: 'error', message: 'Please fill in all required fields' })
+      return
+    }
+
+    setLoading(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      // 1. Send Main Email (to Admin)
+      await emailjs.send(
+        'service_e5n5eds',
+        'template_qrk21bn',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          service: formData.service,
+          message: formData.details
+        },
+        'qOpgbC4RGXupwAnrO'
+      )
+
+      // SUCCESS UI: Main email sent
+      setStatus({ type: 'success', message: 'Request sent successfully. Check your email for confirmation.' })
+      setFormData({ name: '', email: '', service: '', details: '' })
+
+      // 2. Handle Auto-Reply separately (silent if fails)
+      try {
+        await emailjs.send(
+          'service_e5n5eds',
+          'template_3ek0uyn',
+          {
+            to_name: formData.name,
+            to_email: formData.email,
+            service: formData.service
+          },
+          'qOpgbC4RGXupwAnrO'
+        )
+      } catch (autoErr) {
+        console.warn('Auto-reply failed to send:', autoErr)
+      }
+
+    } catch (err) {
+      console.error('Main submission failed:', err)
+      setStatus({ type: 'error', message: 'Something went wrong, please try again.' })
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -47,7 +103,7 @@ export default function Contact() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/5 blur-[100px] rounded-full -mr-32 -mt-32" />
             <h2 className="font-headline text-2xl font-bold text-white mb-2 relative">Start Your Request in 30 Seconds</h2>
             <p className="text-on-surface-variant text-sm mb-10 opacity-70 relative">Fill out the form below and we'll get back to you within 24 hours.</p>
-            <form className="space-y-8 relative" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-8 relative" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Full Name</label>
@@ -101,9 +157,20 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                 />
               </div>
-              <button className="btn-primary" type="submit">
-                Submit Request
-              </button>
+              <div className="flex flex-col gap-4">
+                <button 
+                  className={`btn-primary w-full md:w-auto ${loading ? 'opacity-50 cursor-not-allowed' : ''}`} 
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Submit Request'}
+                </button>
+                {status.message && (
+                  <div className={`text-sm font-bold tracking-widest uppercase fade-in-up ${status.type === 'success' ? 'text-secondary-container' : 'text-red-500'}`}>
+                    {status.message}
+                  </div>
+                )}
+              </div>
             </form>
           </div>
         </section>
