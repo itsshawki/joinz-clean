@@ -16,7 +16,7 @@ export default function Growth() {
             <div>
               <h1 className="text-5xl md:text-7xl font-extrabold font-headline leading-tight tracking-tighter text-white mb-6">
                 Scalable growth. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-container to-primary">Deep engagement.</span>
+                <span className="text-accent">Deep engagement.</span>
               </h1>
               <p className="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl">
                 We help ambitious brands expand their reach and deepen customer relationships through data-driven strategies and creative performance marketing.

@@ -65,7 +65,7 @@ export default function Reputation() {
             </div>
             <h1 className="text-6xl md:text-7xl font-extrabold font-headline leading-[1.1] mb-8 tracking-tighter text-white">
               Reputation <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-container to-primary">Management</span>
+              <span className="text-accent">Management</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
               Take control of your brand's digital narrative. We protect your image, suppress negative content, and amplify the positive stories that define your success.

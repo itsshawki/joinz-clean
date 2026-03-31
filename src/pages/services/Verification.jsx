@@ -35,7 +35,7 @@ export default function Verification() {
               <span className="text-secondary text-xs font-bold tracking-widest uppercase font-label">Official Partner Access</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] text-white">
-              Social Media <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Verification</span>
+              Social Media <span className="text-accent">Verification</span>
             </h1>
             <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
               Secure the coveted blue badge across all major platforms to establish unmatched authority and trust.

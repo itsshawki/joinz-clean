@@ -12,7 +12,7 @@ export default function Username() {
           </div>
           <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-tight">
             Secure Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-container">Dream Username</span>
+            <span className="text-accent">Dream Username</span>
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
             Obtain high-value, inactive, or trademarked social media handles. We specialize in reclaiming digital identities across Instagram, Twitter (X), TikTok, and Facebook.

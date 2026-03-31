@@ -13,7 +13,7 @@ export default function PrMedia() {
               <span className="text-xs font-bold uppercase tracking-widest font-label">Public Relations & Media</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-[0.9]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
-              Strategic <span className="text-primary">Visibility.</span>
+              Strategic <span className="text-accent">Visibility.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
               We bridge the gap between your brand and the world's leading publications, creating narrative authority that drives trust and scale.

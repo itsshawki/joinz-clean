@@ -17,7 +17,7 @@ export default function Branding() {
             </div>
             <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-tight mb-8">
               Branding <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">& Design</span>
+              <span className="text-accent">& Design</span>
             </h1>
             <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
               We don't just create logos. We architect visual identities that command attention and build lasting trust in the digital age.

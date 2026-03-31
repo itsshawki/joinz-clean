@@ -12,7 +12,7 @@ export default function WebDev() {
               Digital Craftsmanship
             </div>
             <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] text-white">
-              Next-Gen <br /> <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Web Dev.</span>
+              Next-Gen <br /> <span className="text-accent">Web Dev.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
               We build high-performance, accessible, and scalable digital solutions that transform user engagement into measurable business growth.

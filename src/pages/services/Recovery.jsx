@@ -14,17 +14,14 @@ export default function Recovery() {
                 Account Recovery Specialist
               </div>
               <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter leading-[1.1]">
-                Reclaim Your <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Digital Legacy</span>
+                Reclaim Your <span className="text-accent">Digital Legacy</span>
               </h1>
               <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
                 Specializing in professional account recovery for high-value social media assets. We handle the technicalities while you regain focus on your brand.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                 <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-bold px-8 py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
                   Start Recovery Process
-                </Link>
-                <Link to="/contact" className="border border-outline-variant hover:bg-surface-container text-on-surface font-bold px-8 py-4 rounded-xl transition-all">
-                  View Case Studies
                 </Link>
               </div>
             </div>
@@ -90,7 +87,7 @@ export default function Recovery() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-24 items-start">
             <div className="sticky top-32">
-              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tighter">Our Recovery <br /><span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container">Protocol</span></h2>
+              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tighter">Our Recovery <br /><span className="text-accent">Protocol</span></h2>
               <p className="text-on-surface-variant text-lg leading-relaxed mb-12">
                 A systematic, multi-layered approach developed through years of interaction with major platform security teams. No shortcuts, just results.
               </p>
