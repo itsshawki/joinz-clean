@@ -1,6 +1,121 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
+
+const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // easeOutQuint
+      const easedProgress = 1 - Math.pow(1 - progress, 4);
+      
+      const currentCount = Math.floor(easedProgress * target);
+      setCount(currentCount);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [hasAnimated, target, duration]);
+
+  return <span ref={elementRef}>{prefix}{count}{suffix}</span>;
+};
 
 export default function Username() {
+  const [formData, setFormData] = useState({
+    platform: 'TikTok',
+    username: '',
+    name: '',
+    email: '',
+    details: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+
+  const isFormValid = formData.username && formData.name && formData.email && formData.details;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    
+    setLoading(true);
+    setError(null);
+    const platform = formData.platform;
+    const username = formData.username.startsWith('@') ? formData.username : `@${formData.username}`;
+    const fullName = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.details.trim();
+
+    const templateParams = {
+      name: fullName,
+      email: email,
+      platform: platform,
+      username: username,
+      message: message
+    };
+
+    try {
+      // 1. Send Admin Notification
+      await emailjs.send(
+        'service_byj7uml',
+        'template_fcmdxvr',
+        templateParams,
+        'DKB3FSWEbkPNWUBbg'
+      );
+
+      // 2. Send Auto-Reply (must also succeed for success UI)
+      await emailjs.send(
+        'service_byj7uml',
+        'template_ctmiula',
+        templateParams,
+        'DKB3FSWEbkPNWUBbg'
+      );
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('EmailJS submission failed:', err);
+      setError('Failed to send request. Please check your connection or contact us via WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUsernameChange = (e) => {
+    const val = e.target.value.toLowerCase().replace(/\s/g, '');
+    setFormData({ ...formData, username: val });
+  };
+
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -93,46 +208,127 @@ export default function Username() {
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-secondary-container/10 blur-[100px] rounded-full" />
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full" />
         <div className="relative glass-card border border-outline-variant/20 rounded-lg p-12 shadow-[0_0_40px_-10px_rgba(0,227,253,0.15)]">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Start Your Claim</h2>
-            <p className="text-on-surface-variant">Provide the details below and our specialists will assess your case within 24 hours.</p>
-          </div>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={(e) => e.preventDefault()}>
-            <div className="space-y-2">
-              <label className="text-sm font-label text-slate-400 ml-1">Current Platform</label>
-              <select className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none appearance-none">
-                <option>Instagram</option>
-                <option>Twitter (X)</option>
-                <option>TikTok</option>
-                <option>YouTube</option>
-                <option>Facebook</option>
-              </select>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-label text-slate-400 ml-1">Desired Username</label>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">@</span>
-                <input className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl pl-8 pr-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" placeholder="yourbrand" type="text" />
+          {submitted ? (
+            <div className="text-center py-12 animate-in fade-in zoom-in duration-500">
+              <div className="w-20 h-20 bg-secondary-container/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="material-symbols-outlined text-secondary-container text-5xl">check_circle</span>
               </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-label text-slate-400 ml-1">Your Full Name</label>
-              <input className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" placeholder="John Doe" type="text" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-label text-slate-400 ml-1">Contact Email</label>
-              <input className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" placeholder="john@company.com" type="email" />
-            </div>
-            <div className="md:col-span-2 space-y-2">
-              <label className="text-sm font-label text-slate-400 ml-1">Case Details (Reason for claim, Trademark info, etc.)</label>
-              <textarea className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none" placeholder="Briefly describe why you are entitled to this handle..." rows="4" />
-            </div>
-            <div className="md:col-span-2 pt-4">
-              <button className="w-full bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-headline font-bold py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all transform active:scale-[0.98]" type="submit">
-                Submit Investigation Request
+              <h2 className="text-3xl font-headline font-bold mb-4">Request Received</h2>
+              <p className="text-on-surface-variant max-w-sm mx-auto mb-8">
+                Your claim investigator has been assigned. We will contact you at {formData.email} within 24 hours.
+              </p>
+              <button 
+                onClick={() => setSubmitted(false)}
+                className="text-secondary-container font-bold hover:underline"
+              >
+                Submit another request
               </button>
             </div>
-          </form>
+          ) : (
+            <>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Start Your Username Claim</h2>
+                <p className="text-on-surface-variant">Submit your request and our specialists will review your case within 24 hours.</p>
+              </div>
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
+                <div className="space-y-2">
+                  <label className="text-sm font-label text-slate-400 ml-1">Current Platform</label>
+                  <div className="relative">
+                    <select 
+                      value={formData.platform}
+                      onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
+                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none appearance-none"
+                    >
+                      {['TikTok', 'Instagram', 'X (Twitter)', 'Snapchat', 'YouTube', 'Facebook', 'Kick', 'Twitch', 'LinkedIn', 'Pinterest', 'Tenor'].map(p => (
+                        <option key={p} value={p}>{p}</option>
+                      ))}
+                    </select>
+                    <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">expand_more</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-label text-slate-400 ml-1">Desired Username</label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">@</span>
+                    <input 
+                      value={formData.username}
+                      onChange={handleUsernameChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl pl-8 pr-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
+                      placeholder="yourbrand" 
+                      type="text" 
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-label text-slate-400 ml-1">Your Full Name</label>
+                  <input 
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
+                    placeholder="John Doe" 
+                    type="text" 
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-label text-slate-400 ml-1">Contact Email</label>
+                  <input 
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
+                    placeholder="john@company.com" 
+                    type="email" 
+                    required
+                  />
+                </div>
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-sm font-label text-slate-400 ml-1">Case Details (Reason for claim, Trademark info, etc.)</label>
+                  <textarea 
+                    value={formData.details}
+                    onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none" 
+                    placeholder="Explain your claim (trademark, inactive account, impersonation, etc.)" 
+                    rows="4" 
+                    required
+                  />
+                </div>
+                <div className="md:col-span-2 pt-4">
+                  <button 
+                    disabled={!isFormValid || loading}
+                    className="w-full bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-headline font-bold py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all transform active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2" 
+                    type="submit"
+                  >
+                    {loading ? (
+                      <>
+                        <span className="w-5 h-5 border-2 border-on-primary-fixed/30 border-t-on-primary-fixed rounded-full animate-spin" />
+                        Processing...
+                      </>
+                    ) : 'Submit Claim Request'}
+                  </button>
+                  {error && (
+                    <div className="mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center animate-in fade-in slide-in-from-top-2">
+                      {error}
+                    </div>
+                  )}
+                  <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                      <span className="material-symbols-outlined text-[14px]">shield</span>
+                      100% Confidential
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                      <span className="material-symbols-outlined text-[14px]">visibility_off</span>
+                      No public exposure
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                      <span className="material-symbols-outlined text-[14px]">person_search</span>
+                      Reviewed by specialists only
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </>
+          )}
         </div>
       </section>
 
@@ -140,13 +336,15 @@ export default function Username() {
       <section className="bg-surface-container-low rounded-lg p-12 border border-outline-variant/10 mb-32">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: '500+', label: 'Usernames Claimed' },
-            { value: '94%', label: 'Success Rate' },
-            { value: '12h', label: 'Avg Response' },
-            { value: '100%', label: 'Secure Escrow' },
+            { target: 99, suffix: '+', label: 'Usernames Claimed' },
+            { target: 94, suffix: '%', label: 'Success Rate' },
+            { target: 12, suffix: 'h', label: 'Avg Response' },
+            { target: 100, suffix: '%', label: 'Secure Escrow' },
           ].map((stat, i) => (
             <div key={i}>
-              <div className="text-4xl md:text-5xl font-headline font-black text-secondary-container mb-2">{stat.value}</div>
+              <div className="text-4xl md:text-5xl font-headline font-black text-secondary-container mb-2">
+                <CountUp target={stat.target} suffix={stat.suffix} />
+              </div>
               <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">{stat.label}</div>
             </div>
           ))}
