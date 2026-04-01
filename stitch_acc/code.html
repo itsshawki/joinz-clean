@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Social Media Verification | Joinz Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#00363d",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary-fixed-variant": "#4f00d0",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "surface-container-high": "#252b31",
+                        "surface-container": "#1a2027",
+                        "on-tertiary": "#370096",
+                        "secondary-fixed": "#9cf0ff",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-background": "#dde3ec",
+                        "tertiary-fixed": "#e8deff",
+                        "inverse-on-surface": "#2b3138",
+                        "on-surface": "#dde3ec",
+                        "surface-variant": "#2f353c",
+                        "surface-container-low": "#161c22",
+                        "surface-container-lowest": "#090f15",
+                        "on-primary-fixed-variant": "#00468c",
+                        "on-error": "#690005",
+                        "primary-container": "#3d90ff",
+                        "primary": "#a9c7ff",
+                        "on-primary-container": "#002957",
+                        "inverse-surface": "#dde3ec",
+                        "background": "#0e141a",
+                        "surface-container-highest": "#2f353c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#cdbdff",
+                        "error": "#ffb4ab",
+                        "secondary": "#bdf4ff",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "surface": "#0e141a",
+                        "on-tertiary-fixed": "#20005f",
+                        "tertiary-fixed-dim": "#cdbdff",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-tint": "#a9c7ff",
+                        "on-primary": "#003063",
+                        "on-tertiary-container": "#2f0084",
+                        "surface-dim": "#0e141a",
+                        "outline-variant": "#414754",
+                        "secondary-container": "#00e3fd",
+                        "primary-fixed": "#d6e3ff",
+                        "on-surface-variant": "#c1c6d6",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#005db7",
+                        "tertiary-container": "#9a7bff",
+                        "surface-bright": "#343a41",
+                        "outline": "#8b919f",
+                        "on-secondary-container": "#00616d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e141a;
+            color: #dde3ec;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-plus-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 32, 39, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .cyan-glow {
+            filter: drop-shadow(0 0 15px rgba(0, 227, 253, 0.3));
+        }
+        .no-line { border: none !important; }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+<style>
+        .avatar-ring {
+            position: relative;
+            padding: 2px;
+            background: linear-gradient(135deg, #2188FF, #00daf3);
+            border-radius: 9999px;
+            box-shadow: 0 0 10px rgba(33, 136, 255, 0.2);
+        }
+        .badge-glow {
+            color: #2188FF !important;
+            text-shadow: 0 0 8px rgba(33, 136, 255, 0.8);
+            filter: drop-shadow(0 0 2px rgba(33, 136, 255, 0.5));
+        }
+        .account-card-hover {
+            transition: all 0.3s ease;
+        }
+        .account-card-hover:hover {
+            transform: scale(1.03);
+        }
+        .account-card-hover:hover .avatar-ring {
+            box-shadow: 0 0 20px rgba(33, 136, 255, 0.5);
+        }
+        .account-card-hover:hover .badge-glow {
+            filter: drop-shadow(0 0 5px rgba(33, 136, 255, 0.9));
+        }
+    </style></head>
+<body class="selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto left-1/2 -translate-x-1/2">
+<div class="text-xl font-black tracking-tighter text-slate-50 dark:text-white font-plus-jakarta">
+            Joinz Agency
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-plus-jakarta text-sm font-bold tracking-tight" href="#">Work</a>
+<a class="text-sky-400 font-bold border-b-2 border-sky-400 pb-1 font-plus-jakarta text-sm tracking-tight" href="#">Services</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-plus-jakarta text-sm font-bold tracking-tight" href="#">Process</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-plus-jakarta text-sm font-bold tracking-tight" href="#">About</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-plus-jakarta text-sm font-bold tracking-tight" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-6 py-2.5 rounded-xl font-bold text-sm transition-transform active:scale-95">
+            Start a Project
+        </button>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center justify-center overflow-hidden px-6">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-secondary-container/10 blur-[120px] rounded-full -z-10"></div>
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></span>
+<span class="text-secondary text-xs font-bold tracking-widest uppercase font-label">Official Partner Access</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] text-white">
+                        Social Media <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Verification</span>
+</h1>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
+                        Elevate your digital presence with the ultimate mark of authenticity. We provide direct-to-platform verification for public figures, brands, and creators.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container rounded-xl font-bold text-lg hover:shadow-[0_0_30px_-5px_rgba(61,144,255,0.5)] transition-all active:scale-95">
+                            Get Verified Now
+                        </button>
+<button class="px-8 py-4 bg-surface-container border border-outline-variant/20 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all">
+                            View Platforms
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="relative z-10 rounded-2xl overflow-hidden aspect-square shadow-2xl bg-transparent">
+<img alt="Verification Badge Illustration" class="w-full h-full object-cover cyan-glow" data-alt="A premium, modern verification symbol. A glowing cyan and teal checkmark badge, minimal and tech-inspired with glassmorphism textures on a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD54t0L400LFM44xEP_AokvcJh0go0go5J8DzeCfER6bmlYfdPwwDA6W27QdGbqC6DVeutEZCzAzj_dtj7uAWTy_S-Sdd9ZiU8Gn2Rkxp7ccLYt8rtUa29OKmpp52Yw7HecomsyEJ4v1DNucwCIxlXlZ-AtMnNXRnyY78A3-GHqjmqc6ZwCABTj5Nes0A199N_E1ZP-JhZpFvt2YruuVhbDh5PZziQ3hmOXrNRJUo7ZNuN-pixHKydIMLll0_Qoy-Z13X1ZDylG8s8"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary-container/20 blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Marquee Platforms -->
+<section class="py-12 bg-surface-container-low/50">
+<div class="marquee-container">
+<div class="marquee-content flex gap-12 items-center">
+<!-- Set 1 -->
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">photo_camera</span>
+<span class="text-2xl font-bold font-headline">Instagram</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">video_library</span>
+<span class="text-2xl font-bold font-headline">TikTok</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">social_leaderboard</span>
+<span class="text-2xl font-bold font-headline">Facebook</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">close</span>
+<span class="text-2xl font-bold font-headline">X / Twitter</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">smart_display</span>
+<span class="text-2xl font-bold font-headline">YouTube</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">work</span>
+<span class="text-2xl font-bold font-headline">LinkedIn</span>
+</div>
+<!-- Duplicate for infinite effect -->
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">photo_camera</span>
+<span class="text-2xl font-bold font-headline">Instagram</span>
+</div>
+<div class="flex items-center gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-4xl">video_library</span>
+<span class="text-2xl font-bold font-headline">TikTok</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Overview -->
+<section class="py-32 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<div>
+<h2 class="text-4xl md:text-5xl font-black font-headline mb-8 text-white leading-tight">
+                            The Strategic Edge of Authenticity
+                        </h2>
+<div class="space-y-6 text-on-surface-variant text-lg">
+<p>Verification is more than just a badge; it's a critical layer of protection and authority for your digital identity. Joinz Agency leverages direct platform partnerships to streamline the submission process for our elite clientele.</p>
+<p>We analyze your digital footprint to ensure it meets the rigorous standards set by Meta, Google, and ByteDance, maximizing your chances of successful verification on the first attempt.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="text-xl font-bold mb-2">Authority</h3>
+<p class="text-sm text-on-surface-variant">Instant credibility and trust for followers and business partners.</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">security</span>
+<h3 class="text-xl font-bold mb-2">Protection</h3>
+<p class="text-sm text-on-surface-variant">Prevent impersonation and secure your brand's unique name.</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="text-xl font-bold mb-2">Visibility</h3>
+<p class="text-sm text-on-surface-variant">Increased search ranking and discoverability across platforms.</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="text-xl font-bold mb-2">Exclusive Features</h3>
+<p class="text-sm text-on-surface-variant">Access beta tools and advanced analytics reserved for verified users.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Requirements & Key Benefits (Bento) -->
+<section class="py-32 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-5xl font-black font-headline mb-4">Core Requirements</h2>
+<p class="text-on-surface-variant text-xl">What it takes to secure your blue checkmark.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 p-10 rounded-3xl bg-surface-container flex flex-col justify-between overflow-hidden relative group">
+<div class="relative z-10">
+<h3 class="text-3xl font-bold mb-4">Press &amp; Media Presence</h3>
+<p class="text-on-surface-variant text-lg max-w-md">Your profile must be notable. We help curate and identify significant media coverage from reputable sources to build your case.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-20 group-hover:opacity-40 transition-opacity">
+<img alt="Media Coverage" class="w-full h-full object-cover" data-alt="Monochrome close-up of newspaper headlines and digital news feeds blurred in the background with sharp focus on a 'Breaking News' tag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDymdhO2gJUjDLmfp4moxQ6vRxhMI8FgErhaVpjDqul6_MnQ-Wv576hTHOT9Nmfw-fWEgv-WvNc0_V6s0Z0sTSHAGyKLPiZGq3tgMWmNNTExI7V4_2kLr6TfS60sf50D9hKavAkU1Lb2Nkv4TO7gkI6VrO1eLcMO-zXPsoQqJei60iLfvhx3aBD7wln_U3HRt_6XCE8ToJMsLQLmi0X6FFdfEzBlplkRHsS_ieC8XYNGnChIayoNCMfJi8v_CBswkgPC71RXaI4F0"/>
+</div>
+</div>
+<div class="p-10 rounded-3xl bg-primary text-on-primary-container">
+<span class="material-symbols-outlined text-5xl mb-6">id_card</span>
+<h3 class="text-2xl font-bold mb-4">Authenticity</h3>
+<p class="text-sm font-medium">Must represent a real person, registered business, or entity. Government-issued ID or official documentation is required for all applications.</p>
+</div>
+<div class="p-10 rounded-3xl bg-surface-container-highest flex flex-col justify-center border border-outline-variant/20">
+<h3 class="text-2xl font-bold mb-4">Completeness</h3>
+<p class="text-on-surface-variant">Your account must be public and have a bio, profile photo, and at least one post.</p>
+</div>
+<div class="md:col-span-2 p-10 rounded-3xl bg-surface-container-highest border border-outline-variant/20">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1">
+<h3 class="text-3xl font-bold mb-4">Uniqueness</h3>
+<p class="text-on-surface-variant text-lg">Your account must be the unique presence of the person or business it represents. Only one account per person or business may be verified.</p>
+</div>
+<div class="flex-none bg-background p-8 rounded-2xl">
+<span class="material-symbols-outlined text-secondary text-6xl" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<h2 class="text-5xl font-black font-headline mb-4">The Verification Journey</h2>
+<p class="text-on-surface-variant text-xl">A white-glove approach to your digital legacy.</p>
+</div>
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<span class="text-8xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline">01</span>
+<div>
+<h3 class="text-3xl font-bold mb-4 text-white">Eligibility Audit</h3>
+<p class="text-on-surface-variant text-lg max-w-2xl">We perform a deep-dive analysis of your current digital footprint, searching for press gaps, impersonation risks, and profile deficiencies that could lead to a rejection.</p>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<span class="text-8xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline">02</span>
+<div>
+<h3 class="text-3xl font-bold mb-4 text-white">Profile Optimization</h3>
+<p class="text-on-surface-variant text-lg max-w-2xl">Our team handles the "packaging" of your profile—optimizing bios, links, and cross-platform consistency to meet the exact aesthetic and technical preferences of platform moderators.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<span class="text-8xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline">03</span>
+<div>
+<h3 class="text-3xl font-bold mb-4 text-white">Direct Submission</h3>
+<p class="text-on-surface-variant text-lg max-w-2xl">Utilizing our agency portals, we submit your application directly to our contacts at major platforms. This ensures your case is reviewed by a human expert rather than an automated algorithm.</p>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<span class="text-8xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline">04</span>
+<div>
+<h3 class="text-3xl font-bold mb-4 text-white">Ongoing Monitoring</h3>
+<p class="text-on-surface-variant text-lg max-w-2xl">Once verified, we provide guidance on maintaining your status. We monitor for impersonators and manage the takedown of fake accounts to protect your blue checkmark.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recently Verified Accounts Section -->
+<section class="py-32 px-6 bg-surface-container-lowest/30">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-black font-headline mb-4">Recently Verified Accounts</h2>
+<p class="text-on-surface-variant text-xl">Real accounts successfully verified by our team.</p>
+</div>
+<div class="flex overflow-x-auto pb-8 gap-8 no-scrollbar scroll-smooth snap-x md:grid md:grid-cols-9 md:overflow-visible"><!-- Account Card @shawki -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@shawki" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnuGsluQ1gcRj6l4_WXc-68GUuvYF7R-d1jUcrwneeq2ngd8_SHVYdckIaParo89VGMaTjSCtfbqgxutVHCenBWclP2Rd0jgdbbsDsBD88iXZ4QfSJnx14gzs5f6Ua54F7Fp-isx_cpcECiaVIlmez6UvW9riF0b8gCilOUivXfQfWPOSe185iIwfjsVw4rzmYakpr4__aRSRUgawBuEG5JTTDgNi5DmAflwWnuyyXcK9e9hZxChmrvg2ojVpm1UdW5szENBA6YrU"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@shawki</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @gzy -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@gzy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOSfJ-RGtyeTcbTjFtaC5d13j2CDDKjgOQWZhNqJyDFWzIsxUMuL05QZ6mntarNuYEqboBx1sZx6J_53jszLAHLalS4mACVjF4HsRXJ4tk3ODHTZKJkdxJZq0SVF9bC4v_9aPDz-voWoyMT23cBKd77gtWSbxRqSU4Bl0jOzvh7WNYWeAUeErTsvZcjXIiVzoN-bhmbcC9TEYkLdatxOVyid6HGdX_JfpOwzMYZMCwa2_TZIZVAgAANf30ocYENX_yJ2cyVChCZ0"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@gzy</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @rayanjailer -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@rayanjailer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAqp49v_5MQjdJckCtytt9idZzDVPpOuO0GMcGv5szDguZPZ1RgjixVmoYfXjjG6i-43ppL5SVsTJaJ-nx9mWBEVA2xvWXzfFlcG8IvnD9gmOwGL9rPvEb9p9q_D1TxfAoyr8-FKh5vuOEQ1ZE70lr8F70NugSzrL057tqbudSYQVq3LWb9xE_uGVSdcK_n31O4QKj9Lj4uJQ2gDf4qHoNCVMJl5INScejtBkZmFtwfs1qdqymFsaWzATCmTsjf_ApRYKI2YMbmoc"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@rayanjailer</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @s500s -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@s500s" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANlUg8ux89w3PSDQpImUJ_8KYuIcbQZslG3cfbIMfsTV0lL2_5dS5VmrfL-_dFKocybYbGRxxBtchjCybt9RiNSsLT2Uy9amZCf-pSDMqcZEX3IOEd8LPjYoNmchhC4G44lmVVLB8EXLvvlnETeHuXLeFm5vFeiruWB-rIi0HDOIJwenEVVnVGbgNv7ieU0Vvr20-EHDeiPbKCEQIIkxHrVWGF1fHlpWsjV7kxdOsIugfTvWGnoXqtmKx2EmRkbJQxApK7OOo0u4c"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@s500s</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @thealbertpreciado -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@thealbertpreciado" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWM-652L975XxMOe2DKjIPaUMAoNozdyr-X_4kpzPvW2WFavfxZWIqm_qUuh0ipx-D4uPzi8NhuVY3nz5eJGytX_3c4xdWkODP9yXiIagxWAcJp4L6T3Pw-_5KH0xbizaPnX7aLzqKgV4tLD1PR6onLa17Q0QKSalUnSoBSBGshwZvVzVlZVLNBvoVC4oW9B7ncoMRm_4ULR9DVakvUqvZP6YA3LHyOHe9JXgrQvSFpla9kWQb0I7Jf3Vt-53Jvv9qh6sbJdLoY0A"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@thealbertpreciado</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @ibrahim_assad -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@ibrahim_assad" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWVoKAuUwvjGCPTY3lkd1zVP3BrnCg1jIHDh7qNsPxLY5k7cRHYBGSHyl6RJu7O5W1DS9Mf-69cdPWc1sMSafqblLRqZON4VAkComvvisgE8aE38nuq823De5tXdwZcdizIQoYFOt4VtDoSaBece1KtURjzOmAO-cn_ipBzNNazaenwb6znpDNM4WKaFjTeKqO-Mj2jAOqJg0h350EvNAPtugQh2KjNok9XGa_QCFl6rRi_wuvqKWc-sEC0BPx2vmGNQHSE8qqNwk"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@ibrahim_assad</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @jasonjosephlee -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@jasonjosephlee" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeY9Zg73AwxqV9ViLNUhdJKUDQvZ0hXEfjd_Kj-5i52t2qfEZc86jDt2wL22NKyDmkrJ_R6Q0lIIBu8Yzf76cq32--ff4qIuO_CON1pJJc49U7o42bPgbaJWrx__Q6w10Hm8kneFF3HuHAv0y7E9RXmPPrVVcL-vo7Pah9d-LKHtAo7-L6uNnAgBVpJy5ZUeMeh3hlwcTodNw6dCsiJT0jdsJSETDHHrUC0MaLk17bf4pnWCPjmj-ajAQy4w4tJXIp2XxzHzQh59A"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@jasonjosephlee</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @ahmed_amwell -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@ahmed_amwell" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr_oXnJstIPFcdF4EWpeN3ID_ZmtxdUxVBT6Dce1ilxUwBRLIYSdwFgAODb8RhveMPNwNE81DmH8vOvhypBKLUdQVuNoJomHnbna4sx9yFrhgZMlT0nWIjwbx7nu_DOZF1Ukg6pnlTgNgkdHo-LqS7qG9mjWGSRsmriGJNBRdHQMkbQ4y09VwRvrKF0WfeCv61Rh1p0xYO7A_5NS5S0qLLGpYaQqf9UgdUr-MkwHr9wU0QOYvxOL-LPHX-NbmTrlqyHb0wXQWTCTQ"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@ahmed_amwell</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div>
+<!-- Account Card @ke -->
+<div class="flex-none snap-center flex flex-col items-center group account-card-hover">
+<div class="relative mb-4">
+<div class="avatar-ring">
+<div class="w-24 h-24 rounded-full overflow-hidden bg-slate-900">
+<img alt="@ke" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA3wKWr0quRZZZQGdN-gdN__ehGzfS5HgykYUhXkz1Wph8MDr3Epz_7xJgeTMd6UJtPn_CnDrnaOUhEy9cPDUC3YQTWaU3trenVEcTnIWXzBMZ4lf0Izepg-eTjulJpcgTIq4IaxfU8B6_hFJZ_8txoFmXGXhFZM7XklKDnIitITZMFgQvWmFEXWQbM-77aorsqcoG8RW_86t2VC7BeU9QzLWvuZuAG4FWQfjoE_Ny3jNhYqBLPdUkULaeIkgh6Z97aXZH4OE64TQ"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+<span class="material-symbols-outlined badge-glow text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<span class="text-sm font-bold font-headline">@ke</span>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">TikTok</span>
+</div></div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6">
+<div class="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-surface-container to-surface-container-high p-16 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.1),transparent)]"></div>
+<div class="relative z-10">
+<h2 class="text-5xl md:text-7xl font-black font-headline mb-8 text-white">Ready to be <span class="text-secondary italic">Recognized?</span></h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">Join the ranks of elite creators and brands. Our team is ready to audit your eligibility today.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="px-12 py-5 bg-white text-slate-950 rounded-2xl font-bold text-xl hover:scale-105 transition-transform active:scale-95">
+                            Get Verified Now
+                        </button>
+<button class="px-12 py-5 bg-surface-container-highest border border-outline-variant/30 text-white rounded-2xl font-bold text-xl hover:bg-surface-container transition-colors">
+                            Have Questions?
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto">
+<div class="text-lg font-bold text-slate-200 font-plus-jakarta mb-6 md:mb-0">
+                Joinz Agency
+            </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-slate-500 hover:text-sky-400 transition-colors font-inter text-xs tracking-widest uppercase" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-sky-400 transition-colors font-inter text-xs tracking-widest uppercase" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-sky-400 transition-colors font-inter text-xs tracking-widest uppercase" href="#">Instagram</a>
+<a class="text-slate-500 hover:text-sky-400 transition-colors font-inter text-xs tracking-widest uppercase" href="#">LinkedIn</a>
+</div>
+<div class="text-slate-500 font-inter text-xs tracking-widest uppercase">
+                © 2024 Joinz Agency. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

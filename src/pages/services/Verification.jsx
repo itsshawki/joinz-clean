@@ -22,6 +22,19 @@ function PlatformIcon({ p, prefix, i }) {
   )
 }
 
+const verifiedAccounts = [
+  { handle: '@drahmedshafy', platform: 'TikTok', image: '/@drahmedsahfy.jpeg', link: 'https://www.tiktok.com/@drahmedshafy' },
+  { handle: '@shawki', platform: 'TikTok', image: '/@shawki.jpeg', link: 'https://www.tiktok.com/@shawki' },
+  { handle: '@gzy', platform: 'TikTok', image: '/@gzy.jpeg', link: 'https://www.tiktok.com/@gzy' },
+  { handle: '@rayanjailer', platform: 'TikTok', image: '/@rayanjailer.jpeg', link: 'https://www.tiktok.com/@rayanjailer' },
+  { handle: '@s500s', platform: 'TikTok', image: '/@s500s.jpeg', link: 'https://www.tiktok.com/@s500s' },
+  { handle: '@thealbertpreciado', platform: 'TikTok', image: '/@thealbertpreciado.jpeg', link: 'https://www.tiktok.com/@thealbertpreciado' },
+  { handle: '@ibrahim_assad', platform: 'TikTok', image: '/@ibrahim_assad.jpeg', link: 'https://www.tiktok.com/@ibrahim_assad' },
+  { handle: '@jasonjosephlee', platform: 'TikTok', image: '/@jasonjosephlee.jpeg', link: 'https://www.tiktok.com/@jasonjosephlee' },
+  { handle: '@ahmed_amwell', platform: 'TikTok', image: '/@ahmed_amwell.jpeg', link: 'https://www.tiktok.com/@ahmed_amwell' },
+  { handle: '@ke', platform: 'TikTok', image: '/@ke.jpeg', link: 'https://www.tiktok.com/@ke' },
+];
+
 export default function Verification() {
   return (
     <main className="pt-24">
@@ -167,6 +180,51 @@ export default function Verification() {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recently Verified Accounts Section */}
+      <section className="py-32 px-6 bg-surface-container-lowest/30 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto mb-16 px-6 relative z-10">
+          <div className="text-center">
+            <h2 className="text-5xl font-black font-headline mb-4">Recently Verified Accounts</h2>
+            <p className="text-on-surface-variant text-xl">Real accounts successfully verified by our team.</p>
+          </div>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden group/marquee">
+          <div className="animate-scroll flex whitespace-nowrap gap-8 md:gap-16 py-8 px-4 group-hover/marquee:[animation-play-state:paused]">
+            {[...verifiedAccounts, ...verifiedAccounts, ...verifiedAccounts].map((account, i) => (
+              <a 
+                key={i} 
+                href={account.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-none flex flex-col items-center group transition-transform duration-300 hover:scale-[1.03]"
+              >
+                <div className="relative mb-4">
+                  <div className="relative p-[2px] rounded-full bg-gradient-to-br from-[#2188FF] to-[#00daf3] shadow-[0_0_10px_rgba(33,136,255,0.2)] group-hover:shadow-[0_0_20px_rgba(33,136,255,0.5)] transition-shadow duration-300">
+                    <div className="w-24 h-24 rounded-full overflow-hidden bg-slate-900 border-[3px] border-[#0e141a]">
+                      <img alt={account.handle} className="w-full h-full object-cover" src={account.image} />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+                    <span 
+                      className="material-symbols-outlined text-xl text-[#2188FF] drop-shadow-[0_0_2px_rgba(33,136,255,0.5)] group-hover:drop-shadow-[0_0_5px_rgba(33,136,255,0.9)] transition-all duration-300"
+                      style={{ 
+                        fontVariationSettings: "'FILL' 1",
+                        textShadow: "0 0 8px rgba(33, 136, 255, 0.8)"
+                      }}
+                    >
+                      verified
+                    </span>
+                  </div>
+                </div>
+                <span className="text-sm font-bold font-headline text-white">{account.handle}</span>
+                <span className="text-[10px] uppercase tracking-widest text-on-surface-variant/70 font-label">{account.platform}</span>
+              </a>
             ))}
           </div>
         </div>

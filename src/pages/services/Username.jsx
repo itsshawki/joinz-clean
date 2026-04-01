@@ -31,10 +31,10 @@ const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       // easeOutQuint
       const easedProgress = 1 - Math.pow(1 - progress, 4);
-      
+
       const currentCount = Math.floor(easedProgress * target);
       setCount(currentCount);
 
@@ -68,7 +68,7 @@ export default function Username() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isFormValid) return;
-    
+
     setLoading(true);
     setError(null);
     const platform = formData.platform;
@@ -217,7 +217,7 @@ export default function Username() {
               <p className="text-on-surface-variant max-w-sm mx-auto mb-8">
                 Your claim investigator has been assigned. We will contact you at {formData.email} within 24 hours.
               </p>
-              <button 
+              <button
                 onClick={() => setSubmitted(false)}
                 className="text-secondary-container font-bold hover:underline"
               >
@@ -234,7 +234,7 @@ export default function Username() {
                 <div className="space-y-2">
                   <label className="text-sm font-label text-slate-400 ml-1">Current Platform</label>
                   <div className="relative">
-                    <select 
+                    <select
                       value={formData.platform}
                       onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
                       className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none appearance-none"
@@ -250,53 +250,53 @@ export default function Username() {
                   <label className="text-sm font-label text-slate-400 ml-1">Desired Username</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">@</span>
-                    <input 
+                    <input
                       value={formData.username}
                       onChange={handleUsernameChange}
-                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl pl-8 pr-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
-                      placeholder="yourbrand" 
-                      type="text" 
+                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl pl-8 pr-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                      placeholder="yourbrand"
+                      type="text"
                       required
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-label text-slate-400 ml-1">Your Full Name</label>
-                  <input 
+                  <input
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
-                    placeholder="John Doe" 
-                    type="text" 
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                    placeholder="John Doe"
+                    type="text"
                     required
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-label text-slate-400 ml-1">Contact Email</label>
-                  <input 
+                  <input
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none" 
-                    placeholder="john@company.com" 
-                    type="email" 
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                    placeholder="john@company.com"
+                    type="email"
                     required
                   />
                 </div>
                 <div className="md:col-span-2 space-y-2">
                   <label className="text-sm font-label text-slate-400 ml-1">Case Details (Reason for claim, Trademark info, etc.)</label>
-                  <textarea 
+                  <textarea
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none" 
-                    placeholder="Explain your claim (trademark, inactive account, impersonation, etc.)" 
-                    rows="4" 
+                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none"
+                    placeholder="Explain your claim (trademark, inactive account, impersonation, etc.)"
+                    rows="4"
                     required
                   />
                 </div>
                 <div className="md:col-span-2 pt-4">
-                  <button 
+                  <button
                     disabled={!isFormValid || loading}
-                    className="w-full bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-headline font-bold py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all transform active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2" 
+                    className="w-full bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-headline font-bold py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all transform active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     type="submit"
                   >
                     {loading ? (
