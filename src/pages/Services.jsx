@@ -156,7 +156,7 @@ export default function Services() {
         <div className="relative z-10 bg-surface-container-low/40 backdrop-blur-xl border border-white/10 p-12 md:p-20 rounded-[2.5rem] shadow-2xl overflow-hidden group">
           {/* Decorative Gradient Overlay - Set to pointer-events-none to avoid blocking clicks */}
           <div className="absolute inset-0 bg-gradient-to-br from-secondary-container/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-          
+
           <div className="relative z-20">
             <h2 className="font-headline text-4xl md:text-5xl font-bold mb-6 tracking-tight">Let’s Build Your Digital Authority</h2>
             <p className="text-on-surface-variant text-lg mb-12 max-w-xl mx-auto leading-relaxed">

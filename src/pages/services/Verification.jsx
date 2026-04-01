@@ -35,6 +35,13 @@ const verifiedAccounts = [
   { handle: '@ke', platform: 'TikTok', image: '/@ke.jpeg', link: 'https://www.tiktok.com/@ke' },
 ];
 
+const caseResults = [
+  { username: '@ahmed_amwell', platform: 'TikTok', problem: 'Verification', result: 'Completed in 3 days', status: 'Completed' },
+  { username: '@gzy', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
+  { username: '@ibrahim_assad', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
+  { username: '@s500s', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
+];
+
 export default function Verification() {
   return (
     <main className="pt-24">
@@ -51,7 +58,7 @@ export default function Verification() {
               Social Media <span className="text-accent">Verification</span>
             </h1>
             <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
-              Secure the coveted blue badge across all major platforms to establish unmatched authority and trust.
+              Get verified on major platforms and build real trust with your audience. Stand out, protect your identity, and make your presence official.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/contact" className="px-8 py-4 bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed rounded-xl font-bold text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all active:scale-95">
@@ -91,23 +98,23 @@ export default function Verification() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div>
               <h2 className="text-4xl md:text-5xl font-black font-headline mb-8 text-white leading-tight">
-                The Strategic Edge of Authenticity
+                Why Verification Actually Matters
               </h2>
               <div className="space-y-6 text-on-surface-variant text-lg">
-                <p>Verification is more than just a badge; it's a critical layer of protection and authority for your digital identity. Joinz Agency leverages direct platform partnerships to streamline the submission process for our elite clientele.</p>
-                <p>We analyze your digital footprint to ensure it meets the rigorous standards set by Meta, Google, and ByteDance, maximizing your chances of successful verification on the first attempt.</p>
+                <p>Verification isn’t just a badge — it’s what separates real brands from the noise. It builds trust instantly, protects your identity, and makes your presence feel legitimate across every platform.</p>
+                <p>We review your profile, fix what’s missing, and position you the right way before submission — so you have the highest chance of getting approved from the first try.</p>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { icon: 'verified', title: 'Authority', desc: 'Instant credibility and trust for followers and business partners.' },
-                { icon: 'security', title: 'Protection', desc: "Prevent impersonation and secure your brand's unique name." },
-                { icon: 'trending_up', title: 'Visibility', desc: 'Increased search ranking and discoverability across platforms.' },
-                { icon: 'bolt', title: 'Exclusive Features', desc: 'Access beta tools and advanced analytics reserved for verified users.' },
+                { icon: 'verified', title: 'Authority', desc: 'Build instant trust with your audience and appear more credible at first glance.' },
+                { icon: 'security', title: 'Protection', desc: 'Protect your name from impersonation and keep your brand identity safe.' },
+                { icon: 'trending_up', title: 'Visibility', desc: 'Get discovered faster and show up higher in search across platforms.' },
+                { icon: 'bolt', title: 'Exclusive Features', desc: 'Unlock features and tools that are only available to verified accounts.' },
               ].map((card, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>{card.icon}</span>
-                  <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                <div key={i} className="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+                  <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform" style={{ fontVariationSettings: "'FILL' 1" }}>{card.icon}</span>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-secondary-container transition-colors">{card.title}</h3>
                   <p className="text-sm text-on-surface-variant">{card.desc}</p>
                 </div>
               ))}
@@ -162,14 +169,14 @@ export default function Verification() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <h2 className="text-5xl font-black font-headline mb-4">The Verification Journey</h2>
-            <p className="text-on-surface-variant text-xl">A white-glove approach to your digital legacy.</p>
+            <p className="text-on-surface-variant text-xl">A simple, proven process to get you verified.</p>
           </div>
           <div className="space-y-4">
             {[
-              { num: '01', title: 'Eligibility Audit', desc: 'We perform a deep-dive analysis of your current digital footprint, searching for press gaps, impersonation risks, and profile deficiencies that could lead to a rejection.' },
-              { num: '02', title: 'Profile Optimization', desc: 'Our team handles the "packaging" of your profile—optimizing bios, links, and cross-platform consistency to meet the exact aesthetic and technical preferences of platform moderators.' },
-              { num: '03', title: 'Direct Submission', desc: 'Utilizing our agency portals, we submit your application directly to our contacts at major platforms. This ensures your case is reviewed by a human expert rather than an automated algorithm.' },
-              { num: '04', title: 'Ongoing Monitoring', desc: 'Once verified, we provide guidance on maintaining your status. We monitor for impersonators and manage the takedown of fake accounts to protect your blue checkmark.' },
+              { num: '01', title: 'Eligibility Audit', desc: 'We review your profile to see what’s missing and what needs to improve before applying.' },
+              { num: '02', title: 'Profile Optimization', desc: 'We fix and optimize your profile — from bio to content — to match what platforms are actually looking for.' },
+              { num: '03', title: 'Direct Submission', desc: 'We handle the submission process and make sure your application is presented the right way.' },
+              { num: '04', title: 'Ongoing Monitoring', desc: 'After approval, we help you maintain your status and protect your account from impersonation.' },
             ].map((step, i) => (
               <div key={i} className="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
@@ -193,12 +200,12 @@ export default function Verification() {
             <p className="text-on-surface-variant text-xl">Real accounts successfully verified by our team.</p>
           </div>
         </div>
-        
+
         <div className="relative flex overflow-x-hidden group/marquee">
           <div className="animate-scroll flex whitespace-nowrap gap-8 md:gap-16 py-8 px-4 group-hover/marquee:[animation-play-state:paused]">
             {[...verifiedAccounts, ...verifiedAccounts, ...verifiedAccounts].map((account, i) => (
-              <a 
-                key={i} 
+              <a
+                key={i}
                 href={account.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -211,9 +218,9 @@ export default function Verification() {
                     </div>
                   </div>
                   <div className="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
-                    <span 
+                    <span
                       className="material-symbols-outlined text-xl text-[#2188FF] drop-shadow-[0_0_2px_rgba(33,136,255,0.5)] group-hover:drop-shadow-[0_0_5px_rgba(33,136,255,0.9)] transition-all duration-300"
-                      style={{ 
+                      style={{
                         fontVariationSettings: "'FILL' 1",
                         textShadow: "0 0 8px rgba(33, 136, 255, 0.8)"
                       }}
@@ -230,21 +237,95 @@ export default function Verification() {
         </div>
       </section>
 
+      {/* Real Case Results */}
+      <section className="py-32 px-6 bg-surface">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-black font-headline mb-4">Real Case Results</h2>
+            <p className="text-on-surface-variant text-xl">Proven success stories from real clients.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {caseResults.map((item, i) => {
+              const isFeatured = i === 0;
+              const delay = i * 150; // Staggered delay
+
+              return (
+                <div
+                  key={i}
+                  style={{ animationDelay: `${delay}ms` }}
+                  className={`p-10 rounded-[2.5rem] bg-surface-container-low transition-all duration-500 group relative overflow-hidden fade-in-up
+                    ${isFeatured
+                      ? 'border-primary/30 scale-[1.02] border-2 bg-gradient-to-br from-surface-container-low to-primary/5 animate-soft-glow'
+                      : 'border border-white/5'
+                    }
+                    hover:bg-surface-container hover:border-primary/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(33,136,255,0.2)] hover:-translate-y-2 hover:scale-[1.03] ease-out`}
+                >
+                  {/* Subtle internal glow */}
+                  <div className={`absolute -top-24 -right-24 w-48 h-48 blur-[100px] rounded-full transition-all duration-700
+                    ${isFeatured ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/30'}`} />
+
+                  <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start gap-4 mb-10">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-3 mb-1">
+                        <h3 className="text-2xl font-black font-headline tracking-tight text-white">{item.username}</h3>
+                        {isFeatured && (
+                          <span className="px-2 py-0.5 rounded-md bg-secondary/20 border border-secondary/30 text-secondary text-[9px] font-black uppercase tracking-widest">
+                            Featured Case
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-secondary" />
+                        <p className="text-on-surface-variant text-[10px] font-bold uppercase tracking-[0.2em] font-label">{item.platform}</p>
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-[11px] font-black uppercase tracking-widest shadow-sm">
+                      <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                      {item.status}
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 space-y-8">
+                    <div className="space-y-3">
+                      <p className="text-on-surface-variant/50 text-[10px] font-bold uppercase tracking-[0.25em] font-label">The Problem</p>
+                      <p className="text-white/90 text-lg font-medium leading-relaxed">{item.problem}</p>
+                    </div>
+
+                    {/* Subtle Divider */}
+                    <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent shadow-sm" />
+
+                    <div className="space-y-3">
+                      <p className="text-on-surface-variant/50 text-[10px] font-bold uppercase tracking-[0.25em] font-label">The Result</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className="text-secondary text-2xl font-black font-headline tracking-tight group-hover:text-glow transition-all duration-500">
+                          {item.result}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 px-6">
         <div className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-surface-container to-surface-container-high p-16 md:p-24 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.1),transparent)]" />
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black font-headline mb-8 text-white">Ready to be <span className="text-secondary italic">Recognized?</span></h2>
-            <p className="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">Join the ranks of elite creators and brands. Our team is ready to audit your eligibility today.</p>
+            <h2 className="text-5xl md:text-7xl font-black font-headline mb-8 text-white">Ready to Get <span className="text-secondary italic">Verified?</span></h2>
+            <p className="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">We’ll review your profile, guide you step by step, and handle the process with you — so you don’t waste time on rejected attempts.</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/contact" className="px-12 py-5 bg-white text-slate-950 rounded-2xl font-bold text-xl hover:scale-105 transition-transform active:scale-95">
                 Get Verified Now
               </Link>
               <Link to="/contact" className="px-12 py-5 bg-surface-container-highest border border-outline-variant/30 text-white rounded-2xl font-bold text-xl hover:bg-surface-container transition-colors">
-                Have Questions?
+                Talk to Us
               </Link>
             </div>
+            <p className="mt-8 text-on-surface-variant/60 text-sm font-medium">Takes less than 2 minutes</p>
           </div>
         </div>
       </section>

@@ -16,28 +16,25 @@ export default function Growth() {
             <div>
               <h1 className="text-5xl md:text-7xl font-extrabold font-headline leading-tight tracking-tighter text-white mb-6">
                 Scalable growth. <br />
-                <span className="text-accent">Deep engagement.</span>
+                <span className="text-accent">Real engagement.</span>
               </h1>
               <p className="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl">
-                We help ambitious brands expand their reach and deepen customer relationships through data-driven strategies and creative performance marketing.
+                We don't just grow your numbers. <br />
+                We help you build real audience, real engagement, and real results.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="bg-white text-slate-950 px-8 py-4 rounded-xl font-bold font-headline flex items-center gap-2 hover:bg-secondary-fixed transition-colors">
-                  Start Your Journey
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </Link>
-                <Link to="/contact" className="px-8 py-4 rounded-xl border border-outline-variant/30 font-bold font-headline hover:bg-white/5 transition-colors">
-                  View Case Studies
+                <Link to="/contact" className="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold font-headline flex items-center gap-2 hover:bg-secondary-fixed transition-all hover:scale-105 shadow-xl">
+                  Start Now →
                 </Link>
               </div>
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: 'trending_up', value: '140%', label: 'Avg. ROI Growth', color: 'text-secondary-container', mt: '' },
-                  { icon: 'group_add', value: '2.4M', label: 'Users Engaged', color: 'text-tertiary', mt: 'mt-8' },
-                  { icon: 'bolt', value: '0.4s', label: 'Lead Response', color: 'text-primary', mt: '-mt-4' },
-                  { icon: 'query_stats', value: '92%', label: 'Retention Rate', color: 'text-secondary-fixed-dim', mt: 'mt-4' },
+                  { icon: 'verified', value: 'Real', label: 'Followers', color: 'text-secondary-container', mt: '' },
+                  { icon: 'favorite', value: 'Higher', label: 'Engagement', color: 'text-tertiary', mt: 'mt-8' },
+                  { icon: 'bolt', value: 'Better', label: 'Reach', color: 'text-primary', mt: '-mt-4' },
+                  { icon: 'query_stats', value: 'Consistent', label: 'Growth', color: 'text-secondary-fixed-dim', mt: 'mt-4' },
                 ].map((stat, i) => (
                   <div key={i} className={`bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10 shadow-xl ${stat.mt}`}>
                     <span className={`material-symbols-outlined ${stat.color} mb-4 text-4xl`} style={{ fontVariationSettings: "'FILL' 1" }}>{stat.icon}</span>
@@ -55,20 +52,20 @@ export default function Growth() {
       <section className="bg-surface-container-low py-32 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <h2 className="text-4xl font-bold font-headline text-white mb-4">Our Growth Ecosystem</h2>
+            <h2 className="text-4xl font-bold font-headline text-white mb-4">How we actually grow your account</h2>
             <div className="w-24 h-1 bg-secondary-container rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="md:col-span-2 bg-surface-container rounded-2xl p-10 relative overflow-hidden group border border-outline-variant/10">
               <div className="relative z-10 h-full flex flex-col justify-between">
                 <div>
-                  <h3 className="text-3xl font-bold font-headline text-white mb-4">Omnichannel Acquisition</h3>
+                  <h3 className="text-3xl font-bold font-headline text-white mb-4">Get more people to your account</h3>
                   <p className="text-on-surface-variant max-w-md leading-relaxed">
-                    Strategic placement across search, social, and display networks using AI-driven audience modeling to ensure your message reaches the right person at the optimal moment.
+                    We help you reach the right audience on TikTok, Instagram, and more — not just random views.
                   </p>
                 </div>
                 <div className="mt-12 flex gap-4">
-                  {['Search', 'Social', 'Programmatic'].map((tag, i) => (
+                  {['TikTok', 'Instagram', 'Twitter'].map((tag, i) => (
                     <span key={i} className="px-4 py-2 rounded-lg bg-surface-variant/50 text-xs font-bold text-secondary font-label uppercase tracking-widest">{tag}</span>
                   ))}
                 </div>
@@ -79,16 +76,16 @@ export default function Growth() {
             </div>
             <div className="bg-gradient-to-br from-primary-container to-blue-900 rounded-2xl p-10 border border-white/10 shadow-2xl">
               <span className="material-symbols-outlined text-white text-5xl mb-6" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>
-              <h3 className="text-2xl font-bold font-headline text-white mb-4">Trust Framework</h3>
+              <h3 className="text-2xl font-bold font-headline text-white mb-4">Build trust, not just numbers</h3>
               <p className="text-white/80 leading-relaxed">
-                Building long-term brand equity through transparent engagement and community building strategies.
+                We make your account look real, credible, and worth following.
               </p>
             </div>
             <div className="bg-surface-container rounded-2xl p-10 border border-outline-variant/10">
               <span className="material-symbols-outlined text-secondary-container text-5xl mb-6" style={{ fontVariationSettings: "'FILL' 1" }}>monitoring</span>
-              <h3 className="text-2xl font-bold font-headline text-white mb-4">Data Analytics</h3>
+              <h3 className="text-2xl font-bold font-headline text-white mb-4">Know what’s working (and fix what’s not)</h3>
               <p className="text-on-surface-variant leading-relaxed">
-                Real-time reporting dashboards that turn raw numbers into actionable growth insights.
+                We track performance and adjust your strategy to keep growing consistently.
               </p>
             </div>
             <div className="md:col-span-2 bg-surface-container rounded-2xl p-10 flex flex-col md:flex-row gap-8 items-center border border-outline-variant/10">
@@ -96,9 +93,9 @@ export default function Growth() {
                 <img className="w-full h-full object-cover" alt="Analytics dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4K-rzgSXpvc5AeikXn16rB-DOxE150HXQ1fNcV0D3w_ZUm7iSG13NxYMWDo_2F798c4wgTZclkCSw_uDTUAgvELxB3Hx-mghWPjW0Lo9lCULqvxSUTE0lkFnter8T1RJoJEIla-dz5nnTiJN2KtxPdWhXzwMaX6dOjyNBsCNP2uiVrQAxuKDqpAp3YwbQSIVIVC-8DHkCxl26ihnTB6HmSu0jqrF2GZBkdiPy8iIHAfmY7GI0t_QHLiqmQRQB97TPSpCp8Y6dRs4" />
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold font-headline text-white mb-4">Behavioral Science</h3>
+                <h3 className="text-2xl font-bold font-headline text-white mb-4">Turn views into real engagement</h3>
                 <p className="text-on-surface-variant leading-relaxed">
-                  We leverage psychological triggers and behavioral mapping to optimize the user journey, increasing conversion rates and lifetime value (LTV).
+                  We optimize your content so people don’t just scroll — they follow, engage, and come back.
                 </p>
               </div>
             </div>
@@ -112,9 +109,9 @@ export default function Growth() {
           <div className="order-2 lg:order-1">
             <div className="space-y-12">
               {[
-                { icon: 'ads_click', title: 'Precision Targeting', desc: 'Micro-segmentation of audiences based on intent, interest, and behavioral history for maximum conversion.', bg: 'bg-secondary-fixed-dim/20', color: 'text-secondary-container' },
-                { icon: 'campaign', title: 'Content Strategy', desc: 'Engagement-focused content that resonates with your core audience and encourages organic virality.', bg: 'bg-primary-fixed-dim/20', color: 'text-primary' },
-                { icon: 'psychology', title: 'AI Optimization', desc: 'Continuous automated A/B testing and creative optimization powered by machine learning algorithms.', bg: 'bg-tertiary-fixed-dim/20', color: 'text-tertiary' },
+                { icon: 'ads_click', title: 'Reach the right audience', desc: 'We help your content show up to people who are actually interested — not random viewers.', bg: 'bg-secondary-fixed-dim/20', color: 'text-secondary-container' },
+                { icon: 'campaign', title: 'Create content that performs', desc: 'We guide your content so it gets more views, more engagement, and real growth.', bg: 'bg-primary-fixed-dim/20', color: 'text-primary' },
+                { icon: 'psychology', title: 'Improve and scale faster', desc: 'We test, adjust, and improve your strategy continuously to keep your account growing.', bg: 'bg-tertiary-fixed-dim/20', color: 'text-tertiary' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6">
                   <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center`}>
@@ -139,16 +136,13 @@ export default function Growth() {
       <section className="px-8 pb-32">
         <div className="max-w-7xl mx-auto rounded-3xl p-12 md:p-24 relative overflow-hidden bg-surface-container-high border border-outline-variant/10 text-center">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary-container to-transparent" />
-          <h2 className="text-4xl md:text-6xl font-black font-headline text-white mb-8">Ready to amplify your presence?</h2>
+          <h2 className="text-4xl md:text-6xl font-black font-headline text-white mb-8">Ready to grow your account?</h2>
           <p className="text-on-surface-variant text-lg max-w-2xl mx-auto mb-12">
-            Join dozens of high-growth brands who have scaled their operations through our Engagement framework.
+            We’ll help you grow faster, get real engagement, and turn your account into real results.
           </p>
-          <div className="flex flex-col md:flex-row justify-center gap-6">
-            <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-bold font-headline text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
-              Book a Strategy Session
-            </Link>
-            <Link to="/contact" className="bg-white/5 border border-outline-variant/30 text-white px-10 py-5 rounded-2xl font-bold font-headline text-lg hover:bg-white/10 transition-all">
-              Explore Results
+          <div className="flex justify-center">
+            <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-12 py-5 rounded-2xl font-bold font-headline text-xl shadow-[0_0_25px_rgba(0,227,253,0.3)] hover:scale-[1.05] hover:translate-y-[-4px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
+              Start Now →
             </Link>
           </div>
         </div>

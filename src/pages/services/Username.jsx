@@ -126,11 +126,11 @@ export default function Username() {
             Identity Restoration
           </div>
           <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-tight">
-            Secure Your <br />
-            <span className="text-accent">Dream Username</span>
+            Username <br />
+            <span className="text-accent">Claim</span>
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
-            Obtain high-value, inactive, or trademarked social media handles. We specialize in reclaiming digital identities across Instagram, Twitter (X), TikTok, and Facebook.
+            Get the username you actually want — even if it's already taken. We help you secure inactive, claimed, or trademarked handles across all major platforms.
           </p>
         </div>
         <div className="flex-1 relative">
@@ -151,9 +151,9 @@ export default function Username() {
           <div className="flex flex-col h-full justify-between">
             <div>
               <span className="material-symbols-outlined text-secondary-container text-4xl mb-6">verified_user</span>
-              <h3 className="text-3xl font-headline font-bold mb-4">Unlocking Inactive Handles</h3>
+              <h3 className="text-3xl font-headline font-bold mb-4">Inactive Handles</h3>
               <p className="text-on-surface-variant leading-relaxed text-lg max-w-2xl">
-                Is your brand name taken by a dormant account with zero activity? Our proprietary legal outreach and platform partnerships allow us to facilitate the transfer of inactive usernames directly to your control.
+                Is your username taken but not being used? We help you claim inactive handles through proven outreach and platform processes — and transfer them to you.
               </p>
             </div>
             <div className="mt-12 flex gap-4">
@@ -172,21 +172,21 @@ export default function Username() {
           <span className="material-symbols-outlined text-primary text-3xl mb-4">gavel</span>
           <h4 className="text-xl font-headline font-bold mb-2">Trademark Claims</h4>
           <p className="text-on-surface-variant text-sm leading-relaxed">
-            Protect your intellectual property. We leverage trademark laws to reclaim usernames that infringe on your brand's legal rights globally.
+            Own the legal rights to a name? We handle trademark-based claims to recover usernames that belong to your brand.
           </p>
         </div>
         <div className="md:col-span-4 bg-surface-container-low border border-outline-variant/10 p-8 rounded-lg">
           <span className="material-symbols-outlined text-secondary text-3xl mb-4">shield_person</span>
           <h4 className="text-xl font-headline font-bold mb-2">Impersonation Removal</h4>
           <p className="text-on-surface-variant text-sm leading-relaxed">
-            Swift action against fake accounts. We secure your identity by removing impersonators and claiming the correct handle for your public profile.
+            Someone using your name or pretending to be you? We remove impersonators and secure your real identity across platforms.
           </p>
         </div>
         <div className="md:col-span-8 glass-card border border-outline-variant/10 p-8 rounded-lg flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h4 className="text-2xl font-headline font-bold mb-2">White-Glove Support</h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
-              Dedicated account managers guide you through the entire verification and claim process. Zero risk, 100% confidentiality, and guaranteed results or you don't pay.
+              You don’t deal with the process — we do. From start to finish, we handle everything with full privacy and direct support.
             </p>
           </div>
           <div className="bg-surface-container-highest p-4 rounded-xl border border-white/5">
@@ -196,7 +196,7 @@ export default function Username() {
               </div>
               <div>
                 <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Available 24/7</p>
-                <p className="font-bold">Expert Consulting</p>
+                <p className="font-bold">Direct Support</p>
               </div>
             </div>
           </div>

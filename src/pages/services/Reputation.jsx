@@ -68,7 +68,7 @@ export default function Reputation() {
               <span className="text-accent">Management</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
-              Take control of your brand's digital narrative. We protect your image, suppress negative content, and amplify the positive stories that define your success.
+              We help you take control of what people see when they search your name — removing the negative and pushing forward what actually represents you.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="bg-white text-slate-950 px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-secondary transition-colors">
@@ -109,7 +109,7 @@ export default function Reputation() {
                 Why Digital <br />Reputation Matters
               </h2>
               <p className="text-on-surface-variant leading-relaxed">
-                In a hyper-connected world, your search results are your first impression. We ensure it's a reflection of your true value, not an outdated narrative.
+                When someone searches your name, what shows up matters. First impressions today start on Google — and we make sure yours works in your favor.
               </p>
               <div className="mt-12 space-y-8">
                 <div className="flex gap-4">
@@ -118,7 +118,7 @@ export default function Reputation() {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-1">Real-time Monitoring</h4>
-                    <p className="text-sm text-on-surface-variant">We track every mention across the web, from social media to press releases.</p>
+                    <p className="text-sm text-on-surface-variant">We track mentions of your name across search, social media, and news — so nothing slips through unnoticed.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -127,16 +127,16 @@ export default function Reputation() {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-1">Strategic Suppression</h4>
-                    <p className="text-sm text-on-surface-variant">Push unwanted content to the second page of search results and beyond.</p>
+                    <p className="text-sm text-on-surface-variant">We push down unwanted or harmful content and replace it with strong, positive assets that reflect your real value.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="md:col-span-7 grid grid-cols-1 gap-6">
               {[
-                { num: '01', icon: 'policy', title: 'Crisis Management', desc: 'Rapid response strategies to mitigate damage during active PR crises. We handle the noise while you focus on the solution.', offset: '' },
-                { num: '02', icon: 'star', title: 'Review Engineering', desc: 'Cultivate a 5-star presence by automating customer feedback loops and managing negative reviews with professional diplomacy.', offset: 'translate-y-4' },
-                { num: '03', icon: 'newspaper', title: 'Positive Content Promotion', desc: 'We create and rank high-authority assets like guest posts, interviews, and professional profiles to dominate your search landscape.', offset: 'translate-y-8' },
+                { num: '01', icon: 'policy', title: 'Crisis Management', desc: 'When things go wrong, we act fast. We manage the situation, control the narrative, and protect your reputation.', offset: '' },
+                { num: '02', icon: 'star', title: 'Review Engineering', desc: 'We help you build a strong, authentic review presence while professionally handling negative feedback.', offset: 'translate-y-4' },
+                { num: '03', icon: 'newspaper', title: 'Positive Content Promotion', desc: 'We create and promote high-quality content that ranks — so the right story shows up first.', offset: 'translate-y-8' },
               ].map((card, i) => (
                 <div key={i} className={`glass-card p-10 rounded-2xl hover:bg-surface-container transition-all group ${card.offset}`}>
                   <div className="flex justify-between items-start mb-8">
@@ -156,7 +156,7 @@ export default function Reputation() {
       <section className="py-32 px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-20">
           <h2 className="text-4xl font-black font-headline tracking-tighter text-white mb-4 uppercase">Advanced Analytics</h2>
-          <p className="text-on-surface-variant max-w-2xl mx-auto">Full transparency into your reputation growth with our proprietary tracking dashboard.</p>
+          <p className="text-on-surface-variant max-w-2xl mx-auto">Track your progress in real time. See what’s improving, what’s being removed, and how your visibility is growing.</p>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
@@ -187,11 +187,11 @@ export default function Reputation() {
               <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
             </div>
             <div className="relative z-10 max-w-3xl">
-              <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8">Ready to define your narrative?</h2>
-              <p className="text-xl text-on-surface-variant mb-12">Don't let others tell your story. Partner with Joinz Agency to build a legacy of trust and excellence.</p>
+              <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8">Take Back Control of Your Reputation</h2>
+              <p className="text-xl text-on-surface-variant mb-12">We help you clean up your search results, protect your name, and build a strong, trusted presence online.</p>
               <div className="flex justify-center">
                 <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-black text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
-                  Protect Your Reputation
+                  Secure Your Name Now
                 </Link>
               </div>
             </div>

@@ -273,6 +273,15 @@ html {
   }
 }
 
+@keyframes soft-glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(33, 136, 255, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(33, 136, 255, 0.3); }
+}
+
+.animate-soft-glow {
+  animation: soft-glow-pulse 4s ease-in-out infinite;
+}
+
 .animate-float {
   animation: float 10s ease-in-out infinite;
 }

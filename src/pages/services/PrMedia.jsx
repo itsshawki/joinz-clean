@@ -10,13 +10,13 @@ export default function PrMedia() {
           <div className="md:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary mb-8">
               <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest font-label">Public Relations & Media</span>
+              <span className="text-xs font-bold uppercase tracking-widest font-label">Media & Press Coverage</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-[0.9]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
-              Strategic <span className="text-accent">Visibility.</span>
+              Get Your Brand <span className="text-accent">Seen.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
-              We bridge the gap between your brand and the world's leading publications, creating narrative authority that drives trust and scale.
+              We help your brand get featured on trusted platforms, so people see you as credible and take you seriously.
             </p>
           </div>
           <div className="md:col-span-5 relative">
@@ -29,7 +29,7 @@ export default function PrMedia() {
                 <span className="material-symbols-outlined text-secondary-container">verified</span>
                 <span className="font-bold text-sm tracking-tight uppercase font-headline">Verified Authority</span>
               </div>
-              <p className="text-xs text-on-surface-variant leading-relaxed">Placement in Forbes, TechCrunch, and Bloomberg for our tier-1 partners.</p>
+              <p className="text-xs text-on-surface-variant leading-relaxed">Get featured on platforms like Forbes, TechCrunch, and more.</p>
             </div>
           </div>
         </div>
@@ -40,14 +40,14 @@ export default function PrMedia() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-24 items-start">
             <div className="sticky top-40">
-              <h2 className="text-4xl font-black font-headline mb-6 uppercase tracking-tighter">The Narrative Architecture</h2>
+              <h2 className="text-4xl font-extrabold font-headline mb-6 uppercase tracking-tight">How We Build Your Presence</h2>
               <p className="text-on-surface-variant leading-loose mb-12">
-                PR is no longer about sending out mass emails. It's about precision-guided storytelling that resonates with journalists and your target audience simultaneously. We don't just ask for attention; we earn it.
+                PR today is about getting the right people to talk about you. We focus on real stories that make your brand stand out and get noticed.
               </p>
               <div className="flex flex-col gap-8">
                 {[
-                  { icon: 'newspaper', title: 'Media Relations', desc: 'Direct access to editors and journalists across global tech, finance, and lifestyle publications.' },
-                  { icon: 'campaign', title: 'Strategic Pitching', desc: 'Data-backed narrative development designed to fit current editorial trends and news cycles.' },
+                  { icon: 'newspaper', title: 'Media Relations', desc: 'We connect you with journalists and platforms that actually matter for your brand.' },
+                  { icon: 'campaign', title: 'Strategic Pitching', desc: 'We create the right story and pitch it in a way that gets attention.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start">
                     <div className="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
@@ -63,9 +63,9 @@ export default function PrMedia() {
             </div>
             <div className="grid grid-cols-1 gap-8">
               {[
-                { icon: 'auto_graph', title: 'Reputation Management', desc: "Protecting your brand's integrity in the digital landscape through proactive monitoring and strategic response frameworks.", offset: '' },
-                { icon: 'psychology', title: 'Thought Leadership', desc: 'Positioning your executives as the definitive voices in their industry through guest columns and keynote opportunities.', offset: 'mt-12' },
-                { icon: 'cast_connected', title: 'Crisis Communication', desc: 'Rapid-response strategies to mitigate risks and control the conversation when it matters most.', offset: 'mt-12' },
+                { icon: 'auto_graph', title: 'Reputation Management', desc: "We help protect your brand and handle any negative situations the right way.", offset: '' },
+                { icon: 'psychology', title: 'Thought Leadership', desc: 'We help you build a strong personal brand and become a trusted voice in your field.', offset: 'mt-12' },
+                { icon: 'cast_connected', title: 'Crisis Communication', desc: 'If something goes wrong, we step in quickly and help you control the situation.', offset: 'mt-12' },
               ].map((card, i) => (
                 <div key={i} className={`p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:border-secondary/30 transition-all group ${card.offset}`}>
                   <div className="text-secondary-container mb-6 opacity-40 group-hover:opacity-100 transition-opacity">
@@ -106,14 +106,13 @@ export default function PrMedia() {
                 <div className="h-full bg-secondary-container w-3/4" />
               </div>
             </div>
-            <div className="md:col-span-2 bg-secondary-container p-8 rounded-2xl border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-center text-on-secondary-container">
-              <div className="flex-1">
-                <h3 className="text-3xl font-black font-headline mb-4 uppercase italic tracking-tighter">The Joinz Guarantee</h3>
-                <p className="font-medium opacity-80">We guarantee visibility through our performance-based PR model. If we don't land the coverage, we don't stop working.</p>
+            <div className="md:col-span-2 bg-secondary-container p-10 md:p-14 rounded-2xl border border-outline-variant/10 flex items-center text-on-secondary-container">
+              <div className="max-w-xl">
+                <h3 className="text-3xl font-extrabold font-headline mb-4 tracking-wide">Our Guarantee</h3>
+                <p className="text-lg font-medium opacity-90 leading-relaxed">
+                  We focus on getting real results, not just promises. If we don’t secure strong media coverage, we keep working until we do.
+                </p>
               </div>
-              <Link to="/contact" className="bg-on-secondary-container text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shrink-0">
-                View Pricing
-              </Link>
             </div>
           </div>
         </div>
@@ -124,23 +123,44 @@ export default function PrMedia() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="flex-1 relative">
-              <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full" />
-              <img className="relative z-10 w-full h-auto rounded-xl shadow-2xl" alt="Case study laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6nA0borB6IzI_908dg-4oXqqaZWz8StgdxRQvBHVEzXIQ1uTnj1jzwiJIB95p1jWgVs7ePxIcQCMbddgPuQUN83F6KFaComwi7eOTwjO8UGqiGfw5WARTN4G_H20LdpvuQC45ixKnXd_ZAvADclPGSHdRQ2dOJbcBCFqD31eNu3kUtnohsoCuigzQsQ-x_B0l028VUYqRv2F6THB0JZbHdZB6gilZExxOsbf5s3B0ARYUFGdI9dnPAPfamXANqRxJohMhW8pa4ug" />
+              <div className="absolute -inset-10 bg-secondary-container/20 blur-[100px] rounded-full opacity-50" />
+              <div className="relative z-10 aspect-video md:aspect-square w-full rounded-3xl bg-gradient-to-br from-secondary-container/20 to-primary-container/10 border border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden group shadow-2xl">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.15)_0%,transparent_70%)]" />
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Center Icon: Reach */}
+                  <span className="material-symbols-outlined text-7xl md:text-8xl text-[#00e3fd] opacity-80 group-hover:opacity-100 group-hover:scale-110 group-hover:drop-shadow-[0_0_30px_rgba(0,227,253,0.6)] transition-all duration-700 select-none z-10" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
+                    settings_input_antenna
+                  </span>
+                  
+                  {/* Surrounding Icons */}
+                  <span className="absolute top-1/4 left-1/4 material-symbols-outlined text-4xl text-[#00e3fd]/60 group-hover:opacity-100 animate-float-slow select-none transition-all duration-700" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
+                    newspaper
+                  </span>
+                  <span className="absolute bottom-1/4 right-1/4 material-symbols-outlined text-4xl text-[#00e3fd]/60 group-hover:opacity-100 animate-float transition-all duration-700 select-none" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
+                    campaign
+                  </span>
+                  <span className="absolute top-1/3 right-1/4 material-symbols-outlined text-3xl text-[#00e3fd]/60 group-hover:opacity-100 animate-pulse transition-all duration-700 select-none" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
+                    verified
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background/20 to-transparent" />
+              </div>
             </div>
             <div className="flex-1">
-              <span className="text-primary font-bold tracking-widest uppercase text-xs font-label">Success Story</span>
-              <h2 className="text-4xl md:text-5xl font-black font-headline mt-4 mb-6 leading-tight">120+ High Authority Placements in 6 Months.</h2>
+              <span className="text-primary font-bold tracking-widest uppercase text-xs font-label">REAL CLIENT RESULT</span>
+              <h2 className="text-4xl md:text-5xl font-black font-headline mt-4 mb-6 leading-tight">Real Results From Our Recent Clients.</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed">
-                For our recent FinTech client, we secured consecutive features in Forbes, TechCrunch, and VentureBeat, resulting in a 400% increase in inbound investor inquiries and a successful Series B round.
+                We recently helped a client strengthen their online presence through targeted media placements and strategic visibility.<br /><br />
+                Within a few months, their brand became easier to find, more trusted, and more recognized by their audience.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="text-3xl font-black text-white font-headline">40M+</div>
-                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Estimated Reach</div>
+                  <div className="text-3xl font-black text-white font-headline">15+</div>
+                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Media Placements</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-white font-headline">12.5k</div>
-                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Social Shares</div>
+                  <div className="text-3xl font-black text-white font-headline">2–8</div>
+                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Weeks Average Timeline</div>
                 </div>
               </div>
             </div>

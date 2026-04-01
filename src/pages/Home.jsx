@@ -56,15 +56,15 @@ export default function Home() {
             <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
             <span className="text-secondary-container text-xs font-bold uppercase tracking-widest leading-none">The Authority in Digital Presence</span>
           </div>
-          
+
           <h1 className="font-display text-6xl md:text-8xl text-white tracking-tighter leading-[0.95] mb-8 max-w-5xl mx-auto fade-in-up [animation-delay:200ms]">
             Take Full Control <br />of Your <span className="text-accent !text-shadow-none relative inline-block">Digital Presence</span>
           </h1>
-          
+
           <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-16 font-light leading-relaxed fade-in-up [animation-delay:400ms] opacity-80">
             We help elite individuals and brands get verified, protect their digital assets, and build a powerful online reputation with absolute discretion.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 fade-in-up [animation-delay:600ms]">
             <Link to="/services" className="w-full sm:w-auto btn-primary">
               Explore Services
@@ -108,9 +108,8 @@ export default function Home() {
             <Link
               key={i}
               to={s.href}
-              className={`group glass-card p-8 rounded-2xl border transition-all duration-500 flex flex-col justify-between min-h-[300px] cursor-pointer ${
-                i === 0 ? 'border-secondary-container/30 shadow-lg' : 'border-transparent hover:border-white/5'
-              } hover:bg-surface-container-high hover:-translate-y-1.5`}
+              className={`group glass-card p-8 rounded-2xl border transition-all duration-500 flex flex-col justify-between min-h-[300px] cursor-pointer ${i === 0 ? 'border-secondary-container/30 shadow-lg' : 'border-transparent hover:border-white/5'
+                } hover:bg-surface-container-high hover:-translate-y-1.5`}
             >
               {i === 0 && (
                 <span className="absolute top-4 right-4 text-[9px] font-black uppercase tracking-widest text-secondary-container bg-secondary-container/10 px-2.5 py-1 rounded-full">Popular</span>
