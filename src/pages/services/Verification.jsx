@@ -171,19 +171,19 @@ export default function Verification() {
             <h2 className="text-5xl font-black font-headline mb-4">The Verification Journey</h2>
             <p className="text-on-surface-variant text-xl">A simple, proven process to get you verified.</p>
           </div>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { num: '01', title: 'Eligibility Audit', desc: 'We review your profile to see what’s missing and what needs to improve before applying.' },
-              { num: '02', title: 'Profile Optimization', desc: 'We fix and optimize your profile — from bio to content — to match what platforms are actually looking for.' },
-              { num: '03', title: 'Direct Submission', desc: 'We handle the submission process and make sure your application is presented the right way.' },
-              { num: '04', title: 'Ongoing Monitoring', desc: 'After approval, we help you maintain your status and protect your account from impersonation.' },
+              { num: '01', title: 'Audit', desc: 'We review your profile and identify what’s missing.' },
+              { num: '02', title: 'Optimize', desc: 'We fix and prepare your profile for approval.' },
+              { num: '03', title: 'Submit', desc: 'We handle the application process for you.' },
+              { num: '04', title: 'Monitor', desc: 'We help maintain and protect your account after approval.' },
             ].map((step, i) => (
-              <div key={i} className="group relative p-12 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-transparent hover:border-outline-variant/20">
-                <div className="flex flex-col md:flex-row gap-12 items-start">
-                  <span className="text-8xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline">{step.num}</span>
+              <div key={i} className="group relative p-8 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-outline-variant/5 hover:border-outline-variant/20">
+                <div className="flex items-center gap-8">
+                  <span className="text-6xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline shrink-0">{step.num}</span>
                   <div>
-                    <h3 className="text-3xl font-bold mb-4 text-white">{step.title}</h3>
-                    <p className="text-on-surface-variant text-lg max-w-2xl">{step.desc}</p>
+                    <h3 className="text-xl font-bold mb-1 text-white">{step.title}</h3>
+                    <p className="text-on-surface-variant text-sm max-w-xs">{step.desc}</p>
                   </div>
                 </div>
               </div>
