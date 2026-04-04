@@ -3,14 +3,12 @@ import { createContext, useContext, useState, useEffect } from 'react'
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('joinz-theme')
-    return saved || 'dark'
-  })
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('joinz-theme', theme)
+    const root = document.documentElement
+    root.classList.remove('light', 'dark')
+    root.classList.add(theme)
   }, [theme])
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark')

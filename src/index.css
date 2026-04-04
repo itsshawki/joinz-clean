@@ -9,7 +9,7 @@
 
 /* ---- Theme Variables: DARK (default) ---- */
 :root,
-[data-theme="dark"] {
+.dark {
   /* Backgrounds */
   --bg-body: #0e141a;
   --bg-surface: #0e141a;
@@ -83,7 +83,7 @@
 }
 
 /* ---- Theme Variables: LIGHT ---- */
-[data-theme="light"] {
+.light {
   /* Backgrounds — white/off-white alternation for section depth */
   --bg-body: #f8fafb;
   --bg-surface: #ffffff;
@@ -230,7 +230,7 @@ body {
   text-shadow: 0 0 20px rgba(169, 199, 255, 0.4);
 }
 
-[data-theme="light"] .text-glow {
+.light .text-glow {
   text-shadow: none;
 }
 
@@ -238,7 +238,7 @@ body {
   text-shadow: 0 0 20px var(--accent-glow);
 }
 
-[data-theme="light"] .glow-text {
+.light .glow-text {
   text-shadow: none;
 }
 
@@ -251,7 +251,7 @@ body {
   text-shadow: none;
 }
 
-[data-theme="dark"] .text-accent {
+.dark .text-accent {
   filter: none;
 }
 
@@ -342,7 +342,7 @@ body {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-[data-theme="light"] .editorial-text-shadow {
+.light .editorial-text-shadow {
   text-shadow: none;
 }
 
@@ -462,7 +462,7 @@ html {
   }
 }
 
-[data-theme="light"] .animate-soft-glow {
+.light .animate-soft-glow {
   animation: none;
   box-shadow: var(--shadow-card);
 }
@@ -516,480 +516,480 @@ html {
    Light-mode specific overrides
    Premium Stripe/Linear quality
    ═══════════════════════════════════ */
-[data-theme="light"] {
+.light {
   color-scheme: light;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* ─── Backgrounds ─── */
-[data-theme="light"] .bg-slate-950 {
+.light .bg-slate-950 {
   background-color: var(--bg-hero) !important;
 }
 
-[data-theme="light"] section.bg-slate-950,
-[data-theme="light"] [class*="bg-slate-950"] {
+.light section.bg-slate-950,
+.light [class*="bg-slate-950"] {
   background-color: var(--bg-hero) !important;
 }
 
-[data-theme="light"] .bg-slate-950\/20 {
+.light .bg-slate-950\/20 {
   background-color: rgba(248, 250, 251, 0.2) !important;
 }
 
-[data-theme="light"] .bg-slate-950\/80 {
+.light .bg-slate-950\/80 {
   background-color: rgba(248, 250, 251, 0.85) !important;
 }
 
 /* Surface containers — white cards on subtle gray sections */
-[data-theme="light"] .bg-surface-container-low {
+.light .bg-surface-container-low {
   background-color: var(--bg-surface-low) !important;
 }
 
-[data-theme="light"] .bg-surface-container {
+.light .bg-surface-container {
   background-color: var(--bg-surface-container) !important;
 }
 
-[data-theme="light"] .bg-surface-container-high {
+.light .bg-surface-container-high {
   background-color: var(--bg-surface-container-high) !important;
 }
 
-[data-theme="light"] .bg-surface-container-highest {
+.light .bg-surface-container-highest {
   background-color: var(--bg-surface-container-highest) !important;
 }
 
-[data-theme="light"] .bg-background {
+.light .bg-background {
   background-color: var(--bg-body) !important;
 }
 
-[data-theme="light"] .bg-surface {
+.light .bg-surface {
   background-color: var(--bg-surface) !important;
 }
 
 /* Surface-container-low alpha variants */
-[data-theme="light"] .bg-surface-container-low\/50,
-[data-theme="light"] .bg-surface-container-low\/20 {
+.light .bg-surface-container-low\/50,
+.light .bg-surface-container-low\/20 {
   background-color: var(--bg-surface-low) !important;
 }
 
 /* Surface-container-lowest → now a distinct light card for CTA boxes */
-[data-theme="light"] .bg-surface-container-lowest,
-[data-theme="light"] .bg-surface-container-lowest\/30 {
+.light .bg-surface-container-lowest,
+.light .bg-surface-container-lowest\/30 {
   background-color: #ffffff !important;
 }
 
 /* Surface-container-low/40 for CTA cards */
-[data-theme="light"] .bg-surface-container-low\/40 {
+.light .bg-surface-container-low\/40 {
   background-color: #ffffff !important;
 }
 
 /* ─── Text ─── */
-[data-theme="light"] .text-white {
+.light .text-white {
   color: var(--text-heading) !important;
 }
 
-[data-theme="light"] .text-slate-400 {
+.light .text-slate-400 {
   color: var(--text-secondary) !important;
 }
 
-[data-theme="light"] .text-slate-500 {
+.light .text-slate-500 {
   color: var(--text-muted) !important;
 }
 
-[data-theme="light"] .text-slate-600 {
+.light .text-slate-600 {
   color: var(--text-muted) !important;
 }
 
-[data-theme="light"] .text-on-surface {
+.light .text-on-surface {
   color: var(--text-primary) !important;
 }
 
-[data-theme="light"] .text-on-surface-variant {
+.light .text-on-surface-variant {
   color: var(--text-secondary) !important;
 }
 
 /* Accent text classes */
-[data-theme="light"] .text-secondary-container {
+.light .text-secondary-container {
   color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .text-secondary {
+.light .text-secondary {
   color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .text-secondary\/60 {
+.light .text-secondary\/60 {
   color: rgba(8, 145, 178, 0.7) !important;
 }
 
-[data-theme="light"] .text-primary {
+.light .text-primary {
   color: var(--accent-secondary) !important;
 }
 
-[data-theme="light"] .text-sky-400 {
+.light .text-sky-400 {
   color: var(--accent-primary) !important;
 }
 
 /* Step numbers: text-outline-variant/10, text-outline/10 — make them visible */
-[data-theme="light"] [class*="text-outline-variant"],
-[data-theme="light"] [class*="text-outline/"] {
+.light [class*="text-outline-variant"],
+.light [class*="text-outline/"] {
   color: rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] [class*="text-outline-variant"]:hover,
-[data-theme="light"] .group:hover [class*="text-outline-variant"],
-[data-theme="light"] .group:hover [class*="text-outline/"],
-[data-theme="light"] .group:hover [class*="text-primary/20"] {
+.light [class*="text-outline-variant"]:hover,
+.light .group:hover [class*="text-outline-variant"],
+.light .group:hover [class*="text-outline/"],
+.light .group:hover [class*="text-primary/20"] {
   color: rgba(8, 145, 178, 0.12) !important;
 }
 
 /* ─── Borders ─── */
-[data-theme="light"] .border-white\/5,
-[data-theme="light"] .border-white\/10 {
+.light .border-white\/5,
+.light .border-white\/10 {
   border-color: var(--border-default) !important;
 }
 
-[data-theme="light"] .border-secondary-container\/30 {
+.light .border-secondary-container\/30 {
   border-color: rgba(8, 145, 178, 0.2) !important;
 }
 
-[data-theme="light"] .border-secondary-container\/20 {
+.light .border-secondary-container\/20 {
   border-color: rgba(8, 145, 178, 0.15) !important;
 }
 
-[data-theme="light"] .border-secondary-container\/40 {
+.light .border-secondary-container\/40 {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-[data-theme="light"] .border-transparent {
+.light .border-transparent {
   border-color: transparent !important;
 }
 
-[data-theme="light"] .hover\:border-white\/5:hover {
+.light .hover\:border-white\/5:hover {
   border-color: var(--border-default) !important;
 }
 
-[data-theme="light"] .hover\:border-secondary-container\/20:hover {
+.light .hover\:border-secondary-container\/20:hover {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-[data-theme="light"] .hover\:border-secondary-container\/40:hover {
+.light .hover\:border-secondary-container\/40:hover {
   border-color: rgba(8, 145, 178, 0.3) !important;
 }
 
 /* ─── Cards — premium elevated white cards ─── */
-[data-theme="light"] .glass-card {
+.light .glass-card {
   background: #ffffff;
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-card);
   backdrop-filter: none;
 }
 
-[data-theme="light"] .glass-card:hover {
+.light .glass-card:hover {
   box-shadow: var(--shadow-card-hover);
   transform: translateY(-2px);
 }
 
 /* All cards that use bg-surface-container should be white with shadow */
-[data-theme="light"] .bg-surface-container.rounded-2xl,
-[data-theme="light"] .bg-surface-container-low.rounded-2xl {
+.light .bg-surface-container.rounded-2xl,
+.light .bg-surface-container-low.rounded-2xl {
   background-color: #ffffff !important;
   box-shadow: var(--shadow-card);
 }
 
 /* Card hover states */
-[data-theme="light"] .hover\:bg-surface-container-high:hover {
+.light .hover\:bg-surface-container-high:hover {
   background-color: #f8fafb !important;
   box-shadow: var(--shadow-card-hover);
 }
 
-[data-theme="light"] .hover\:bg-surface-container-high\/50:hover {
+.light .hover\:bg-surface-container-high\/50:hover {
   background-color: #f8fafb !important;
 }
 
-[data-theme="light"] .hover\:bg-surface-container:hover {
+.light .hover\:bg-surface-container:hover {
   background-color: #f8fafb !important;
   box-shadow: var(--shadow-card-hover);
 }
 
 /* ─── Glow effects → soft shadows ─── */
-[data-theme="light"] .glow-cyan,
-[data-theme="light"] .glow-shadow,
-[data-theme="light"] .cyan-glow {
+.light .glow-cyan,
+.light .glow-shadow,
+.light .cyan-glow {
   box-shadow: var(--shadow-card);
   filter: none;
 }
 
-[data-theme="light"] .text-glow,
-[data-theme="light"] .glow-text {
+.light .text-glow,
+.light .glow-text {
   text-shadow: none;
 }
 
-[data-theme="light"] .editorial-text-shadow {
+.light .editorial-text-shadow {
   text-shadow: none;
 }
 
 /* Blur/glow backgrounds → very subtle or hidden */
-[data-theme="light"] [class*="blur-["] {
+.light [class*="blur-["] {
   opacity: 0.15;
 }
 
 /* ─── Badges / Pills ─── */
-[data-theme="light"] .bg-secondary-container\/5 {
+.light .bg-secondary-container\/5 {
   background-color: rgba(8, 145, 178, 0.04) !important;
 }
 
-[data-theme="light"] .bg-secondary-container\/10 {
+.light .bg-secondary-container\/10 {
   background-color: rgba(8, 145, 178, 0.06) !important;
 }
 
-[data-theme="light"] .bg-secondary-container\/20 {
+.light .bg-secondary-container\/20 {
   background-color: rgba(8, 145, 178, 0.08) !important;
 }
 
 /* bg-white/5 → subtle gray */
-[data-theme="light"] .bg-white\/5 {
+.light .bg-white\/5 {
   background-color: rgba(0, 0, 0, 0.02) !important;
 }
 
-[data-theme="light"] .hover\:bg-white\/5:hover {
+.light .hover\:bg-white\/5:hover {
   background-color: rgba(8, 145, 178, 0.04) !important;
 }
 
 /* ─── Shadows on specific classes ─── */
-[data-theme="light"] .shadow-secondary-container\/5 {
+.light .shadow-secondary-container\/5 {
   --tw-shadow-color: rgba(8, 145, 178, 0.06) !important;
 }
 
-[data-theme="light"] .shadow-2xl {
+.light .shadow-2xl {
   box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 /* ─── Gradients ─── */
-[data-theme="light"] .from-secondary-container {
+.light .from-secondary-container {
   --tw-gradient-from: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .to-primary-container {
+.light .to-primary-container {
   --tw-gradient-to: var(--accent-secondary) !important;
 }
 
-[data-theme="light"] .from-secondary-container\/20 {
+.light .from-secondary-container\/20 {
   --tw-gradient-from: rgba(8, 145, 178, 0.08) !important;
 }
 
-[data-theme="light"] .from-secondary-container\/5 {
+.light .from-secondary-container\/5 {
   --tw-gradient-from: rgba(8, 145, 178, 0.03) !important;
 }
 
-[data-theme="light"] .from-surface-container-low {
+.light .from-surface-container-low {
   --tw-gradient-from: var(--bg-surface-low) !important;
 }
 
-[data-theme="light"] .to-surface-container {
+.light .to-surface-container {
   --tw-gradient-to: #ffffff !important;
 }
 
 /* Image overlays */
-[data-theme="light"] .from-background\/40,
-[data-theme="light"] .from-black\/40,
-[data-theme="light"] .from-black\/60 {
+.light .from-background\/40,
+.light .from-black\/40,
+.light .from-black\/60 {
   --tw-gradient-from: rgba(248, 250, 251, 0.4) !important;
 }
 
-[data-theme="light"] .bg-gradient-to-t {
+.light .bg-gradient-to-t {
   --tw-gradient-from: rgba(248, 250, 251, 0.3);
 }
 
 /* Marquee fade edges */
-[data-theme="light"] .from-\[\#0e141a\] {
+.light .from-\[\#0e141a\] {
   --tw-gradient-from: var(--marquee-fade) !important;
 }
 
-[data-theme="light"] .bg-gradient-to-r.from-\[\#0e141a\] {
+.light .bg-gradient-to-r.from-\[\#0e141a\] {
   --tw-gradient-from: var(--marquee-fade) !important;
 }
 
-[data-theme="light"] .bg-gradient-to-l.from-\[\#0e141a\] {
+.light .bg-gradient-to-l.from-\[\#0e141a\] {
   --tw-gradient-from: var(--marquee-fade) !important;
 }
 
 /* CTA gradient bg → white card */
-[data-theme="light"] .bg-gradient-to-br.from-surface-container-low {
+.light .bg-gradient-to-br.from-surface-container-low {
   background: #ffffff !important;
 }
 
 /* ─── Buttons — stronger, punchier ─── */
-[data-theme="light"] .btn-primary {
+.light .btn-primary {
   color: #ffffff;
   box-shadow: var(--shadow-btn);
 }
 
-[data-theme="light"] .btn-primary:hover {
+.light .btn-primary:hover {
   box-shadow: var(--shadow-btn-hover);
 }
 
 /* ─── Form inputs — clean white on gray bg ─── */
-[data-theme="light"] input,
-[data-theme="light"] textarea,
-[data-theme="light"] select {
+.light input,
+.light textarea,
+.light select {
   background-color: var(--bg-input) !important;
   color: var(--text-primary) !important;
   border: 1px solid var(--border-default) !important;
 }
 
-[data-theme="light"] input::placeholder,
-[data-theme="light"] textarea::placeholder {
+.light input::placeholder,
+.light textarea::placeholder {
   color: var(--text-muted) !important;
 }
 
-[data-theme="light"] input:focus,
-[data-theme="light"] textarea:focus,
-[data-theme="light"] select:focus {
+.light input:focus,
+.light textarea:focus,
+.light select:focus {
   border-color: var(--accent-primary) !important;
   box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.08) !important;
 }
 
-[data-theme="light"] .placeholder\:text-outline-variant::placeholder {
+.light .placeholder\:text-outline-variant::placeholder {
   color: #94a3b8 !important;
 }
 
 /* ─── Footer — subtle elevation ─── */
-[data-theme="light"] footer {
+.light footer {
   background-color: #ffffff !important;
   border-color: var(--border-default) !important;
   box-shadow: 0 -1px 0 var(--border-default);
 }
 
 /* ─── Navbar — crisp separation ─── */
-[data-theme="light"] .glass-nav {
+.light .glass-nav {
   background: var(--bg-nav);
   border-bottom: 1px solid var(--border-nav);
   box-shadow: var(--shadow-nav);
 }
 
 /* ─── Icons ─── */
-[data-theme="light"] .material-symbols-outlined {
+.light .material-symbols-outlined {
   color: inherit;
 }
 
-[data-theme="light"] svg {
+.light svg {
   color: inherit;
 }
 
 /* Platform icon opacity — more visible in light mode */
-[data-theme="light"] .opacity-30 {
+.light .opacity-30 {
   opacity: 0.4;
 }
 
 /* Why Us section big icon opacity */
-[data-theme="light"] .text-secondary-container\/20 {
+.light .text-secondary-container\/20 {
   color: rgba(8, 145, 178, 0.15) !important;
 }
 
 /* ─── Images ─── */
-[data-theme="light"] .grayscale {
+.light .grayscale {
   filter: grayscale(0.2);
 }
 
-[data-theme="light"] .grayscale:hover {
+.light .grayscale:hover {
   filter: grayscale(0);
 }
 
 /* Image opacity in service cards */
-[data-theme="light"] .opacity-40 {
+.light .opacity-40 {
   opacity: 0.7;
 }
 
 /* WhatsApp green */
-[data-theme="light"] .text-\[\#25D366\] {
+.light .text-\[\#25D366\] {
   color: #25D366 !important;
 }
 
-[data-theme="light"] .bg-\[\#25D366\] {
+.light .bg-\[\#25D366\] {
   background-color: #25D366 !important;
 }
 
-[data-theme="light"] .bg-\[\#25D366\]\/10 {
+.light .bg-\[\#25D366\]\/10 {
   background-color: rgba(37, 211, 102, 0.08) !important;
 }
 
 /* ─── Outline/Divider classes ─── */
-[data-theme="light"] .bg-outline-variant\/10 {
+.light .bg-outline-variant\/10 {
   background-color: rgba(0, 0, 0, 0.03) !important;
 }
 
 /* ─── Verified accounts section: remove flat gray ─── */
-[data-theme="light"] .bg-surface-container-low\/20 {
+.light .bg-surface-container-low\/20 {
   background-color: #f3f5f7 !important;
 }
 
 /* ─── Tooltip on marquee icons ─── */
-[data-theme="light"] .bg-slate-800\/90 {
+.light .bg-slate-800\/90 {
   background-color: rgba(15, 23, 42, 0.9) !important;
   color: #ffffff !important;
 }
 
 /* ─── CTA sections — use elegant gradient instead of dark bg ─── */
-[data-theme="light"] .bg-surface-container-lowest {
+.light .bg-surface-container-lowest {
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f7fa 50%, #faf5ff 100%) !important;
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-card);
 }
 
 /* via-white/10 on CTA border gradient → subtle in light */
-[data-theme="light"] .via-white\/10 {
+.light .via-white\/10 {
   --tw-gradient-via: rgba(0, 0, 0, 0.03) !important;
 }
 
 /* ─── Service page specific fixes ─── */
 /* Process step cards */
-[data-theme="light"] .bg-surface.rounded-2xl {
+.light .bg-surface.rounded-2xl {
   background-color: #ffffff !important;
 }
 
 /* hover:bg-surface → should stay white */
-[data-theme="light"] .hover\:bg-surface:hover {
+.light .hover\:bg-surface:hover {
   background-color: #f8fafb !important;
 }
 
 /* hover:bg-surface-container → subtle wash */
-[data-theme="light"] .hover\:bg-surface-container:hover {
+.light .hover\:bg-surface-container:hover {
   background-color: #f5f7f9 !important;
 }
 
 /* ─── Soft animation override ─── */
-[data-theme="light"] .animate-soft-glow {
+.light .animate-soft-glow {
   animation: none;
   box-shadow: var(--shadow-card);
 }
 
 /* ─── Contact sidebar icon boxes ─── */
-[data-theme="light"] .bg-white\/5.flex.items-center {
+.light .bg-white\/5.flex.items-center {
   background-color: rgba(8, 145, 178, 0.04) !important;
 }
 
 /* group-hover text-white → keep dark in light mode */
-[data-theme="light"] .group:hover .group-hover\:text-white {
+.light .group:hover .group-hover\:text-white {
   color: var(--text-heading) !important;
 }
 
 /* group-hover border colors */
-[data-theme="light"] .group:hover .group-hover\:border-secondary-container\/40 {
+.light .group:hover .group-hover\:border-secondary-container\/40 {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
 /* group-hover bg */
-[data-theme="light"] .group-hover\:bg-secondary-container\/10:hover,
-[data-theme="light"] .group:hover .group-hover\:bg-secondary-container\/10 {
+.light .group-hover\:bg-secondary-container\/10:hover,
+.light .group:hover .group-hover\:bg-secondary-container\/10 {
   background-color: rgba(8, 145, 178, 0.06) !important;
 }
 
 /* ─── Publication pills in Services page ─── */
-[data-theme="light"] .bg-white\/5.rounded-lg {
+.light .bg-white\/5.rounded-lg {
   background-color: #f3f5f7 !important;
   border-color: var(--border-default) !important;
 }
 
 /* Hover on publication pills */
-[data-theme="light"] .group:hover .group-hover\:text-white.transition-all {
+.light .group:hover .group-hover\:text-white.transition-all {
   color: var(--text-heading) !important;
 }
 
@@ -1000,40 +1000,40 @@ html {
 
 /* ─── CTA sections with image overlays ─── */
 /* bg-slate-950/20 or bg-slate-950/80 overlay on CTA images → light wash */
-[data-theme="light"] .backdrop-blur-sm.bg-slate-950\/80,
-[data-theme="light"] .bg-slate-950\/80.backdrop-blur-sm,
-[data-theme="light"] .bg-slate-950\/20.backdrop-blur-sm,
-[data-theme="light"] .backdrop-blur-sm.bg-slate-950\/20 {
+.light .backdrop-blur-sm.bg-slate-950\/80,
+.light .bg-slate-950\/80.backdrop-blur-sm,
+.light .bg-slate-950\/20.backdrop-blur-sm,
+.light .backdrop-blur-sm.bg-slate-950\/20 {
   background-color: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(8px) !important;
 }
 
 /* CTA using bg-surface-container as dark card → white elevated */
-[data-theme="light"] .bg-surface-container.text-center,
-[data-theme="light"] .rounded-3xl.bg-surface-container {
+.light .bg-surface-container.text-center,
+.light .rounded-3xl.bg-surface-container {
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f7fa 50%, #faf5ff 100%) !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* CTA using bg-surface-container-high → premium gradient */
-[data-theme="light"] .rounded-3xl.bg-surface-container-high {
+.light .rounded-3xl.bg-surface-container-high {
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f7fa 50%, #faf5ff 100%) !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* CTA using bg-gradient-to-br from-surface-container to-surface-container-high */
-[data-theme="light"] .bg-gradient-to-br.from-surface-container {
+.light .bg-gradient-to-br.from-surface-container {
   background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #faf5ff 100%) !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* CTA full gradient overlay → soft light style in light mode */
-[data-theme="light"] .bg-gradient-to-br.from-primary.to-primary-container,
-[data-theme="light"] .bg-gradient-to-br.from-primary,
-[data-theme="light"] .bg-gradient-to-br.from-secondary-container.to-primary-container {
+.light .bg-gradient-to-br.from-primary.to-primary-container,
+.light .bg-gradient-to-br.from-primary,
+.light .bg-gradient-to-br.from-secondary-container.to-primary-container {
   background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #faf5ff 100%) !important;
   opacity: 1 !important;
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -1041,470 +1041,470 @@ html {
 }
 
 /* Ensure text in light CTAs is dark */
-[data-theme="light"] .bg-gradient-to-br.from-primary.to-primary-container h2,
-[data-theme="light"] .bg-gradient-to-br.from-primary h2,
-[data-theme="light"] .from-primary.to-primary-container .text-white,
-[data-theme="light"] .from-primary.to-primary-container .text-white\/80,
-[data-theme="light"] .from-primary.to-primary-container .text-white\/90 {
+.light .bg-gradient-to-br.from-primary.to-primary-container h2,
+.light .bg-gradient-to-br.from-primary h2,
+.light .from-primary.to-primary-container .text-white,
+.light .from-primary.to-primary-container .text-white\/80,
+.light .from-primary.to-primary-container .text-white\/90 {
   color: var(--text-heading) !important;
 }
 
-[data-theme="light"] .from-primary.to-primary-container .text-white\/80,
-[data-theme="light"] .from-primary.to-primary-container p {
+.light .from-primary.to-primary-container .text-white\/80,
+.light .from-primary.to-primary-container p {
   color: var(--text-secondary) !important;
 }
 
 /* ─── "bg-white text-slate-950" buttons → make visible in light mode ─── */
-[data-theme="light"] a.bg-white.text-slate-950,
-[data-theme="light"] button.bg-white.text-slate-950 {
+.light a.bg-white.text-slate-950,
+.light button.bg-white.text-slate-950 {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
   box-shadow: var(--shadow-btn);
 }
 
-[data-theme="light"] a.bg-white.text-slate-950:hover,
-[data-theme="light"] button.bg-white.text-slate-950:hover {
+.light a.bg-white.text-slate-950:hover,
+.light button.bg-white.text-slate-950:hover {
   box-shadow: var(--shadow-btn-hover);
 }
 
 /* CTA button "px-8 py-4 bg-white text-slate-950" → btn-primary style */
-[data-theme="light"] .px-8.py-4.bg-white.text-slate-950 {
+.light .px-8.py-4.bg-white.text-slate-950 {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
   box-shadow: var(--shadow-btn);
 }
 
 /* bg-surface-container-highest used as secondary button in CTAs */
-[data-theme="light"] .bg-surface-container-highest.border {
+.light .bg-surface-container-highest.border {
   background-color: #ffffff !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* ─── Icon containers ─── */
-[data-theme="light"] .bg-surface-container-highest {
+.light .bg-surface-container-highest {
   background-color: #f3f5f7 !important;
 }
 
 /* bg-surface-container-highest/30 used in Recovery */
-[data-theme="light"] .bg-surface-container-highest\/30 {
+.light .bg-surface-container-highest\/30 {
   background-color: rgba(243, 245, 247, 0.5) !important;
 }
 
 /* Process step numbers in circles */
-[data-theme="light"] .border-2.border-primary {
+.light .border-2.border-primary {
   border-color: var(--accent-primary) !important;
   color: var(--accent-primary);
 }
 
-[data-theme="light"] .group:hover .group-hover\:bg-primary {
+.light .group:hover .group-hover\:bg-primary {
   background-color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .group-hover\:bg-primary:hover {
+.light .group-hover\:bg-primary:hover {
   background-color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .group:hover .group-hover\:text-on-primary {
+.light .group:hover .group-hover\:text-on-primary {
   color: #ffffff !important;
 }
 
 /* ─── Service-specific accent sections ─── */
 /* bg-primary text-on-primary-container (Verification - Authenticity card) */
-[data-theme="light"] .bg-primary.text-on-primary-container {
+.light .bg-primary.text-on-primary-container {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
 }
 
-[data-theme="light"] .bg-primary.text-on-primary-container .text-sm {
+.light .bg-primary.text-on-primary-container .text-sm {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* bg-secondary-container (PR Media - Our Guarantee card) */
-[data-theme="light"] .bg-secondary-container.text-on-secondary-container {
+.light .bg-secondary-container.text-on-secondary-container {
   background: linear-gradient(135deg, #0891b2, #0e7490) !important;
   color: #ffffff !important;
 }
 
-[data-theme="light"] .bg-secondary-container.text-on-secondary-container .opacity-90 {
+.light .bg-secondary-container.text-on-secondary-container .opacity-90 {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Growth page - blue gradient card → keep dark */
-[data-theme="light"] .bg-gradient-to-br.from-primary-container.to-blue-900 {
+.light .bg-gradient-to-br.from-primary-container.to-blue-900 {
   background: linear-gradient(135deg, #0891b2 0%, #1e40af 100%) !important;
   color: #ffffff !important;
 }
 
-[data-theme="light"] .bg-gradient-to-br.from-primary-container.to-blue-900 .text-white\/80 {
+.light .bg-gradient-to-br.from-primary-container.to-blue-900 .text-white\/80 {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-[data-theme="light"] .bg-gradient-to-br.from-primary-container.to-blue-900 .text-white {
+.light .bg-gradient-to-br.from-primary-container.to-blue-900 .text-white {
   color: #ffffff !important;
 }
 
 /* ─── CTA Text/Overlay fixes ─── */
 /* Recovery/Verification CTA text-on-primary-container → white on gradient */
-[data-theme="light"] .text-on-primary-fixed {
+.light .text-on-primary-fixed {
   color: #ffffff !important;
 }
 
 /* CTA overlays text-on-surface-variant/60  → stronger */
-[data-theme="light"] .text-on-surface-variant\/60 {
+.light .text-on-surface-variant\/60 {
   color: rgba(71, 85, 105, 0.7) !important;
 }
 
 /* text-on-surface-variant/50 (case result labels) */
-[data-theme="light"] .text-on-surface-variant\/50 {
+.light .text-on-surface-variant\/50 {
   color: rgba(71, 85, 105, 0.6) !important;
 }
 
 /* text-on-surface-variant/70 (account platform labels) */
-[data-theme="light"] .text-on-surface-variant\/70 {
+.light .text-on-surface-variant\/70 {
   color: rgba(71, 85, 105, 0.75) !important;
 }
 
 /* text-white/90 → dark heading */
-[data-theme="light"] .text-white\/90 {
+.light .text-white\/90 {
   color: var(--text-heading) !important;
 }
 
 /* text-white/80 → dark sub-text */
-[data-theme="light"] .text-white\/80 {
+.light .text-white\/80 {
   color: var(--text-secondary) !important;
 }
 
 /* CTA bg-white text-background button → visible in light mode */
-[data-theme="light"] .bg-white.text-background {
+.light .bg-white.text-background {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
   box-shadow: var(--shadow-btn);
 }
 
 /* ─── Gradient text → ensure visible ─── */
-[data-theme="light"] .bg-gradient-to-r.from-\[\#22d3ee\].to-\[\#3b82f6\].bg-clip-text {
+.light .bg-gradient-to-r.from-\[\#22d3ee\].to-\[\#3b82f6\].bg-clip-text {
   -webkit-text-fill-color: transparent !important;
 }
 
 /* ─── Process timeline ─── */
-[data-theme="light"] .bg-gradient-to-b.from-primary {
+.light .bg-gradient-to-b.from-primary {
   --tw-gradient-from: var(--accent-primary) !important;
 }
 
 /* ─── Recovery hero glass container ─── */
-[data-theme="light"] .bg-gradient-to-br.from-secondary-container\/10 {
+.light .bg-gradient-to-br.from-secondary-container\/10 {
   background: rgba(8, 145, 178, 0.03) !important;
   border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 /* Recovery floating lock icon → teal on light */
-[data-theme="light"] .text-\[\#00e3fd\] {
+.light .text-\[\#00e3fd\] {
   color: #0891b2 !important;
 }
 
-[data-theme="light"] .text-\[\#00e3fd\]\/40 {
+.light .text-\[\#00e3fd\]\/40 {
   color: rgba(8, 145, 178, 0.3) !important;
 }
 
-[data-theme="light"] .text-\[\#00e3fd\]\/60 {
+.light .text-\[\#00e3fd\]\/60 {
   color: rgba(8, 145, 178, 0.35) !important;
 }
 
-[data-theme="light"] .bg-\[\#00e3fd\]\/20 {
+.light .bg-\[\#00e3fd\]\/20 {
   background-color: rgba(8, 145, 178, 0.08) !important;
 }
 
 /* Drop shadow on recovery icon */
-[data-theme="light"] .drop-shadow-\[0_0_30px_rgba\(0\,227\,253\,0\.6\)\] {
+.light .drop-shadow-\[0_0_30px_rgba\(0\,227\,253\,0\.6\)\] {
   filter: drop-shadow(0 0 15px rgba(8, 145, 178, 0.3)) !important;
 }
 
 /* ─── Dot grid pattern in Growth hero ─── */
-[data-theme="light"] .bg-\[radial-gradient\(circle\,\#1a2027_1px\,transparent_1px\)\] {
+.light .bg-\[radial-gradient\(circle\,\#1a2027_1px\,transparent_1px\)\] {
   background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px) !important;
 }
 
 /* ─── Radial gradient ambient in WebDev hero ─── */
-[data-theme="light"] .bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(0\,227\,253\,0\.15\)_0\%\,transparent_70\%\)\] {
+.light .bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(0\,227\,253\,0\.15\)_0\%\,transparent_70\%\)\] {
   background: radial-gradient(circle at 50% 50%, rgba(8, 145, 178, 0.04) 0%, transparent 70%) !important;
 }
 
 /* ─── Verified accounts section ─── */
 /* Avatar border: border-[#0e141a] → white in light mode */
-[data-theme="light"] .border-\[\#0e141a\] {
+.light .border-\[\#0e141a\] {
   border-color: #ffffff !important;
 }
 
 /* Avatar bg: bg-slate-900 → white */
-[data-theme="light"] .bg-slate-900 {
+.light .bg-slate-900 {
   background-color: #ffffff !important;
 }
 
 /* Verified badge glow */
-[data-theme="light"] .text-\[\#2188FF\] {
+.light .text-\[\#2188FF\] {
   color: #2563eb !important;
 }
 
 /* ─── Service card variant classes ─── */
 /* bg-surface-variant/50 tags */
-[data-theme="light"] .bg-surface-variant\/50 {
+.light .bg-surface-variant\/50 {
   background-color: rgba(8, 145, 178, 0.06) !important;
 }
 
 /* outline-variant border classes */
-[data-theme="light"] .border-outline-variant\/5 {
+.light .border-outline-variant\/5 {
   border-color: rgba(0, 0, 0, 0.04) !important;
 }
 
-[data-theme="light"] .border-outline-variant\/10 {
+.light .border-outline-variant\/10 {
   border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] .border-outline-variant\/15 {
+.light .border-outline-variant\/15 {
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-[data-theme="light"] .border-outline-variant\/20 {
+.light .border-outline-variant\/20 {
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-[data-theme="light"] .hover\:border-outline-variant\/20:hover {
+.light .hover\:border-outline-variant\/20:hover {
   border-color: rgba(8, 145, 178, 0.2) !important;
 }
 
 /* ─── Username page form inputs ─── */
-[data-theme="light"] .bg-surface-container-low.border.border-outline-variant\/20 {
+.light .bg-surface-container-low.border.border-outline-variant\/20 {
   background-color: #ffffff !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* ─── Case result cards ─── */
 /* Divider: bg-gradient-to-r from-white/10 via-white/5 → dark in light mode */
-[data-theme="light"] .from-white\/10 {
+.light .from-white\/10 {
   --tw-gradient-from: rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] .via-white\/5 {
+.light .via-white\/5 {
   --tw-gradient-via: rgba(0, 0, 0, 0.03) !important;
 }
 
 /* Featured case: border-primary/30, bg-gradient-to-br from-surface-container-low to-primary/5 */
-[data-theme="light"] .border-primary\/30 {
+.light .border-primary\/30 {
   border-color: rgba(8, 145, 178, 0.2) !important;
 }
 
-[data-theme="light"] .border-primary\/40 {
+.light .border-primary\/40 {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
 /* bg-primary/5 → subtle teal tint */
-[data-theme="light"] .to-primary\/5 {
+.light .to-primary\/5 {
   --tw-gradient-to: rgba(8, 145, 178, 0.03) !important;
 }
 
 /* bg-primary/10, /20 internal glows → very subtle */
-[data-theme="light"] .bg-primary\/10 {
+.light .bg-primary\/10 {
   background-color: rgba(8, 145, 178, 0.04) !important;
 }
 
-[data-theme="light"] .bg-primary\/20 {
+.light .bg-primary\/20 {
   background-color: rgba(8, 145, 178, 0.06) !important;
 }
 
 /* bg-secondary/20 badge */
-[data-theme="light"] .bg-secondary\/20 {
+.light .bg-secondary\/20 {
   background-color: rgba(37, 99, 235, 0.08) !important;
 }
 
-[data-theme="light"] .border-secondary\/20 {
+.light .border-secondary\/20 {
   border-color: rgba(37, 99, 235, 0.15) !important;
 }
 
-[data-theme="light"] .border-secondary\/30 {
+.light .border-secondary\/30 {
   border-color: rgba(37, 99, 235, 0.2) !important;
 }
 
 /* bg-primary/5 for badges */
-[data-theme="light"] .bg-primary\/5 {
+.light .bg-primary\/5 {
   background-color: rgba(37, 99, 235, 0.04) !important;
 }
 
-[data-theme="light"] .border-primary\/10 {
+.light .border-primary\/10 {
   border-color: rgba(37, 99, 235, 0.08) !important;
 }
 
 /* ─── hover:bg-secondary → keep gradient on buttons ─── */
-[data-theme="light"] a.hover\:bg-secondary:hover {
+.light a.hover\:bg-secondary:hover {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
 }
 
 /* ─── hover:bg-primary for Branding CTA → use gradient ─── */
-[data-theme="light"] a.hover\:bg-primary:hover {
+.light a.hover\:bg-primary:hover {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
 }
 
 /* ─── Secondary/fixed-dim accent classes ─── */
-[data-theme="light"] .bg-secondary-fixed-dim\/10 {
+.light .bg-secondary-fixed-dim\/10 {
   background-color: rgba(8, 145, 178, 0.05) !important;
 }
 
-[data-theme="light"] .border-secondary-fixed-dim\/20 {
+.light .border-secondary-fixed-dim\/20 {
   border-color: rgba(8, 145, 178, 0.12) !important;
 }
 
-[data-theme="light"] .text-secondary-fixed-dim {
+.light .text-secondary-fixed-dim {
   color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .bg-secondary-fixed-dim {
+.light .bg-secondary-fixed-dim {
   background-color: var(--accent-primary) !important;
 }
 
 /* ─── Additional accent bg classes ─── */
-[data-theme="light"] .bg-secondary-container {
+.light .bg-secondary-container {
   background-color: var(--accent-primary) !important;
 }
 
 /* Verified badge gradient border ring */
-[data-theme="light"] .bg-gradient-to-br.from-\[\#2188FF\].to-\[\#00daf3\] {
+.light .bg-gradient-to-br.from-\[\#2188FF\].to-\[\#00daf3\] {
   background: linear-gradient(135deg, #2563eb, #0891b2) !important;
 }
 
 /* shadow glow for verified avatars */
-[data-theme="light"] .shadow-\[0_0_10px_rgba\(33\,136\,255\,0\.2\)\] {
+.light .shadow-\[0_0_10px_rgba\(33\,136\,255\,0\.2\)\] {
   box-shadow: 0 0 10px rgba(37, 99, 235, 0.15) !important;
 }
 
-[data-theme="light"] .group-hover\:shadow-\[0_0_20px_rgba\(33\,136\,255\,0\.5\)\]:hover,
-[data-theme="light"] .group:hover .group-hover\:shadow-\[0_0_20px_rgba\(33\,136\,255\,0\.5\)\] {
+.light .group-hover\:shadow-\[0_0_20px_rgba\(33\,136\,255\,0\.5\)\]:hover,
+.light .group:hover .group-hover\:shadow-\[0_0_20px_rgba\(33\,136\,255\,0\.5\)\] {
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.2) !important;
 }
 
 /* ─── Fix text-shadow in light mode ─── */
-[data-theme="light"] [style*="textShadow"],
-[data-theme="light"] [style*="text-shadow"] {
+.light [style*="textShadow"],
+.light [style*="text-shadow"] {
   text-shadow: none !important;
 }
 
 /* ─── Hover heavy shadows → lighter in light mode ─── */
-[data-theme="light"] .hover\:shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.5\)\,0_0_30px_rgba\(33\,136\,255\,0\.2\)\]:hover {
+.light .hover\:shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.5\)\,0_0_30px_rgba\(33\,136\,255\,0\.2\)\]:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 0 15px rgba(8, 145, 178, 0.06) !important;
 }
 
-[data-theme="light"] .hover\:shadow-\[0_0_50px_rgba\(0\,227\,253\,0\.6\)\]:hover {
+.light .hover\:shadow-\[0_0_50px_rgba\(0\,227\,253\,0\.6\)\]:hover {
   box-shadow: var(--shadow-btn-hover) !important;
 }
 
-[data-theme="light"] .shadow-\[0_0_25px_rgba\(0\,227\,253\,0\.2\)\] {
+.light .shadow-\[0_0_25px_rgba\(0\,227\,253\,0\.2\)\] {
   box-shadow: var(--shadow-btn) !important;
 }
 
-[data-theme="light"] .shadow-\[0_0_25px_rgba\(0\,227\,253\,0\.3\)\] {
+.light .shadow-\[0_0_25px_rgba\(0\,227\,253\,0\.3\)\] {
   box-shadow: var(--shadow-btn) !important;
 }
 
-[data-theme="light"] .shadow-\[0_0_40px_-10px_rgba\(0\,227\,253\,0\.15\)\] {
+.light .shadow-\[0_0_40px_-10px_rgba\(0\,227\,253\,0\.15\)\] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
-[data-theme="light"] .shadow-\[0_0_40px_-10px_rgba\(0\,227\,253\,0\.3\)\] {
+.light .shadow-\[0_0_40px_-10px_rgba\(0\,227\,253\,0\.3\)\] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* ─── CTA header gradient line ─── */
-[data-theme="light"] .bg-gradient-to-r.from-transparent.via-secondary-container.to-transparent {
+.light .bg-gradient-to-r.from-transparent.via-secondary-container.to-transparent {
   background: linear-gradient(to right, transparent, rgba(8, 145, 178, 0.3), transparent) !important;
 }
 
 /* ─── outline/10 step text fix ─── */
-[data-theme="light"] .text-outline\/10 {
+.light .text-outline\/10 {
   color: rgba(0, 0, 0, 0.06) !important;
 }
 
 /* ─── PR Media section — from-background/20 gradient → light ─── */
-[data-theme="light"] .from-background\/20 {
+.light .from-background\/20 {
   --tw-gradient-from: rgba(248, 250, 251, 0.2) !important;
 }
 
 /* ─── On hover change secondary-container bg for icon circles ─── */
-[data-theme="light"] .group:hover .group-hover\:bg-secondary-container {
+.light .group:hover .group-hover\:bg-secondary-container {
   background-color: var(--accent-primary) !important;
 }
 
-[data-theme="light"] .group:hover .group-hover\:text-on-secondary-container {
+.light .group:hover .group-hover\:text-on-secondary-container {
   color: #ffffff !important;
 }
 
 /* group hover text-secondary-container transition */
-[data-theme="light"] .group-hover\:text-secondary-container {
+.light .group-hover\:text-secondary-container {
   color: var(--accent-primary) !important;
 }
 
 /* ─── Progress bar in PR Media ─── */
-[data-theme="light"] .bg-secondary-container.h-full {
+.light .bg-secondary-container.h-full {
   background-color: var(--accent-primary) !important;
 }
 
 /* ─── Form label text-slate-400 ─── */
-[data-theme="light"] .text-slate-400 {
+.light .text-slate-400 {
   color: var(--text-secondary) !important;
 }
 
 /* ─── hover:bg-secondary-fixed → accent ─── */
-[data-theme="light"] .hover\:bg-secondary-fixed:hover {
+.light .hover\:bg-secondary-fixed:hover {
   background: var(--accent-gradient) !important;
   color: #ffffff !important;
 }
 
 /* ─── bg-surface-container rounded-2xl as card → white + shadow ─── */
-[data-theme="light"] .bg-surface-container.rounded-2xl {
+.light .bg-surface-container.rounded-2xl {
   background-color: #ffffff !important;
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 /* ─── Fix bg-surface-container-low section backgrounds ─── */
-[data-theme="light"] section.bg-surface-container-low,
-[data-theme="light"] .bg-surface-container-low {
+.light section.bg-surface-container-low,
+.light .bg-surface-container-low {
   background-color: #f3f5f7 !important;
 }
 
 /* ─── bg-surface-container-low rounded cards → white elevated ─── */
-[data-theme="light"] .bg-surface-container-low.rounded-2xl,
-[data-theme="light"] .bg-surface-container-low.rounded-\[2\.5rem\] {
+.light .bg-surface-container-low.rounded-2xl,
+.light .bg-surface-container-low.rounded-\[2\.5rem\] {
   background-color: #ffffff !important;
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 /* ─── bg-surface-container-low as CTA card ─── */
-[data-theme="light"] .bg-surface-container-low.rounded-\[3rem\] {
+.light .bg-surface-container-low.rounded-\[3rem\] {
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f7fa 50%, #faf5ff 100%) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* ─── PR Media icon section opacity fix ─── */
-[data-theme="light"] .opacity-20.group-hover\:opacity-40 {
+.light .opacity-20.group-hover\:opacity-40 {
   opacity: 0.4;
 }
 
-[data-theme="light"] .group:hover .opacity-20.group-hover\:opacity-40 {
+.light .group:hover .opacity-20.group-hover\:opacity-40 {
   opacity: 0.6;
 }
 
 /* ─── Fix icon opacity-40 group-hover:opacity-100 ─── */
-[data-theme="light"] .opacity-40.group-hover\:opacity-100 {
+.light .opacity-40.group-hover\:opacity-100 {
   opacity: 0.5;
 }
 
-[data-theme="light"] .group:hover .opacity-40.group-hover\:opacity-100 {
+.light .group:hover .opacity-40.group-hover\:opacity-100 {
   opacity: 1;
 }
 
 /* ─── Fix verified account section inner border → softer in light ─── */
-[data-theme="light"] .border-\[3px\].border-\[\#0e141a\] {
+.light .border-\[3px\].border-\[\#0e141a\] {
   border-color: #ffffff !important;
 }
