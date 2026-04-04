@@ -4,7 +4,7 @@ export default function Growth() {
   return (
     <main className="pt-24">
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-8 py-24 md:py-32">
+      <section className="relative overflow-hidden px-8 py-24 md:py-16 md:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle,#1a2027_1px,transparent_1px)] bg-[length:40px_40px] opacity-20 -z-10" />
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-secondary-container/10 blur-[120px] rounded-full" />
         <div className="max-w-7xl mx-auto">
@@ -49,9 +49,9 @@ export default function Growth() {
       </section>
 
       {/* Strategy Bento Grid */}
-      <section className="bg-surface-container-low py-32 px-8">
+      <section className="bg-surface-container-low py-16 md:py-20 px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
+          <div className="mb-12">
             <h2 className="text-4xl font-bold font-headline text-white mb-4">How we actually grow your account</h2>
             <div className="w-24 h-1 bg-secondary-container rounded-full" />
           </div>
@@ -104,8 +104,8 @@ export default function Growth() {
       </section>
 
       {/* Services Details */}
-      <section className="py-32 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <section className="py-16 md:py-20 px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="space-y-12">
               {[

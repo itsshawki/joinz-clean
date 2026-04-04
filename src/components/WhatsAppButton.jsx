@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       aria-label="Contact via WhatsApp"
     >
       {/* Label - Desktop only */}
-      <span className="hidden md:flex bg-white text-slate-900 px-4 py-2 rounded-full font-bold shadow-2xl opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+      <span className="hidden md:flex px-4 py-2 rounded-full font-bold shadow-2xl opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none" style={{ background: 'var(--bg-surface-bright)', color: 'var(--text-heading)' }}>
         WhatsApp
       </span>
 

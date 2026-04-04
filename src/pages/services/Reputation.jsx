@@ -101,7 +101,7 @@ export default function Reputation() {
       </section>
 
       {/* Service Benefits */}
-      <section className="py-32 px-8 bg-surface-container-low">
+      <section className="py-16 md:py-20 px-8 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div className="md:col-span-5 mb-12 md:mb-0 sticky top-32">
@@ -153,8 +153,8 @@ export default function Reputation() {
       </section>
 
       {/* Analytics Section */}
-      <section className="py-32 px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center mb-20">
+      <section className="py-16 md:py-20 px-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-black font-headline tracking-tighter text-white mb-4 uppercase">Advanced Analytics</h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto">Track your progress in real time. See what’s improving, what’s being removed, and how your visibility is growing.</p>
         </div>
@@ -179,7 +179,7 @@ export default function Reputation() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-8">
+      <section className="py-16 md:py-20 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden p-12 md:p-24 flex flex-col items-center text-center">
             <div className="absolute inset-0 z-0">

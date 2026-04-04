@@ -36,9 +36,9 @@ export default function PrMedia() {
       </section>
 
       {/* Strategy Section */}
-      <section className="py-32 bg-surface-container-low">
+      <section className="py-16 md:py-20 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-24 items-start">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div className="sticky top-40">
               <h2 className="text-4xl font-extrabold font-headline mb-6 uppercase tracking-tight">How We Build Your Presence</h2>
               <p className="text-on-surface-variant leading-loose mb-12">
@@ -81,7 +81,7 @@ export default function PrMedia() {
       </section>
 
       {/* Core Capabilities Bento */}
-      <section className="py-32 bg-background">
+      <section className="py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-5xl font-black font-headline mb-16 text-center">Core <span className="text-secondary-container">Capabilities.</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
@@ -119,7 +119,7 @@ export default function PrMedia() {
       </section>
 
       {/* Case Study Section */}
-      <section className="py-32 bg-surface-container-low border-y border-outline-variant/10">
+      <section className="py-16 md:py-20 bg-surface-container-low border-y border-outline-variant/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="flex-1 relative">

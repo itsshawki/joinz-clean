@@ -33,9 +33,9 @@ export default function WebDev() {
       </section>
 
       {/* Feature Bento Grid */}
-      <section className="py-32 px-8 bg-surface-container-low">
+      <section className="py-16 md:py-20 px-8 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-24 space-y-4">
+          <div className="mb-14 space-y-4">
             <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight">Built to Be Fast, Simple, and Reliable</h2>
             <p className="text-on-surface-variant text-lg max-w-2xl">We build websites that load fast, feel smooth, and work perfectly on all devices.</p>
           </div>
@@ -75,9 +75,9 @@ export default function WebDev() {
       </section>
 
       {/* Process Section */}
-      <section className="py-32 px-8">
+      <section className="py-16 md:py-20 px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-14 gap-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight">How We Work</h2>
               <p className="text-on-surface-variant text-lg max-w-xl">A simple step-by-step process to get your website live and ready for real results.</p>

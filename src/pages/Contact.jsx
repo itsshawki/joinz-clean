@@ -66,16 +66,16 @@ export default function Contact() {
   }
 
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <main className="pt-28 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Hero Section */}
-      <section className="mb-24">
+      <section className="mb-14">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 text-secondary-container text-xs font-bold tracking-widest uppercase mb-6 border border-secondary-container/20">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(0,227,253,1)]" />
               Status: Taking Projects
             </div>
-            <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-white leading-tight mb-8">
+            <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white leading-tight mb-5">
               Get in Touch
             </h1>
             <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
@@ -99,12 +99,12 @@ export default function Contact() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Contact Form */}
         <section className="lg:col-span-8 space-y-12">
-          <div className="p-8 md:p-12 rounded-2xl bg-surface-container-low border border-white/5 relative overflow-hidden">
+          <div className="p-7 md:p-10 rounded-2xl bg-surface-container-low border border-white/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/5 blur-[100px] rounded-full -mr-32 -mt-32" />
-            <h2 className="font-headline text-2xl font-bold text-white mb-2 relative">Start Your Request in 30 Seconds</h2>
-            <p className="text-on-surface-variant text-sm mb-10 opacity-70 relative">Fill out the form below and we'll get back to you within 24 hours.</p>
-            <form className="space-y-8 relative" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="font-headline text-xl font-bold text-white mb-2 relative">Start Your Request in 30 Seconds</h2>
+            <p className="text-on-surface-variant text-sm mb-8 opacity-70 relative">Fill out the form below and we'll get back to you within 24 hours.</p>
+            <form className="space-y-6 relative" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Full Name</label>
                   <input
@@ -222,7 +222,7 @@ export default function Contact() {
       </div>
 
       {/* WhatsApp Banner */}
-      <section className="mt-12">
+      <section className="mt-10">
         <a className="block group relative overflow-hidden rounded-2xl bg-gradient-to-r from-secondary-container/20 to-primary-container/10 border border-secondary-container/20 p-8 md:p-12 transition-all hover:border-secondary-container/40" href="https://wa.me/201020366187" target="_blank" rel="noopener noreferrer">
           <div className="absolute top-0 right-0 p-8 opacity-10 scale-150 rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <svg className="w-32 h-32 fill-current text-secondary-container" viewBox="0 0 448 512">

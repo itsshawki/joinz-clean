@@ -119,7 +119,7 @@ export default function Username() {
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Hero Section */}
-      <header className="mb-24 text-center md:text-left flex flex-col md:flex-row gap-12 items-center">
+      <header className="mb-14 text-center md:text-left flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed-dim/10 border border-secondary-fixed-dim/20 text-secondary-fixed-dim text-xs font-bold tracking-widest uppercase">
             <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />

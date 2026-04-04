@@ -114,9 +114,9 @@ export default function Recovery() {
       </section>
 
       {/* Process Section */}
-      <section className="py-32 px-8 overflow-hidden relative">
+      <section className="py-16 md:py-20 px-8 overflow-hidden relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
             <div className="sticky top-32">
               <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tighter">Our Recovery <br /><span className="text-accent">Process</span></h2>
               <p className="text-on-surface-variant text-lg leading-relaxed mb-12">

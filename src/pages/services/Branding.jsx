@@ -19,7 +19,7 @@ export default function Branding() {
               Branding <br />
               <span className="text-accent">& Design</span>
             </h1>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
+            <p className="text-on-surface-variant text-base sm:text-lg md:text-2xl max-w-2xl leading-relaxed font-light">
               We don't just design logos. <br />
               We build brands people actually remember.
             </p>
@@ -43,8 +43,8 @@ export default function Branding() {
 
 
       {/* Process & Services Section */}
-      <section className="max-w-7xl mx-auto px-8 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+      <section className="max-w-7xl mx-auto px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           <div>
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter mb-8">
               Our Process <br /> Is Our <span className="text-secondary-container">Product.</span>
@@ -100,7 +100,7 @@ export default function Branding() {
       </section>
 
       {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-8 py-32 text-center relative">
+      <section className="max-w-7xl mx-auto px-8 py-16 md:py-20 text-center relative">
         <div className="bg-surface-container-low rounded-[3rem] p-16 md:p-24 overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
           <div className="relative z-10">
@@ -113,7 +113,7 @@ export default function Branding() {
                 Stand Out?
               </span>
             </h2>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+            <p className="text-on-surface-variant text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-16 font-light leading-relaxed">
               If you’re serious about your brand, <br />
               we’ll make sure people take it seriously too.
             </p>

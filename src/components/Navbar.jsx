@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from '../context/ThemeContext'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -10,6 +11,7 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
+  const { theme, toggleTheme } = useTheme()
 
   const isActive = (href) => {
     if (href === '/services') {
@@ -19,51 +21,87 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-sky-900/20">
+    <nav className="fixed top-0 w-full z-50" style={{
+      background: 'var(--bg-nav)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      borderBottom: '1px solid var(--border-nav)',
+      boxShadow: 'var(--shadow-nav)',
+      transition: 'background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease'
+    }}>
       <div className="flex justify-between items-center px-6 md:px-8 py-4 max-w-screen-2xl mx-auto">
         {/* Logo */}
-        <Link to="/" className="text-xl font-black tracking-tighter text-white uppercase font-headline">
+        <Link to="/" className="text-xl font-black tracking-tighter uppercase font-headline" style={{ color: 'var(--text-heading)' }}>
           JOINZ
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className={`font-headline text-sm tracking-widest uppercase transition-all duration-300 ${isActive(link.href)
-                  ? 'text-sky-400 font-bold'
-                  : 'text-slate-400 hover:text-white hover:tracking-[0.2em]'
-                }`}
+              className="font-headline text-sm tracking-widest uppercase transition-all duration-300"
+              style={{
+                color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--text-muted)',
+                fontWeight: isActive(link.href) ? 700 : 400
+              }}
+              onMouseEnter={e => { if (!isActive(link.href)) e.target.style.color = 'var(--text-heading)' }}
+              onMouseLeave={e => { if (!isActive(link.href)) e.target.style.color = 'var(--text-muted)' }}
             >
               {link.label}
             </Link>
           ))}
+
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}>
+              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+            </span>
+          </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`w-6 h-0.5 bg-white transition-all duration-400 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`w-6 h-0.5 bg-white transition-all duration-400 ${mobileOpen ? 'opacity-0' : ''}`} />
-          <span className={`w-6 h-0.5 bg-white transition-all duration-400 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
+        {/* Mobile: Toggle + Hamburger */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}>
+              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+            </span>
+          </button>
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`w-6 h-0.5 transition-all duration-400 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} style={{ backgroundColor: 'var(--text-heading)' }} />
+            <span className={`w-6 h-0.5 transition-all duration-400 ${mobileOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: 'var(--text-heading)' }} />
+            <span className={`w-6 h-0.5 transition-all duration-400 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} style={{ backgroundColor: 'var(--text-heading)' }} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileOpen ? 'max-h-96 border-t border-white/5' : 'max-h-0'}`}>
-        <div className="px-8 py-12 bg-slate-950/98 backdrop-blur-2xl flex flex-col items-center gap-8">
+      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileOpen ? 'max-h-96' : 'max-h-0'}`} style={{ borderTop: mobileOpen ? `1px solid var(--border-default)` : 'none' }}>
+        <div className="px-8 py-12 flex flex-col items-center gap-8" style={{ background: 'var(--bg-nav-mobile)' }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`font-headline text-xl uppercase tracking-[0.2em] py-2 transition-all duration-300 ${isActive(link.href) ? 'text-sky-400 font-black' : 'text-slate-500'
-                }`}
+              className="font-headline text-xl uppercase tracking-[0.2em] py-2 transition-all duration-300"
+              style={{
+                color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--text-muted)',
+                fontWeight: isActive(link.href) ? 900 : 400
+              }}
             >
               {link.label}
             </Link>

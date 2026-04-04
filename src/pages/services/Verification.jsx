@@ -46,7 +46,7 @@ export default function Verification() {
   return (
     <main className="pt-24">
       {/* Hero Section */}
-      <section className="relative min-h-[870px] flex items-center justify-center overflow-hidden px-6">
+      <section className="relative min-h-[600px] md:min-h-[680px] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-secondary-container/10 blur-[120px] rounded-full -z-10" />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -54,14 +54,14 @@ export default function Verification() {
               <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
               <span className="text-secondary text-xs font-bold tracking-widest uppercase font-label">Official Partner Access</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] text-white">
+            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.9] text-white">
               Social Media <span className="text-accent">Verification</span>
             </h1>
             <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
               Get verified on major platforms and build real trust with your audience. Stand out, protect your identity, and make your presence official.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/contact" className="px-8 py-4 bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed rounded-xl font-bold text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all active:scale-95">
+              <Link to="/contact" className="btn-primary">
                 Get Verified Now
               </Link>
             </div>
@@ -80,10 +80,10 @@ export default function Verification() {
       </section>
 
       {/* Supported Platforms Marquee */}
-      <section className="py-12 bg-surface-container-low/20 overflow-hidden relative border-y border-white/5">
+      <section className="py-6 bg-surface-container-low/20 overflow-hidden relative border-y border-white/5">
         <div className="relative flex overflow-x-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0e141a] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0e141a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--marquee-fade), transparent)' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--marquee-fade), transparent)' }} />
           <div className="animate-scroll whitespace-nowrap flex items-center gap-12 md:gap-16 py-3 hover:[animation-play-state:paused]">
             {[...platformIcons, ...platformIcons, ...platformIcons, ...platformIcons].map((p, i) => (
               <PlatformIcon key={`s-${i}`} p={p} prefix="s" i={i} />
@@ -93,11 +93,11 @@ export default function Verification() {
       </section>
 
       {/* Service Overview */}
-      <section className="py-32 px-6 bg-surface">
+      <section className="py-16 md:py-20 px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black font-headline mb-8 text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white leading-tight">
                 Why Verification Actually Matters
               </h2>
               <div className="space-y-6 text-on-surface-variant text-lg">
@@ -112,7 +112,7 @@ export default function Verification() {
                 { icon: 'trending_up', title: 'Visibility', desc: 'Get discovered faster and show up higher in search across platforms.' },
                 { icon: 'bolt', title: 'Exclusive Features', desc: 'Unlock features and tools that are only available to verified accounts.' },
               ].map((card, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+                <div key={i} className="p-6 rounded-2xl bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
                   <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform" style={{ fontVariationSettings: "'FILL' 1" }}>{card.icon}</span>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-secondary-container transition-colors">{card.title}</h3>
                   <p className="text-sm text-on-surface-variant">{card.desc}</p>
@@ -124,35 +124,35 @@ export default function Verification() {
       </section>
 
       {/* Requirements Bento */}
-      <section className="py-32 px-6 bg-surface-container-low">
+      <section className="py-16 md:py-20 px-6 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-black font-headline mb-4">Core Requirements</h2>
-            <p className="text-on-surface-variant text-xl">What it takes to secure your blue checkmark.</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Core Requirements</h2>
+            <p className="text-on-surface-variant text-base sm:text-lg">What it takes to secure your blue checkmark.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="md:col-span-2 p-10 rounded-3xl bg-surface-container flex flex-col justify-between overflow-hidden relative group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="md:col-span-2 p-8 rounded-2xl bg-surface-container flex flex-col justify-between overflow-hidden relative group">
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">Press & Media Presence</h3>
+                <h3 className="text-2xl font-bold mb-3">Press & Media Presence</h3>
                 <p className="text-on-surface-variant text-lg max-w-md">Your profile must be notable. We help curate and identify significant media coverage from reputable sources to build your case.</p>
               </div>
               <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-20 group-hover:opacity-40 transition-opacity">
                 <img alt="Media Coverage" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDymdhO2gJUjDLmfp4moxQ6vRxhMI8FgErhaVpjDqul6_MnQ-Wv576hTHOT9Nmfw-fWEgv-WvNc0_V6s0Z0sTSHAGyKLPiZGq3tgMWmNNTExI7V4_2kLr6TfS60sf50D9hKavAkU1Lb2Nkv4TO7gkI6VrO1eLcMO-zXPsoQqJei60iLfvhx3aBD7wln_U3HRt_6XCE8ToJMsLQLmi0X6FFdfEzBlplkRHsS_ieC8XYNGnChIayoNCMfJi8v_CBswkgPC71RXaI4F0" />
               </div>
             </div>
-            <div className="p-10 rounded-3xl bg-primary text-on-primary-container">
-              <span className="material-symbols-outlined text-5xl mb-6">id_card</span>
-              <h3 className="text-2xl font-bold mb-4">Authenticity</h3>
+            <div className="p-8 rounded-2xl bg-primary text-on-primary-container">
+              <span className="material-symbols-outlined text-4xl mb-4">id_card</span>
+              <h3 className="text-xl font-bold mb-3">Authenticity</h3>
               <p className="text-sm font-medium">Must represent a real person, registered business, or entity.</p>
             </div>
-            <div className="p-10 rounded-3xl bg-surface-container-highest flex flex-col justify-center border border-outline-variant/20">
-              <h3 className="text-2xl font-bold mb-4">Completeness</h3>
+            <div className="p-8 rounded-2xl bg-surface-container-highest flex flex-col justify-center border border-outline-variant/20">
+              <h3 className="text-xl font-bold mb-3">Completeness</h3>
               <p className="text-on-surface-variant">Your account must be public and have a bio, profile photo, and at least one post.</p>
             </div>
-            <div className="md:col-span-2 p-10 rounded-3xl bg-surface-container-highest border border-outline-variant/20">
-              <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:col-span-2 p-8 rounded-2xl bg-surface-container-highest border border-outline-variant/20">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-4">Uniqueness</h3>
+                  <h3 className="text-2xl font-bold mb-3">Uniqueness</h3>
                   <p className="text-on-surface-variant text-lg">Your account must be the unique presence of the person or business it represents. Only one account per person or business may be verified.</p>
                 </div>
                 <div className="flex-none bg-background p-8 rounded-2xl">
@@ -165,11 +165,11 @@ export default function Verification() {
       </section>
 
       {/* Process Section */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
-            <h2 className="text-5xl font-black font-headline mb-4">The Verification Journey</h2>
-            <p className="text-on-surface-variant text-xl">A simple, proven process to get you verified.</p>
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">The Verification Journey</h2>
+            <p className="text-on-surface-variant text-base sm:text-lg">A simple, proven process to get you verified.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
@@ -178,7 +178,7 @@ export default function Verification() {
               { num: '03', title: 'Submit', desc: 'We handle the application process for you.' },
               { num: '04', title: 'Monitor', desc: 'We help maintain and protect your account after approval.' },
             ].map((step, i) => (
-              <div key={i} className="group relative p-8 rounded-3xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-outline-variant/5 hover:border-outline-variant/20">
+              <div key={i} className="group relative p-6 md:p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-outline-variant/5 hover:border-outline-variant/20">
                 <div className="flex items-center gap-8">
                   <span className="text-6xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline shrink-0">{step.num}</span>
                   <div>
@@ -193,11 +193,11 @@ export default function Verification() {
       </section>
 
       {/* Recently Verified Accounts Section */}
-      <section className="py-32 px-6 bg-surface-container-lowest/30 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto mb-16 px-6 relative z-10">
+      <section className="py-16 md:py-20 px-6 bg-surface-container-lowest/30 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto mb-10 px-6 relative z-10">
           <div className="text-center">
-            <h2 className="text-5xl font-black font-headline mb-4">Recently Verified Accounts</h2>
-            <p className="text-on-surface-variant text-xl">Real accounts successfully verified by our team.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Recently Verified Accounts</h2>
+            <p className="text-on-surface-variant text-base sm:text-lg">Real accounts successfully verified by our team.</p>
           </div>
         </div>
 
@@ -238,11 +238,11 @@ export default function Verification() {
       </section>
 
       {/* Real Case Results */}
-      <section className="py-32 px-6 bg-surface">
+      <section className="py-16 md:py-20 px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-black font-headline mb-4">Real Case Results</h2>
-            <p className="text-on-surface-variant text-xl">Proven success stories from real clients.</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Real Case Results</h2>
+            <p className="text-on-surface-variant text-base sm:text-lg">Proven success stories from real clients.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {caseResults.map((item, i) => {
@@ -311,21 +311,21 @@ export default function Verification() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-surface-container to-surface-container-high p-16 md:p-24 text-center relative overflow-hidden">
+      <section className="py-10 md:py-12 px-6">
+        <div className="max-w-4xl mx-auto rounded-2xl bg-gradient-to-br from-surface-container to-surface-container-high p-8 md:p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.1),transparent)]" />
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black font-headline mb-8 text-white">Ready to Get <span className="text-secondary italic">Verified?</span></h2>
-            <p className="text-xl text-on-surface-variant mb-12 max-w-2xl mx-auto">We’ll review your profile, guide you step by step, and handle the process with you — so you don’t waste time on rejected attempts.</p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contact" className="px-12 py-5 bg-white text-slate-950 rounded-2xl font-bold text-xl hover:scale-105 transition-transform active:scale-95">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white">Ready to Get <span className="text-secondary italic">Verified?</span></h2>
+            <p className="text-base sm:text-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">We'll review your profile, guide you step by step, and handle the process with you — so you don't waste time on rejected attempts.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact" className="px-8 py-4 bg-white text-slate-950 rounded-xl font-bold text-lg hover:scale-105 transition-transform active:scale-95">
                 Get Verified Now
               </Link>
-              <Link to="/contact" className="px-12 py-5 bg-surface-container-highest border border-outline-variant/30 text-white rounded-2xl font-bold text-xl hover:bg-surface-container transition-colors">
+              <Link to="/contact" className="px-8 py-4 bg-surface-container-highest border border-outline-variant/30 text-white rounded-xl font-bold text-lg hover:bg-surface-container transition-colors">
                 Talk to Us
               </Link>
             </div>
-            <p className="mt-8 text-on-surface-variant/60 text-sm font-medium">Takes less than 2 minutes</p>
+            <p className="mt-6 text-on-surface-variant/60 text-sm font-medium">Takes less than 2 minutes</p>
           </div>
         </div>
       </section>

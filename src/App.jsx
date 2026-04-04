@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -18,25 +19,27 @@ import Verification from './pages/services/Verification'
 
 export default function App() {
   return (
-    <div className="font-body text-on-surface antialiased min-h-screen bg-background">
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/reputation" element={<Reputation />} />
-        <Route path="/services/recovery" element={<Recovery />} />
-        <Route path="/services/username" element={<Username />} />
-        <Route path="/services/branding" element={<Branding />} />
-        <Route path="/services/webdev" element={<WebDev />} />
-        <Route path="/services/pr-media" element={<PrMedia />} />
-        <Route path="/services/growth" element={<Growth />} />
-        <Route path="/services/verification" element={<Verification />} />
-      </Routes>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <ThemeProvider>
+      <div className="font-body text-on-surface antialiased min-h-screen" style={{ backgroundColor: 'var(--bg-body)', color: 'var(--text-primary)', transition: 'background-color 0.35s ease, color 0.35s ease' }}>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/reputation" element={<Reputation />} />
+          <Route path="/services/recovery" element={<Recovery />} />
+          <Route path="/services/username" element={<Username />} />
+          <Route path="/services/branding" element={<Branding />} />
+          <Route path="/services/webdev" element={<WebDev />} />
+          <Route path="/services/pr-media" element={<PrMedia />} />
+          <Route path="/services/growth" element={<Growth />} />
+          <Route path="/services/verification" element={<Verification />} />
+        </Routes>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </ThemeProvider>
   )
 }
