@@ -54,6 +54,7 @@ const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
 export default function Username() {
   const [formData, setFormData] = useState({
     platform: 'TikTok',
+    customPlatform: '',
     username: '',
     name: '',
     email: '',
@@ -63,7 +64,7 @@ export default function Username() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
 
-  const isFormValid = formData.username && formData.name && formData.email && formData.details;
+  const isFormValid = formData.username && formData.name && formData.email && formData.details && (formData.platform !== 'other' || formData.customPlatform?.trim());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,7 +72,7 @@ export default function Username() {
 
     setLoading(true);
     setError(null);
-    const platform = formData.platform;
+    const platform = formData.platform === 'other' ? formData.customPlatform.trim() : formData.platform;
     const username = formData.username.startsWith('@') ? formData.username : `@${formData.username}`;
     const fullName = formData.name.trim();
     const email = formData.email.trim();
@@ -242,9 +243,22 @@ export default function Username() {
                       {['TikTok', 'Instagram', 'X (Twitter)', 'Snapchat', 'YouTube', 'Facebook', 'Kick', 'Twitch', 'LinkedIn', 'Pinterest', 'Tenor'].map(p => (
                         <option key={p} value={p}>{p}</option>
                       ))}
+                      <option value="other">Other</option>
                     </select>
                     <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">expand_more</span>
                   </div>
+                  {formData.platform === 'other' && (
+                    <div className="mt-3 animate-in fade-in slide-in-from-top-1 duration-300">
+                      <input
+                        value={formData.customPlatform}
+                        onChange={(e) => setFormData({ ...formData, customPlatform: e.target.value })}
+                        className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                        placeholder="Enter platform name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-label text-slate-400 ml-1">Desired Username</label>
