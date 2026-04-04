@@ -11,7 +11,7 @@ export default function WebDev() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-fixed-dim/10 border border-secondary-fixed-dim/20 text-secondary-fixed-dim text-sm font-label tracking-widest uppercase">
               Digital Craftsmanship
             </div>
-            <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-[0.9] text-white">
+            <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-snug text-white">
               Websites That <br /> <span className="text-accent">Actually Work.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
@@ -36,7 +36,7 @@ export default function WebDev() {
       <section className="py-16 md:py-20 px-8 bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight">Built to Be Fast, Simple, and Reliable</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight leading-snug">Built to Be Fast, Simple, and Reliable</h2>
             <p className="text-on-surface-variant text-lg max-w-2xl">We build websites that load fast, feel smooth, and work perfectly on all devices.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -79,7 +79,7 @@ export default function WebDev() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-14 gap-8">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight">How We Work</h2>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-white tracking-tight leading-snug">How We Work</h2>
               <p className="text-on-surface-variant text-lg max-w-xl">A simple step-by-step process to get your website live and ready for real results.</p>
             </div>
             <div className="text-right">
@@ -110,7 +110,7 @@ export default function WebDev() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-container opacity-90" />
           <div className="absolute inset-0 bg-slate-950/20 backdrop-blur-sm" />
           <div className="relative p-12 md:p-20 text-center space-y-8">
-            <h2 className="text-4xl md:text-6xl font-headline font-extrabold text-white tracking-tighter">Ready to get your website live?</h2>
+            <h2 className="text-4xl md:text-6xl font-headline font-extrabold text-white tracking-tighter leading-snug">Ready to get your website live?</h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">We’ll handle everything — design, domain, hosting, and launch — so you can focus on your business.</p>
             <div className="pt-8">
               <Link to="/contact" className="inline-block bg-white text-slate-950 px-10 py-5 rounded-xl font-headline font-black text-xl hover:scale-105 transition-transform">

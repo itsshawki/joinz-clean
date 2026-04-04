@@ -64,7 +64,7 @@ export default function About() {
             <span className="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse" />
             <span className="text-xs font-label tracking-[0.2em] uppercase font-semibold">THE NETWORK</span>
           </div>
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 max-w-4xl mx-auto leading-[0.9]">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 max-w-4xl mx-auto leading-snug">
             Who <span className="text-accent">We Are</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
@@ -165,7 +165,7 @@ export default function About() {
       <section className="py-16 md:py-20 px-6 text-center">
         <div className="max-w-4xl mx-auto p-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-2xl">
           <div className="bg-surface-container-lowest p-10 md:p-16 rounded-2xl">
-            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">Ready to build your digital legacy?</h2>
+            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-snug">Ready to build your digital legacy?</h2>
             <div className="flex justify-center">
               <Link to="/contact" className="w-full md:w-auto btn-primary">
                 Get Started

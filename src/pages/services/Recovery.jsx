@@ -13,7 +13,7 @@ export default function Recovery() {
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary-fixed-dim text-xs font-bold tracking-widest uppercase">
                 Account Recovery Specialist
               </div>
-              <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter leading-[1.1]">
+              <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter leading-snug">
                 Reclaim Your <span className="text-accent">Digital Legacy</span>
               </h1>
               <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
@@ -118,7 +118,7 @@ export default function Recovery() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
             <div className="sticky top-32">
-              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tighter">Our Recovery <br /><span className="text-accent">Process</span></h2>
+              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tighter leading-snug">Our Recovery <br /><span className="text-accent">Process</span></h2>
               <p className="text-on-surface-variant text-lg leading-relaxed mb-12">
                 A proven step-by-step process designed to recover your account as quickly and safely as possible.
               </p>
@@ -159,7 +159,7 @@ export default function Recovery() {
       <section className="py-24 px-8">
         <div className="max-w-5xl mx-auto rounded-3xl p-12 md:p-20 relative overflow-hidden bg-surface-container text-center">
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6">Get your account back — starting today</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 leading-snug">Get your account back — starting today</h2>
             <p className="text-on-surface-variant text-lg mb-12 max-w-2xl mx-auto">We handle everything for you. No stress, no confusion — just results.</p>
             <Link to="/contact" className="inline-block bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-black px-12 py-5 rounded-2xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
               Start My Recovery

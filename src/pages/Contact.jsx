@@ -7,7 +7,8 @@ export default function Contact() {
     name: '',
     email: '',
     service: '',
-    details: ''
+    details: '',
+    otherService: ''
   })
   const [status, setStatus] = useState({ type: '', message: '' })
   const [loading, setLoading] = useState(false)
@@ -15,7 +16,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!formData.name || !formData.email || !formData.service) {
+    if (!formData.name || !formData.email || !formData.service || (formData.service === 'other' && !formData.otherService)) {
       setStatus({ type: 'error', message: 'Please fill in all required fields' })
       return
     }
@@ -24,6 +25,8 @@ export default function Contact() {
     setStatus({ type: '', message: '' })
 
     try {
+      const selectedService = formData.service === 'other' ? `Other: ${formData.otherService}` : formData.service;
+
       // 1. Send Main Email (to Admin)
       await emailjs.send(
         'service_e5n5eds',
@@ -31,7 +34,7 @@ export default function Contact() {
         {
           from_name: formData.name,
           from_email: formData.email,
-          service: formData.service,
+          service: selectedService,
           message: formData.details
         },
         'qOpgbC4RGXupwAnrO'
@@ -39,7 +42,7 @@ export default function Contact() {
 
       // SUCCESS UI: Main email sent
       setStatus({ type: 'success', message: 'Request sent successfully. Check your email for confirmation.' })
-      setFormData({ name: '', email: '', service: '', details: '' })
+      setFormData({ name: '', email: '', service: '', details: '', otherService: '' })
 
       // 2. Handle Auto-Reply separately (silent if fails)
       try {
@@ -49,7 +52,7 @@ export default function Contact() {
           {
             to_name: formData.name,
             to_email: formData.email,
-            service: formData.service
+            service: selectedService
           },
           'qOpgbC4RGXupwAnrO'
         )
@@ -65,6 +68,29 @@ export default function Contact() {
     }
   }
 
+  const socialLinks = [
+    {
+      name: 'Instagram',
+      url: 'https://instagram.com/joinz.agency',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      )
+    },
+    {
+      name: 'Facebook',
+      url: 'https://facebook.com/joinz.agency',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      )
+    }
+  ]
+
   return (
     <main className="pt-28 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -75,7 +101,7 @@ export default function Contact() {
               <span className="w-1.5 h-1.5 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(0,227,253,1)]" />
               Status: Taking Projects
             </div>
-            <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white leading-tight mb-5">
+            <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white leading-snug mb-5">
               Get in Touch
             </h1>
             <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
@@ -143,9 +169,23 @@ export default function Contact() {
                     <option>Web Development</option>
                     <option>PR & Media</option>
                     <option>Growth & Engagement</option>
+                    <option value="other">Other</option>
                   </select>
                   <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">expand_more</span>
                 </div>
+
+                {formData.service === 'other' && (
+                  <div className="space-y-2 mt-4 fade-in-up">
+                    <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Please specify service</label>
+                    <input
+                      className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
+                      placeholder="Type the service you need..."
+                      type="text"
+                      value={formData.otherService}
+                      onChange={(e) => setFormData({ ...formData, otherService: e.target.value })}
+                    />
+                  </div>
+                )}
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Case Details &amp; URLs</label>
@@ -185,39 +225,23 @@ export default function Contact() {
           <div className="p-8 rounded-2xl bg-surface-container border border-white/5">
             <h3 className="text-xs font-bold tracking-widest uppercase text-slate-500 mb-6">Connect With Us</h3>
             <div className="space-y-3">
-              {[
-                {
-                  name: 'Instagram',
-                  href: '#',
-                  icon: (
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                  )
-                },
-                {
-                  name: 'Facebook',
-                  href: '#',
-                  icon: (
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                  )
-                }
-              ].map((social) => (
-                <a key={social.name} className="flex items-center gap-4 group p-4 -mx-4 rounded-xl hover:bg-white/5 transition-all duration-300" href={social.href}>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  className="flex items-center gap-4 group p-4 -mx-4 rounded-xl hover:bg-white/5 hover:shadow-[0_0_30px_rgba(0,227,253,0.05)] transition-all duration-300"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-secondary-container group-hover:bg-secondary-container/10 transition-all duration-300">
                     {social.icon}
                   </div>
                   <span className="flex-1 text-on-surface group-hover:text-white font-medium transition-colors">{social.name}</span>
-                  <span className="material-symbols-outlined text-slate-600 group-hover:text-secondary-container transition-all translate-x-0 group-hover:translate-x-1">north_east</span>
+                  <span className="material-symbols-outlined text-slate-600 group-hover:text-secondary-container transition-all translate-x-0 group-hover:translate-x-1.5 duration-300">north_east</span>
                 </a>
               ))}
             </div>
           </div>
-
         </aside>
       </div>
 

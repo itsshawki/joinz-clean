@@ -9,8 +9,8 @@ export default function Services() {
           <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
           <span className="text-secondary-container text-xs font-label tracking-widest uppercase">Curated Excellence</span>
         </div>
-        <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-5 leading-tight">
-          Elite Digital Services for <span className="text-accent">Authority & Growth</span>
+        <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-5 leading-snug">
+          Expert Digital <span className="text-secondary-container">Solutions</span>
         </h1>
         <p className="max-w-2xl mx-auto text-on-surface-variant text-base sm:text-lg leading-relaxed">
           Expert solutions to establish, protect, and amplify your digital authority across all major platforms.

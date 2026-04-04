@@ -12,7 +12,7 @@ export default function PrMedia() {
               <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-widest font-label">Media & Press Coverage</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-[0.9]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
+            <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-snug" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
               Get Your Brand <span className="text-accent">Seen.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
@@ -148,7 +148,7 @@ export default function PrMedia() {
             </div>
             <div className="flex-1">
               <span className="text-primary font-bold tracking-widest uppercase text-xs font-label">REAL CLIENT RESULT</span>
-              <h2 className="text-4xl md:text-5xl font-black font-headline mt-4 mb-6 leading-tight">Real Results From Our Recent Clients.</h2>
+              <h2 className="text-4xl md:text-5xl font-black font-headline mt-4 mb-6 leading-snug">Real Results From Our Recent Clients.</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed">
                 We recently helped a client strengthen their online presence through targeted media placements and strategic visibility.<br /><br />
                 Within a few months, their brand became easier to find, more trusted, and more recognized by their audience.

@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -39,6 +40,7 @@ export default function App() {
         </Routes>
         <Footer />
         <WhatsAppButton />
+        <Analytics />
       </div>
     </ThemeProvider>
   )

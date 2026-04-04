@@ -15,7 +15,7 @@ export default function Branding() {
               <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
               <span className="text-secondary text-xs font-label uppercase tracking-widest font-semibold">Strategic Design</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-tight mb-8">
+            <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-snug mb-8">
               Branding <br />
               <span className="text-accent">& Design</span>
             </h1>
@@ -104,7 +104,7 @@ export default function Branding() {
         <div className="bg-surface-container-low rounded-[3rem] p-16 md:p-24 overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-8xl font-headline font-extrabold tracking-tighter mb-8">
+            <h2 className="text-5xl md:text-8xl font-headline font-extrabold tracking-tighter mb-8 leading-snug">
               <span className="text-white">Ready to </span>
               <span 
                 className="bg-gradient-to-r from-[#22d3ee] to-[#3b82f6] bg-clip-text"

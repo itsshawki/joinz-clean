@@ -54,7 +54,7 @@ export default function Verification() {
               <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
               <span className="text-secondary text-xs font-bold tracking-widest uppercase font-label">Official Partner Access</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.9] text-white">
+            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-snug text-white">
               Social Media <span className="text-accent">Verification</span>
             </h1>
             <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
@@ -97,7 +97,7 @@ export default function Verification() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white leading-snug">
                 Why Verification Actually Matters
               </h2>
               <div className="space-y-6 text-on-surface-variant text-lg">
@@ -315,7 +315,7 @@ export default function Verification() {
         <div className="max-w-4xl mx-auto rounded-2xl bg-gradient-to-br from-surface-container to-surface-container-high p-8 md:p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.1),transparent)]" />
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white">Ready to Get <span className="text-secondary italic">Verified?</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-5 text-white leading-snug">Ready to Get <span className="text-secondary italic">Verified?</span></h2>
             <p className="text-base sm:text-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">We'll review your profile, guide you step by step, and handle the process with you — so you don't waste time on rejected attempts.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="px-8 py-4 bg-white text-slate-950 rounded-xl font-bold text-lg hover:scale-105 transition-transform active:scale-95">

@@ -125,7 +125,7 @@ export default function Username() {
             <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
             Identity Restoration
           </div>
-          <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-tight">
+          <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-snug">
             Username <br />
             <span className="text-accent">Claim</span>
           </h1>
@@ -227,7 +227,7 @@ export default function Username() {
           ) : (
             <>
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Start Your Username Claim</h2>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4 leading-snug">Start Your Username Claim</h2>
                 <p className="text-on-surface-variant">Submit your request and our specialists will review your case within 24 hours.</p>
               </div>
               <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>

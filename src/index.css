@@ -166,13 +166,14 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background-color: var(--bg-body);
   color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
@@ -249,6 +250,9 @@ body {
   background-clip: text;
   color: transparent;
   text-shadow: none;
+  display: inline-block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
 }
 
 .dark .text-accent {
@@ -260,6 +264,9 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline-block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
 }
 
 .hero-gradient {

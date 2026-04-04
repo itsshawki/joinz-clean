@@ -14,7 +14,7 @@ export default function Growth() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 className="text-5xl md:text-7xl font-extrabold font-headline leading-tight tracking-tighter text-white mb-6">
+              <h1 className="text-5xl md:text-7xl font-extrabold font-headline leading-snug tracking-tighter text-white mb-6">
                 Scalable growth. <br />
                 <span className="text-accent">Real engagement.</span>
               </h1>
@@ -136,7 +136,7 @@ export default function Growth() {
       <section className="px-8 pb-32">
         <div className="max-w-7xl mx-auto rounded-3xl p-12 md:p-24 relative overflow-hidden bg-surface-container-high border border-outline-variant/10 text-center">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary-container to-transparent" />
-          <h2 className="text-4xl md:text-6xl font-black font-headline text-white mb-8">Ready to grow your account?</h2>
+          <h2 className="text-4xl md:text-6xl font-black font-headline text-white mb-8 leading-snug">Ready to grow your account?</h2>
           <p className="text-on-surface-variant text-lg max-w-2xl mx-auto mb-12">
             We’ll help you grow faster, get real engagement, and turn your account into real results.
           </p>

@@ -63,7 +63,7 @@ export default function Reputation() {
               <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
               <span className="text-xs font-bold tracking-widest uppercase text-secondary">Expert Protection</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-extrabold font-headline leading-[1.1] mb-8 tracking-tighter text-white">
+            <h1 className="text-6xl md:text-7xl font-extrabold font-headline leading-snug mb-8 tracking-tighter text-white">
               Reputation <br />
               <span className="text-accent">Management</span>
             </h1>
@@ -187,7 +187,7 @@ export default function Reputation() {
               <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
             </div>
             <div className="relative z-10 max-w-3xl">
-              <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8">Take Back Control of Your Reputation</h2>
+              <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8 leading-snug">Take Back Control of Your Reputation</h2>
               <p className="text-xl text-on-surface-variant mb-12">We help you clean up your search results, protect your name, and build a strong, trusted presence online.</p>
               <div className="flex justify-center">
                 <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-black text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">

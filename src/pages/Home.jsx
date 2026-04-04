@@ -90,7 +90,7 @@ export default function Home() {
             <span className="text-secondary-container text-xs font-bold uppercase tracking-widest leading-none">The Authority in Digital Presence</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-[0.95] mb-6 max-w-5xl mx-auto fade-in-up [animation-delay:200ms]">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-snug mb-6 max-w-5xl mx-auto fade-in-up [animation-delay:200ms]">
             Take Full Control <br className="hidden sm:block" />of Your <span className="text-accent !text-shadow-none relative inline-block">Digital Presence</span>
           </h1>
 
@@ -118,7 +118,7 @@ export default function Home() {
                 <span className="text-2xl sm:text-3xl font-display font-black text-white">
                   <CountUp target={stat.value} suffix={stat.suffix} />
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-slate-500 leading-tight">{stat.label}</span>
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-slate-500 leading-normal">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function Home() {
       <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14 gap-4">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white tracking-tight mb-3 leading-tight">Elite Digital <span className="text-accent">Services</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white tracking-tight mb-3 leading-snug">Elite Digital <span className="text-accent">Services</span></h2>
             <p className="text-on-surface-variant text-base sm:text-lg">Curated solutions for those who demand the highest standards in digital asset management and authority.</p>
           </div>
           <Link to="/services" className="hidden md:inline-flex items-center gap-2 text-secondary-container text-sm font-bold hover:gap-3 transition-all duration-300 shrink-0">
@@ -221,7 +221,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto rounded-3xl glass-card p-10 md:p-16 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-72 h-72 bg-secondary-container/5 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3" />
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white mb-4 tracking-tighter">Ready to Take Control of Your <span className="text-accent">Digital Presence?</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white mb-4 tracking-tighter leading-snug">Ready to Take Control of Your <span className="text-accent">Digital Presence?</span></h2>
             <p className="text-on-surface-variant text-base sm:text-lg mb-8 md:mb-10 max-w-2xl mx-auto opacity-80">Join the exclusive list of brands and creators who trust our agency with their digital legacy.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/contact" className="w-full sm:w-auto btn-primary">
