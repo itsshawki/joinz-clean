@@ -289,20 +289,31 @@ export default function Home() {
       </section>
 
       {/* ═══════ Final CTA ═══════ */}
-      <section className="py-24 px-6 scale-95 md:scale-90 origin-bottom">
-        <div className="max-w-6xl mx-auto rounded-[3.5rem] bg-gray-900 p-12 md:p-24 text-center relative overflow-hidden shadow-3xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2" />
+      <section className="py-24 px-6 scale-95 md:scale-[0.98] origin-bottom bg-white">
+        <div className="max-w-6xl mx-auto rounded-[3.5rem] bg-white p-12 md:p-24 text-center relative overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] border border-slate-100">
+          {/* Very subtle ambient depth for a premium look */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary-container/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
           
           <div className="relative z-10">
-            <span className="px-4 py-2 bg-white/5 backdrop-blur-md rounded-full text-accent text-xs font-black uppercase tracking-widest mb-8 inline-block">Join the Elite</span>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-headline font-black text-white mb-8 tracking-tighter leading-tight max-w-4xl mx-auto">Ready to dominate your <span className="text-accent">digital space?</span></h2>
-            <p className="text-gray-400 text-lg sm:text-xl mb-12 max-w-2xl mx-auto font-medium">Join the exclusive list of brands and creators who trust our agency with their digital legacy and authority.</p>
+            <span className="px-5 py-2 bg-slate-50 rounded-full text-accent text-[11px] font-black uppercase tracking-[0.25em] mb-10 inline-block shadow-sm border border-slate-100">
+              Join the Elite
+            </span>
+            
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-headline font-black text-[#0f172a] mb-8 tracking-tighter leading-[1.05] max-w-4xl mx-auto">
+              Ready to dominate your <br className="hidden sm:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e3fd] to-[#2188ff]">digital space?</span>
+            </h2>
+            
+            <p className="text-[#475569] text-lg sm:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+              Join the exclusive list of brands and creators who trust our agency with their digital legacy and authority.
+            </p>
+            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/contact" className="w-full sm:w-auto btn-primary px-12 py-5 text-lg">
+              <Link to="/contact" className="w-full sm:w-auto btn-primary px-12 py-5 text-lg shadow-[0_20px_40px_-10px_rgba(33,136,255,0.4)] hover:shadow-[0_25px_50px_-10px_rgba(33,136,255,0.6)] hover:scale-105 transition-all duration-300">
                 Secure Your Name
               </Link>
-              <Link to="/services" className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10 transition-all">
+              <Link to="/services" className="w-full sm:w-auto px-10 py-5 bg-white border border-slate-200 text-slate-900 font-black rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
                 Explore Services
               </Link>
             </div>

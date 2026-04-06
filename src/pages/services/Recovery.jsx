@@ -18,7 +18,7 @@ export default function Recovery() {
                 Reclaim Your <span className="text-accent">Digital Legacy</span>
               </h1>
               <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed min-h-[3em]">
-                <Typewriter 
+                <Typewriter
                   text="Locked out of your account? We help you get it back — fast, safely, and without the usual headaches."
                   speed={20}
                   delay={800}
@@ -33,11 +33,11 @@ export default function Recovery() {
             <div className="flex-1 relative w-full aspect-square max-w-md lg:max-w-none group">
               {/* Soft glow background */}
               <div className="absolute -inset-10 bg-secondary-container/20 blur-[100px] rounded-full opacity-50 transition-opacity group-hover:opacity-80" />
-              
+
               {/* Premium Glass Container */}
               <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-secondary-container/10 to-primary-container/5 border border-white/10 backdrop-blur-xl flex items-center justify-center overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,227,253,0.15)_0%,transparent_70%)]" />
-                
+
                 {/* Icon Composition */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   {/* Central Security Icon */}
