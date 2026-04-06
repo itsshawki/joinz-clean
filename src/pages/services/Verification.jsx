@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 const platformIcons = [
   { name: 'Instagram', path: 'M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z' },
@@ -36,10 +37,10 @@ const verifiedAccounts = [
 ];
 
 const caseResults = [
-  { username: '@ahmed_amwell', platform: 'TikTok', problem: 'Verification', result: 'Completed in 3 days', status: 'Completed' },
-  { username: '@gzy', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
-  { username: '@ibrahim_assad', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
-  { username: '@s500s', platform: 'TikTok', problem: 'Verification', result: 'Completed', status: 'Completed' },
+  { name: 'Ahmed Amwell', username: '@ahmed_amwell', platform: 'TikTok', image: '/@ahmed_amwell.jpeg', link: 'https://www.tiktok.com/@ahmed_amwell', followers: '1.9M', status: 'Completed' },
+  { name: 'غازي الذيابي', username: '@gzy', platform: 'TikTok', image: '/@gzy.jpeg', link: 'https://www.tiktok.com/@gzy', followers: '1.7M', status: 'Completed' },
+  { name: 'Ibrahim Assad', username: '@ibrahim_assad', platform: 'TikTok', image: '/@ibrahim_assad.jpeg', link: 'https://www.tiktok.com/@ibrahim_assad', followers: '489.5K', status: 'Completed' },
+  { name: 'د. سعود الشهري', username: '@s500s', platform: 'TikTok', image: '/@s500s.jpeg', link: 'https://www.tiktok.com/@s500s', followers: '1.1M', status: 'Completed' },
 ];
 
 export default function Verification() {
@@ -50,15 +51,18 @@ export default function Verification() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-secondary-container/10 blur-[120px] rounded-full -z-10" />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-outline-variant/15">
-              <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
-              <span className="text-secondary text-xs font-bold tracking-widest uppercase font-label">Official Partner Access</span>
+            <div className="mb-8">
+              <span className="text-secondary text-[13px] font-semibold tracking-wide">Official partner access</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-snug text-white">
               Social Media <span className="text-accent">Verification</span>
             </h1>
-            <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body">
-              Get verified on major platforms and build real trust with your audience. Stand out, protect your identity, and make your presence official.
+            <p className="text-on-surface-variant text-xl leading-relaxed max-w-lg font-body min-h-[4em]">
+              <Typewriter
+                text="Get verified on major platforms and build real trust with your audience. Stand out, protect your identity, and make your presence official."
+                speed={20}
+                delay={800}
+              />
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/contact" className="btn-primary">
@@ -180,7 +184,9 @@ export default function Verification() {
             ].map((step, i) => (
               <div key={i} className="group relative p-6 md:p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 border border-outline-variant/5 hover:border-outline-variant/20">
                 <div className="flex items-center gap-8">
-                  <span className="text-6xl font-black text-outline-variant/10 group-hover:text-primary/20 transition-colors font-headline shrink-0">{step.num}</span>
+                  <span className="text-6xl font-black text-[#0f172a] opacity-70 group-hover:opacity-100 transition-opacity font-headline shrink-0">
+                    {step.num}
+                  </span>
                   <div>
                     <h3 className="text-xl font-bold mb-1 text-white">{step.title}</h3>
                     <p className="text-on-surface-variant text-sm max-w-xs">{step.desc}</p>
@@ -193,7 +199,7 @@ export default function Verification() {
       </section>
 
       {/* Recently Verified Accounts Section */}
-      <section className="py-16 md:py-20 px-6 bg-surface-container-lowest/30 overflow-hidden relative">
+      <section className="py-16 md:py-20 px-6 bg-surface-container-low overflow-hidden relative">
         <div className="max-w-7xl mx-auto mb-10 px-6 relative z-10">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Recently Verified Accounts</h2>
@@ -238,74 +244,62 @@ export default function Verification() {
       </section>
 
       {/* Real Case Results */}
-      <section className="py-16 md:py-20 px-6 bg-surface">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Real Case Results</h2>
             <p className="text-on-surface-variant text-base sm:text-lg">Proven success stories from real clients.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseResults.map((item, i) => {
-              const isFeatured = i === 0;
-              const delay = i * 150; // Staggered delay
-
-              return (
-                <div
-                  key={i}
-                  style={{ animationDelay: `${delay}ms` }}
-                  className={`p-10 rounded-[2.5rem] bg-surface-container-low transition-all duration-500 group relative overflow-hidden fade-in-up
-                    ${isFeatured
-                      ? 'border-primary/30 scale-[1.02] border-2 bg-gradient-to-br from-surface-container-low to-primary/5 animate-soft-glow'
-                      : 'border border-white/5'
-                    }
-                    hover:bg-surface-container hover:border-primary/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(33,136,255,0.2)] hover:-translate-y-2 hover:scale-[1.03] ease-out`}
-                >
-                  {/* Subtle internal glow */}
-                  <div className={`absolute -top-24 -right-24 w-48 h-48 blur-[100px] rounded-full transition-all duration-700
-                    ${isFeatured ? 'bg-primary/20' : 'bg-primary/10 group-hover:bg-primary/30'}`} />
-
-                  <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start gap-4 mb-10">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-2xl font-black font-headline tracking-tight text-white">{item.username}</h3>
-                        {isFeatured && (
-                          <span className="px-2 py-0.5 rounded-md bg-secondary/20 border border-secondary/30 text-secondary text-[9px] font-black uppercase tracking-widest">
-                            Featured Case
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-secondary" />
-                        <p className="text-on-surface-variant text-[10px] font-bold uppercase tracking-[0.2em] font-label">{item.platform}</p>
-                      </div>
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-[11px] font-black uppercase tracking-widest shadow-sm">
-                      <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                      {item.status}
-                    </div>
-                  </div>
-
-                  <div className="relative z-10 space-y-8">
-                    <div className="space-y-3">
-                      <p className="text-on-surface-variant/50 text-[10px] font-bold uppercase tracking-[0.25em] font-label">The Problem</p>
-                      <p className="text-white/90 text-lg font-medium leading-relaxed">{item.problem}</p>
-                    </div>
-
-                    {/* Subtle Divider */}
-                    <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent shadow-sm" />
-
-                    <div className="space-y-3">
-                      <p className="text-on-surface-variant/50 text-[10px] font-bold uppercase tracking-[0.25em] font-label">The Result</p>
-                      <div className="flex items-baseline gap-2">
-                        <p className="text-secondary text-2xl font-black font-headline tracking-tight group-hover:text-glow transition-all duration-500">
-                          {item.result}
-                        </p>
-                      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {caseResults.map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ animationDelay: `${i * 100}ms` }}
+                className="group relative rounded-2xl border border-gray-100 bg-white p-5 flex flex-col items-center text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl shadow-md fade-in-up overflow-hidden"
+              >
+                {/* Avatar */}
+                <div className="relative mb-3 mt-2">
+                  <div className="w-[56px] h-[56px] rounded-full p-[2px] bg-gradient-to-br from-primary to-accent group-hover:shadow-[0_0_15px_rgba(0,180,216,0.2)] transition-shadow duration-500">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
                   </div>
                 </div>
-              );
-            })}
+
+                {/* Name */}
+                <h3 className="text-[15px] font-bold font-headline text-gray-900 leading-snug transition-colors duration-300 mb-0.5">
+                  {item.name}
+                </h3>
+
+                {/* Username + badge */}
+                <div className="flex items-center gap-1 mb-3">
+                  <span className="text-[13px] text-gray-500 font-medium">
+                    {item.username}
+                  </span>
+                  <span className="material-symbols-outlined text-secondary text-[14px] select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    verified
+                  </span>
+                </div>
+
+                {/* Followers inline */}
+                <div className="flex items-center gap-1.5 mb-5">
+                  <span className="text-lg font-black font-headline text-gray-900 leading-none">
+                    {item.followers}
+                  </span>
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    followers
+                  </span>
+                </div>
+
+                {/* Follow Button */}
+                <button className="w-full py-2.5 bg-[#fe2c55] hover:brightness-110 !text-white text-xs font-bold rounded-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+                  Follow
+                </button>
+              </a>
+            ))}
           </div>
         </div>
       </section>

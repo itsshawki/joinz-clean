@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 export default function PrMedia() {
   return (
@@ -8,15 +9,18 @@ export default function PrMedia() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary-container/10 via-transparent to-transparent -z-10" />
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary mb-8">
-              <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest font-label">Media & Press Coverage</span>
+            <div className="mb-8">
+              <span className="text-secondary text-[13px] font-semibold tracking-wide">Media & press coverage</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter mb-8 leading-snug" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
               Get Your Brand <span className="text-accent">Seen.</span>
             </h1>
-            <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
-              We help your brand get featured on trusted platforms, so people see you as credible and take you seriously.
+            <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed min-h-[3em]">
+              <Typewriter 
+                text="We help your brand get featured on trusted platforms, so people see you as credible and take you seriously."
+                speed={20}
+                delay={800}
+              />
             </p>
           </div>
           <div className="md:col-span-5 relative">
@@ -25,9 +29,14 @@ export default function PrMedia() {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-surface-container p-6 rounded-xl border border-outline-variant/20 shadow-xl shadow-[0_0_40px_-10px_rgba(0,227,253,0.3)] max-w-[240px]">
-              <div className="flex items-center gap-4 mb-2">
-                <span className="material-symbols-outlined text-secondary-container">verified</span>
-                <span className="font-bold text-sm tracking-tight uppercase font-headline">Verified Authority</span>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="font-semibold text-[13px] text-secondary tracking-tight">Verified authority</span>
+                <span 
+                  className="material-symbols-outlined text-[14px] text-white bg-gradient-to-br from-[#00daf3] to-[#2188FF] rounded-full p-[1px] flex items-center justify-center shrink-0 ml-1 shadow-[0_0_8px_rgba(33,136,255,0.3)]"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  check
+                </span>
               </div>
               <p className="text-xs text-on-surface-variant leading-relaxed">Get featured on platforms like Forbes, TechCrunch, and more.</p>
             </div>
@@ -81,7 +90,7 @@ export default function PrMedia() {
       </section>
 
       {/* Core Capabilities Bento */}
-      <section className="py-16 md:py-20 bg-background">
+      <section className="py-16 md:py-20 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-5xl font-black font-headline mb-16 text-center">Core <span className="text-secondary-container">Capabilities.</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
@@ -147,7 +156,7 @@ export default function PrMedia() {
               </div>
             </div>
             <div className="flex-1">
-              <span className="text-primary font-bold tracking-widest uppercase text-xs font-label">REAL CLIENT RESULT</span>
+              <span className="text-primary font-semibold tracking-wide text-[11px] font-label">Real client result</span>
               <h2 className="text-4xl md:text-5xl font-black font-headline mt-4 mb-6 leading-snug">Real Results From Our Recent Clients.</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed">
                 We recently helped a client strengthen their online presence through targeted media placements and strategic visibility.<br /><br />
@@ -156,11 +165,11 @@ export default function PrMedia() {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <div className="text-3xl font-black text-white font-headline">15+</div>
-                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Media Placements</div>
+                  <div className="text-[11px] text-on-surface-variant font-medium tracking-wide font-label mt-1">Media placements</div>
                 </div>
                 <div>
                   <div className="text-3xl font-black text-white font-headline">2–8</div>
-                  <div className="text-xs text-on-surface-variant uppercase tracking-widest font-label">Weeks Average Timeline</div>
+                  <div className="text-[11px] text-on-surface-variant font-medium tracking-wide font-label mt-1">Average timeline</div>
                 </div>
               </div>
             </div>

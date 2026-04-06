@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 export default function Recovery() {
   return (
@@ -10,14 +11,18 @@ export default function Recovery() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary-fixed-dim text-xs font-bold tracking-widest uppercase">
-                Account Recovery Specialist
+              <div className="mb-8">
+                <span className="text-secondary-fixed-dim text-[13px] font-semibold tracking-wide">Account recovery specialist</span>
               </div>
               <h1 className="text-6xl md:text-7xl font-headline font-extrabold tracking-tighter leading-snug">
                 Reclaim Your <span className="text-accent">Digital Legacy</span>
               </h1>
-              <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
-                Locked out of your account? We help you get it back — fast, safely, and without the usual headaches.
+              <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed min-h-[3em]">
+                <Typewriter 
+                  text="Locked out of your account? We help you get it back — fast, safely, and without the usual headaches."
+                  speed={20}
+                  delay={800}
+                />
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                 <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed font-black px-10 py-4 rounded-xl shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
@@ -54,19 +59,21 @@ export default function Recovery() {
                     key
                   </span>
                   <span className="absolute bottom-1/3 left-1/4 material-symbols-outlined text-3xl text-[#00e3fd]/40 animate-float-slow transition-all duration-700" style={{ fontVariationSettings: "'FILL' 0, 'wght' 200" }}>
-                    person
+                    vpn_key
                   </span>
+                  {/* Featured Recovery Badge */}
+                  <div className="absolute bottom-8 right-8 bg-surface-container/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 text-xs font-bold tracking-wider text-[#00e3fd]">
+                    SECURE RECOVERY
+                  </div>
+                  {/* Subtle finishing gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container/20 to-transparent" />
                 </div>
-
-                {/* Subtle finishing gradient */}
-                <div className="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-slate-950/40 to-transparent" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How We Help Bento Grid */}
       <section className="py-24 bg-surface-container-low px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
@@ -114,7 +121,7 @@ export default function Recovery() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-20 px-8 overflow-hidden relative">
+      <section className="py-16 md:py-20 px-8 overflow-hidden relative bg-surface-container-low">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
             <div className="sticky top-32">
@@ -141,7 +148,7 @@ export default function Recovery() {
               ].map((step, i) => (
                 <div key={i} className="flex gap-8 group">
                   <div className="flex flex-col items-center">
-                    <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center text-xl font-bold font-headline shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-all">{step.num}</div>
+                    <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center text-xl font-bold font-headline shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-all text-[#0f172a] opacity-70 group-hover:opacity-100">{step.num}</div>
                     {i < 3 && <div className="w-0.5 h-full bg-gradient-to-b from-primary to-transparent mt-4 opacity-30" />}
                   </div>
                   <div className="pt-2">

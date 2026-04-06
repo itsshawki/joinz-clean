@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Typewriter from '../components/Typewriter'
 
 const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
   const [count, setCount] = useState(0);
@@ -60,15 +61,18 @@ export default function About() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[150px]" />
         </div>
         <div className="max-w-7xl mx-auto w-full relative z-10 text-center">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-secondary-container/10 text-secondary-container mb-6 border border-secondary-container/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse" />
-            <span className="text-xs font-label tracking-[0.2em] uppercase font-semibold">THE NETWORK</span>
+          <div className="mb-8">
+            <span className="text-secondary-container text-[13px] font-semibold tracking-wide">The network</span>
           </div>
           <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 max-w-4xl mx-auto leading-snug">
             Who <span className="text-accent">We Are</span>
           </h1>
-          <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-            We are the silent partners behind the worlds leading digital profiles. Joinz is a premier digital service agency specializing in secure, confidential, and guaranteed social media solutions.
+          <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed min-h-[4em]">
+            <Typewriter 
+              text="We are the silent partners behind the worlds leading digital profiles. Joinz is a premier digital service agency specializing in secure, confidential, and guaranteed social media solutions."
+              speed={20}
+              delay={800}
+            />
           </p>
         </div>
       </section>
@@ -110,13 +114,13 @@ export default function About() {
               <span className="text-5xl md:text-6xl font-headline font-black text-secondary-container mb-3 glow-text">
                 <CountUp target={98} suffix="%" />
               </span>
-              <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Success Rate</span>
+              <span className="font-label text-[11px] font-medium tracking-wide text-on-surface-variant mt-1">Success rate</span>
             </div>
             <div className="p-8 md:p-10 rounded-2xl bg-surface-container border border-white/5 flex flex-col items-center text-center group hover:bg-surface-container-high transition-all duration-500">
               <span className="text-5xl md:text-6xl font-headline font-black text-white mb-3">
                 <CountUp target={500} suffix="+" />
               </span>
-              <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Cases Handled</span>
+              <span className="font-label text-[11px] font-medium tracking-wide text-on-surface-variant mt-1">Cases handled</span>
             </div>
             <div className="p-8 md:p-10 rounded-2xl bg-surface-container border border-white/5 flex flex-col items-center text-center group hover:bg-surface-container-high transition-all duration-500">
               <div className="flex items-center space-x-2 text-secondary-container mb-3">
@@ -125,7 +129,7 @@ export default function About() {
               <span className="text-2xl sm:text-3xl font-headline font-bold text-white mb-2">
                 <CountUp target={24} suffix="/7" /> Support
               </span>
-              <span className="font-label text-sm tracking-[0.3em] uppercase text-on-surface-variant">Dedicated Support</span>
+              <span className="font-label text-[11px] font-medium tracking-wide text-on-surface-variant mt-1">Dedicated support</span>
             </div>
           </div>
         </div>

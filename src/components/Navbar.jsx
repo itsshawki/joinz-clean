@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useTheme } from '../context/ThemeContext'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -11,7 +10,6 @@ const navLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
-  const { theme, toggleTheme } = useTheme()
 
   const isActive = (href) => {
     if (href === '/services') {
@@ -52,31 +50,10 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="theme-toggle"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}>
-              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-            </span>
-          </button>
         </div>
 
-        {/* Mobile: Toggle + Hamburger */}
-        <div className="md:hidden flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            className="theme-toggle"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}>
-              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-            </span>
-          </button>
+        {/* Mobile: Hamburger Only */}
+        <div className="md:hidden flex items-center">
           <button
             className="flex flex-col gap-1.5 p-2"
             onClick={() => setMobileOpen(!mobileOpen)}

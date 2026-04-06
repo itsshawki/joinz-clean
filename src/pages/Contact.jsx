@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
+import Typewriter from '../components/Typewriter'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -97,15 +98,18 @@ export default function Contact() {
       <section className="mb-14">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 text-secondary-container text-xs font-bold tracking-widest uppercase mb-6 border border-secondary-container/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(0,227,253,1)]" />
-              Status: Taking Projects
+            <div className="mb-6">
+              <span className="text-secondary-container text-[13px] font-semibold tracking-wide">Status: Taking projects</span>
             </div>
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white leading-snug mb-5">
               Get in Touch
             </h1>
-            <p className="text-lg text-on-surface-variant leading-relaxed opacity-80">
-              Whether you have a specific project in mind or just want to explore possibilities, our team is ready to help you navigate your digital future.
+            <p className="text-lg text-on-surface-variant leading-relaxed opacity-80 min-h-[3em]">
+              <Typewriter 
+                text="Whether you have a specific project in mind or just want to explore possibilities, our team is ready to help you navigate your digital future."
+                speed={20}
+                delay={800}
+              />
             </p>
           </div>
           <div className="hidden lg:block relative group">
@@ -132,7 +136,7 @@ export default function Contact() {
             <form className="space-y-6 relative" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Full Name</label>
+                  <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Full name</label>
                   <input
                     className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
                     placeholder="John Doe"
@@ -142,7 +146,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Email Address</label>
+                  <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Email address</label>
                   <input
                     className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
                     placeholder="john@example.com"
@@ -153,7 +157,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Service Needed</label>
+                <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Service needed</label>
                 <div className="relative">
                   <select
                     className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface focus:ring-1 focus:ring-secondary-container/40 appearance-none transition-all"
@@ -176,7 +180,7 @@ export default function Contact() {
 
                 {formData.service === 'other' && (
                   <div className="space-y-2 mt-4 fade-in-up">
-                    <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Please specify service</label>
+                    <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Please specify service</label>
                     <input
                       className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
                       placeholder="Type the service you need..."
@@ -188,7 +192,7 @@ export default function Contact() {
                 )}
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold tracking-widest uppercase text-slate-400 ml-1">Case Details &amp; URLs</label>
+                <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Case details & URLs</label>
                 <textarea
                   className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all resize-none"
                   placeholder="Tell us about your project or provide relevant links..."
@@ -223,7 +227,7 @@ export default function Contact() {
             <a className="text-xl font-headline font-bold text-white hover:text-secondary-container transition-colors" href="mailto:info@joinz.agency">info@joinz.agency</a>
           </div>
           <div className="p-8 rounded-2xl bg-surface-container border border-white/5">
-            <h3 className="text-xs font-bold tracking-widest uppercase text-slate-500 mb-6">Connect With Us</h3>
+            <h3 className="text-[11px] font-medium tracking-wide text-slate-500 mb-6">Connect with us</h3>
             <div className="space-y-3">
               {socialLinks.map((social) => (
                 <a
@@ -262,9 +266,8 @@ export default function Contact() {
                   </svg>
                   <h2 className="text-xl font-headline font-bold text-white tracking-tight leading-none uppercase">Chat with us on WhatsApp</h2>
                 </div>
-                <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#25D366]/10 border border-[#25D366]/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#25D366]">Online Now</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-semibold tracking-wide text-[#25D366]">Online now</span>
                 </div>
               </div>
               <p className="text-on-surface-variant opacity-80 mb-8">

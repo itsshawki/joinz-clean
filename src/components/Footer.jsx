@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16">
           {/* Quick Links Column */}
           <div className="flex flex-col gap-6">
-            <h5 className="font-bold text-sm uppercase tracking-[0.2em] leading-none mb-2" style={{ color: 'var(--text-heading)' }}>Quick Links</h5>
+            <h5 className="font-semibold text-[11px] tracking-wide leading-none mb-2" style={{ color: 'var(--text-heading)' }}>Quick links</h5>
             <nav className="flex flex-col gap-4">
               {[
                 { to: '/', label: 'Home' },
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div className="flex flex-col gap-6">
-            <h5 className="font-bold text-sm uppercase tracking-[0.2em] leading-none mb-2" style={{ color: 'var(--text-heading)' }}>Services</h5>
+            <h5 className="font-semibold text-[11px] tracking-wide leading-none mb-2" style={{ color: 'var(--text-heading)' }}>Services</h5>
             <nav className="flex flex-col gap-4">
               {[
                 { to: '/services/verification', label: 'Verification' },
@@ -127,8 +127,8 @@ export default function Footer() {
 
       {/* Bottom Bar: Copyright */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 mt-10 text-center" style={{ borderTop: '1px solid var(--border-default)' }}>
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: 'var(--text-muted)' }}>
-          © 2022 - {currentYear} JOINZ. ALL RIGHTS RESERVED.
+        <p className="text-[11px] font-medium tracking-wide" style={{ color: 'var(--text-muted)' }}>
+          © 2022 - {currentYear} Joinz. All rights reserved.
         </p>
       </div>
     </footer>

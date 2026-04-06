@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 export default function Growth() {
   return (
@@ -8,9 +9,8 @@ export default function Growth() {
         <div className="absolute inset-0 bg-[radial-gradient(circle,#1a2027_1px,transparent_1px)] bg-[length:40px_40px] opacity-20 -z-10" />
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-secondary-container/10 blur-[120px] rounded-full" />
         <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed-dim/10 border border-secondary-fixed-dim/20 mb-8">
-            <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
-            <span className="text-secondary text-xs font-bold uppercase tracking-widest font-label">Growth & Engagement</span>
+          <div className="mb-8">
+            <span className="text-secondary text-[13px] font-semibold tracking-wide">Growth & engagement</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -18,9 +18,12 @@ export default function Growth() {
                 Scalable growth. <br />
                 <span className="text-accent">Real engagement.</span>
               </h1>
-              <p className="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl">
-                We don't just grow your numbers. <br />
-                We help you build real audience, real engagement, and real results.
+              <p className="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl min-h-[4em]">
+                <Typewriter 
+                  text="We don't just grow your numbers. We help you build real audience, real engagement, and real results."
+                  speed={20}
+                  delay={800}
+                />
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="bg-white text-slate-950 px-10 py-5 rounded-2xl font-bold font-headline flex items-center gap-2 hover:bg-secondary-fixed transition-all hover:scale-105 shadow-xl">
@@ -39,7 +42,7 @@ export default function Growth() {
                   <div key={i} className={`bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10 shadow-xl ${stat.mt}`}>
                     <span className={`material-symbols-outlined ${stat.color} mb-4 text-4xl`} style={{ fontVariationSettings: "'FILL' 1" }}>{stat.icon}</span>
                     <div className="text-4xl font-black text-white mb-1 font-headline">{stat.value}</div>
-                    <div className="text-sm text-on-surface-variant font-label uppercase tracking-wider">{stat.label}</div>
+                    <div className="text-[11px] text-on-surface-variant font-medium tracking-wide font-label uppercase opacity-60">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -66,7 +69,7 @@ export default function Growth() {
                 </div>
                 <div className="mt-12 flex gap-4">
                   {['TikTok', 'Instagram', 'Twitter'].map((tag, i) => (
-                    <span key={i} className="px-4 py-2 rounded-lg bg-surface-variant/50 text-xs font-bold text-secondary font-label uppercase tracking-widest">{tag}</span>
+                    <span key={i} className="text-[11px] font-semibold text-secondary tracking-wide">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -103,8 +106,8 @@ export default function Growth() {
         </div>
       </section>
 
-      {/* Services Details */}
-      <section className="py-16 md:py-20 px-8">
+      {/* Process Section */}
+      <section className="py-16 md:py-20 px-8 bg-surface-container-low">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="space-y-12">

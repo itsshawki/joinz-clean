@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
+import Typewriter from '../../components/Typewriter'
 
 const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
   const [count, setCount] = useState(0);
@@ -122,16 +123,19 @@ export default function Username() {
       {/* Hero Section */}
       <header className="mb-14 text-center md:text-left flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed-dim/10 border border-secondary-fixed-dim/20 text-secondary-fixed-dim text-xs font-bold tracking-widest uppercase">
-            <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse" />
-            Identity Restoration
+          <div className="mb-8">
+            <span className="text-secondary-fixed-dim text-[13px] font-semibold tracking-wide">Identity restoration</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-snug">
             Username <br />
             <span className="text-accent">Claim</span>
           </h1>
-          <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
-            Get the username you actually want — even if it's already taken. We help you secure inactive, claimed, or trademarked handles across all major platforms.
+          <p className="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed min-h-[4em]">
+            <Typewriter 
+              text="Get the username you actually want — even if it's already taken. We help you secure inactive, claimed, or trademarked handles across all major platforms."
+              speed={20}
+              delay={800}
+            />
           </p>
         </div>
         <div className="flex-1 relative">
@@ -183,7 +187,7 @@ export default function Username() {
             Someone using your name or pretending to be you? We remove impersonators and secure your real identity across platforms.
           </p>
         </div>
-        <div className="md:col-span-8 glass-card border border-outline-variant/10 p-8 rounded-lg flex flex-col md:flex-row items-center gap-8">
+        <div className="md:col-span-8 glass-card border border-outline-variant/10 p-8 rounded-lg flex flex-col md:flex-row items-center gap-8 bg-surface-container-low">
           <div className="flex-1">
             <h4 className="text-2xl font-headline font-bold mb-2">White-Glove Support</h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
@@ -196,7 +200,7 @@ export default function Username() {
                 <span className="material-symbols-outlined text-secondary">support_agent</span>
               </div>
               <div>
-                <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Available 24/7</p>
+                <p className="text-[11px] text-slate-500 font-medium tracking-wide italic">Available 24/7</p>
                 <p className="font-bold">Direct Support</p>
               </div>
             </div>
@@ -326,17 +330,17 @@ export default function Username() {
                     </div>
                   )}
                   <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-2">
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500 tracking-wide">
                       <span className="material-symbols-outlined text-[14px]">shield</span>
                       100% Confidential
                     </div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500 tracking-wide">
                       <span className="material-symbols-outlined text-[14px]">visibility_off</span>
                       No public exposure
                     </div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500 tracking-wide">
                       <span className="material-symbols-outlined text-[14px]">person_search</span>
-                      Reviewed by specialists only
+                      Reviewed by specialists
                     </div>
                   </div>
                 </div>
@@ -347,7 +351,7 @@ export default function Username() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-surface-container-low rounded-lg p-12 border border-outline-variant/10 mb-32">
+      <section className="bg-surface-container-low rounded-lg p-12 border border-outline-variant/10 mb-32 bg-surface-container-low">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { target: 99, suffix: '+', label: 'Usernames Claimed' },
@@ -359,7 +363,7 @@ export default function Username() {
               <div className="text-4xl md:text-5xl font-headline font-black text-secondary-container mb-2">
                 <CountUp target={stat.target} suffix={stat.suffix} />
               </div>
-              <div className="text-xs uppercase tracking-widest text-slate-500 font-bold">{stat.label}</div>
+              <div className="text-[11px] font-medium tracking-wide text-slate-500 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>

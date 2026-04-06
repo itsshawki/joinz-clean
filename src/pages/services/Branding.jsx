@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 export default function Branding() {
   return (
@@ -19,9 +20,12 @@ export default function Branding() {
               Branding <br />
               <span className="text-accent">& Design</span>
             </h1>
-            <p className="text-on-surface-variant text-base sm:text-lg md:text-2xl max-w-2xl leading-relaxed font-light">
-              We don't just design logos. <br />
-              We build brands people actually remember.
+            <p className="text-on-surface-variant text-base sm:text-lg md:text-2xl max-w-2xl leading-relaxed font-light min-h-[4em]">
+              <Typewriter 
+                text="We don't just design logos. We build brands people actually remember."
+                speed={20}
+                delay={800}
+              />
             </p>
           </div>
           <div className="md:w-1/3 pt-12">
@@ -106,7 +110,7 @@ export default function Branding() {
           <div className="relative z-10">
             <h2 className="text-5xl md:text-8xl font-headline font-extrabold tracking-tighter mb-8 leading-snug">
               <span className="text-white">Ready to </span>
-              <span 
+              <span
                 className="bg-gradient-to-r from-[#22d3ee] to-[#3b82f6] bg-clip-text"
                 style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               >

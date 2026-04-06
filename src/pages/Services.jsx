@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../components/Typewriter'
 
 export default function Services() {
   return (
     <main className="pt-28 pb-16 px-6">
       {/* Hero Section */}
       <header className="max-w-7xl mx-auto mb-14 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 mb-5">
-          <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" />
-          <span className="text-secondary-container text-xs font-label tracking-widest uppercase">Curated Excellence</span>
+        <div className="mb-5">
+          <span className="text-secondary-container text-xs font-semibold tracking-wide">Curated excellence</span>
         </div>
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-5 leading-snug">
           Expert Digital <span className="text-secondary-container">Solutions</span>
         </h1>
-        <p className="max-w-2xl mx-auto text-on-surface-variant text-base sm:text-lg leading-relaxed">
-          Expert solutions to establish, protect, and amplify your digital authority across all major platforms.
+        <p className="max-w-2xl mx-auto text-on-surface-variant text-base sm:text-lg leading-relaxed min-h-[3em]">
+          <Typewriter 
+            text="Expert solutions to establish, protect, and amplify your digital authority across all major platforms."
+            speed={20}
+            delay={800}
+          />
         </p>
       </header>
 
@@ -23,7 +27,7 @@ export default function Services() {
         <Link to="/services/verification" className="md:col-span-8 bg-surface-container rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center border border-white/5 group hover:bg-surface-container-high transition-all duration-500 cyan-glow block relative overflow-hidden">
           <div className="flex-1 relative z-10">
             <div className="flex items-center gap-3 mb-4">
-              <span className="bg-secondary-container/20 text-secondary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-secondary-container/20">Most Popular</span>
+              <span className="text-secondary-container text-[11px] font-semibold tracking-wide">Most popular</span>
               <span className="material-symbols-outlined text-secondary-container" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
             </div>
             <h3 className="font-headline text-2xl md:text-3xl font-bold mb-4 text-white">Social Media Verification</h3>

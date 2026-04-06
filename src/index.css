@@ -1228,7 +1228,7 @@ html {
 
 /* ─── Dot grid pattern in Growth hero ─── */
 .light .bg-\[radial-gradient\(circle\,\#1a2027_1px\,transparent_1px\)\] {
-  background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px) !important;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px) !important;
 }
 
 /* ─── Radial gradient ambient in WebDev hero ─── */

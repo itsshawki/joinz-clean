@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Typewriter from '../../components/Typewriter'
 
 export default function WebDev() {
   return (
@@ -14,8 +15,12 @@ export default function WebDev() {
             <h1 className="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter leading-snug text-white">
               Websites That <br /> <span className="text-accent">Actually Work.</span>
             </h1>
-            <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
-              We build fast, clean websites that help your business look better and get more customers.
+            <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed min-h-[3em]">
+              <Typewriter 
+                text="We build fast, clean websites that help your business look better and get more customers."
+                speed={20}
+                delay={800}
+              />
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-headline font-black text-xl shadow-[0_0_25px_rgba(0,227,253,0.3)] hover:scale-[1.05] hover:translate-y-[-4px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
@@ -95,7 +100,7 @@ export default function WebDev() {
               { num: 4, title: 'Launch & Go Live', desc: 'We test everything, connect your domain, and launch your website ready for customers.' },
             ].map((step, i) => (
               <div key={i} className="space-y-6 pt-12 relative">
-                <div className="absolute top-0 left-0 w-12 h-12 bg-surface-container rounded-full border border-secondary/30 flex items-center justify-center text-secondary font-bold -mt-6">{step.num}</div>
+                <div className="absolute top-0 left-0 w-12 h-12 bg-[#0f172a] opacity-70 group-hover:opacity-100 rounded-full border border-secondary/30 flex items-center justify-center text-white font-bold -mt-6">{step.num}</div>
                 <h4 className="text-xl font-headline font-bold text-white">{step.title}</h4>
                 <p className="text-on-surface-variant text-sm leading-relaxed">{step.desc}</p>
               </div>
