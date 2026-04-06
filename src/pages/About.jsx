@@ -68,7 +68,7 @@ export default function About() {
             Who <span className="text-accent">We Are</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed min-h-[4em]">
-            <Typewriter 
+            <Typewriter
               text="We are the silent partners behind the worlds leading digital profiles. Joinz is a premier digital service agency specializing in secure, confidential, and guaranteed social media solutions."
               speed={20}
               delay={800}

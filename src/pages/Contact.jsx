@@ -138,7 +138,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Full name</label>
                   <input
-                    className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                     placeholder="John Doe"
                     type="text"
                     value={formData.name}
@@ -148,7 +148,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Email address</label>
                   <input
-                    className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                     placeholder="john@example.com"
                     type="email"
                     value={formData.email}
@@ -160,7 +160,7 @@ export default function Contact() {
                 <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Service needed</label>
                 <div className="relative">
                   <select
-                    className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface focus:ring-1 focus:ring-secondary-container/40 appearance-none transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-4 text-gray-900 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container appearance-none transition-all outline-none shadow-sm"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   >
@@ -182,7 +182,7 @@ export default function Contact() {
                   <div className="space-y-2 mt-4 fade-in-up">
                     <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Please specify service</label>
                     <input
-                      className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all"
+                      className="w-full bg-white border border-gray-100 rounded-xl px-4 py-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                       placeholder="Type the service you need..."
                       type="text"
                       value={formData.otherService}
@@ -194,7 +194,7 @@ export default function Contact() {
               <div className="space-y-2">
                 <label className="text-[11px] font-medium tracking-wide text-slate-500 ml-1">Case details & URLs</label>
                 <textarea
-                  className="w-full bg-surface-container border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-secondary-container/40 transition-all resize-none"
+                  className="w-full bg-white border border-gray-100 rounded-xl px-4 py-4 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all resize-none outline-none shadow-sm"
                   placeholder="Tell us about your project or provide relevant links..."
                   rows="5"
                   value={formData.details}

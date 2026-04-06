@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Typewriter from '../../components/Typewriter'
+import RealCaseResults from '../../components/RealCaseResults'
 
 const platformIcons = [
   { name: 'Instagram', path: 'M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z' },
@@ -36,12 +37,6 @@ const verifiedAccounts = [
   { handle: '@ke', platform: 'TikTok', image: '/@ke.jpeg', link: 'https://www.tiktok.com/@ke' },
 ];
 
-const caseResults = [
-  { name: 'Ahmed Amwell', username: '@ahmed_amwell', platform: 'TikTok', image: '/@ahmed_amwell.jpeg', link: 'https://www.tiktok.com/@ahmed_amwell', followers: '1.9M', status: 'Completed' },
-  { name: 'غازي الذيابي', username: '@gzy', platform: 'TikTok', image: '/@gzy.jpeg', link: 'https://www.tiktok.com/@gzy', followers: '1.7M', status: 'Completed' },
-  { name: 'Ibrahim Assad', username: '@ibrahim_assad', platform: 'TikTok', image: '/@ibrahim_assad.jpeg', link: 'https://www.tiktok.com/@ibrahim_assad', followers: '489.5K', status: 'Completed' },
-  { name: 'د. سعود الشهري', username: '@s500s', platform: 'TikTok', image: '/@s500s.jpeg', link: 'https://www.tiktok.com/@s500s', followers: '1.1M', status: 'Completed' },
-];
 
 export default function Verification() {
   return (
@@ -243,66 +238,7 @@ export default function Verification() {
         </div>
       </section>
 
-      {/* Real Case Results */}
-      <section className="py-16 md:py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline mb-3">Real Case Results</h2>
-            <p className="text-on-surface-variant text-base sm:text-lg">Proven success stories from real clients.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {caseResults.map((item, i) => (
-              <a
-                key={i}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ animationDelay: `${i * 100}ms` }}
-                className="group relative rounded-2xl border border-gray-100 bg-white p-5 flex flex-col items-center text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl shadow-md fade-in-up overflow-hidden"
-              >
-                {/* Avatar */}
-                <div className="relative mb-3 mt-2">
-                  <div className="w-[56px] h-[56px] rounded-full p-[2px] bg-gradient-to-br from-primary to-accent group-hover:shadow-[0_0_15px_rgba(0,180,216,0.2)] transition-shadow duration-500">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Name */}
-                <h3 className="text-[15px] font-bold font-headline text-gray-900 leading-snug transition-colors duration-300 mb-0.5">
-                  {item.name}
-                </h3>
-
-                {/* Username + badge */}
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-[13px] text-gray-500 font-medium">
-                    {item.username}
-                  </span>
-                  <span className="material-symbols-outlined text-secondary text-[14px] select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    verified
-                  </span>
-                </div>
-
-                {/* Followers inline */}
-                <div className="flex items-center gap-1.5 mb-5">
-                  <span className="text-lg font-black font-headline text-gray-900 leading-none">
-                    {item.followers}
-                  </span>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-                    followers
-                  </span>
-                </div>
-
-                {/* Follow Button */}
-                <button className="w-full py-2.5 bg-[#fe2c55] hover:brightness-110 !text-white text-xs font-bold rounded-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-                  Follow
-                </button>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RealCaseResults />
 
       {/* CTA Section */}
       <section className="py-10 md:py-12 px-6">

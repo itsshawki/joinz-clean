@@ -31,10 +31,10 @@ const CountUp = ({ target, duration = 2000, prefix = '', suffix = '' }) => {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       // easeOutQuint
       const easedProgress = 1 - Math.pow(1 - progress, 4);
-      
+
       const currentCount = Math.floor(easedProgress * target);
       setCount(currentCount);
 
@@ -68,7 +68,7 @@ export default function Reputation() {
               <span className="text-accent">Management</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10 min-h-[4em]">
-              <Typewriter 
+              <Typewriter
                 text="We help you take control of what people see when they search your name — removing the negative and pushing forward what actually represents you."
                 speed={20}
                 delay={800}
@@ -182,26 +182,8 @@ export default function Reputation() {
         </div>
       </section>
 
+
       {/* CTA Section */}
-      <section className="py-16 md:py-20 px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden p-12 md:p-24 flex flex-col items-center text-center">
-            <div className="absolute inset-0 z-0">
-              <img alt="Deep dark background with subtle cyan light streaks" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAxc_Vw5HYYY3hZ8fheFswYc1gwHfqXou1g-0aVN3W23q9TJqbBtrI7voTiSYpANtt6TqGAY7erP4Ck1Gb5ghu3GB2wtLminkCq6qrOoEaF61HxA8TR3NHHehEtQYqfUMkwziSrhZG4OJcEf4oKSBr1WO9_gemJsICvEIeGu_xpxRx6LzHMutRn3D6_3TE9cpbNBgozMitLki_-nobDlvVIe9dxzaFDiK7ihxfTU_JE3a_CMBtJ4JcudQqceoZ7cGp35xeD0DSwug" />
-              <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" />
-            </div>
-            <div className="relative z-10 max-w-3xl">
-              <h2 className="text-5xl md:text-6xl font-black font-headline tracking-tighter text-white mb-8 leading-snug">Take back control of your reputation</h2>
-              <p className="text-xl text-on-surface-variant mb-12">We help you clean up your search results, protect your name, and build a strong, trusted presence online.</p>
-              <div className="flex justify-center">
-                <Link to="/contact" className="bg-gradient-to-r from-secondary-container to-primary-container text-on-primary-fixed px-10 py-5 rounded-2xl font-black text-lg shadow-[0_0_25px_rgba(0,227,253,0.2)] hover:scale-[1.03] hover:translate-y-[-2px] hover:shadow-[0_0_50px_rgba(0,227,253,0.6)] hover:brightness-[1.1] transition-all">
-                  Secure Your Name Now
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

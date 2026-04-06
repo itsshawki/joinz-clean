@@ -148,7 +148,7 @@ export default function Recovery() {
               ].map((step, i) => (
                 <div key={i} className="flex gap-8 group">
                   <div className="flex flex-col items-center">
-                    <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center text-xl font-bold font-headline shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-all text-[#0f172a] opacity-70 group-hover:opacity-100">{step.num}</div>
+                    <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center text-xl font-bold font-headline shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-all text-gray-400 group-hover:text-white">{step.num}</div>
                     {i < 3 && <div className="w-0.5 h-full bg-gradient-to-b from-primary to-transparent mt-4 opacity-30" />}
                   </div>
                   <div className="pt-2">
@@ -161,6 +161,7 @@ export default function Recovery() {
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-24 px-8">

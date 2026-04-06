@@ -88,7 +88,7 @@ export default function WebDev() {
               <p className="text-on-surface-variant text-lg max-w-xl">A simple step-by-step process to get your website live and ready for real results.</p>
             </div>
             <div className="text-right">
-              <span className="text-7xl font-headline font-black text-outline/10">01—04</span>
+              <span className="text-7xl font-headline font-black text-gray-200/50 tracking-wider">01—04</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
@@ -100,7 +100,7 @@ export default function WebDev() {
               { num: 4, title: 'Launch & Go Live', desc: 'We test everything, connect your domain, and launch your website ready for customers.' },
             ].map((step, i) => (
               <div key={i} className="space-y-6 pt-12 relative">
-                <div className="absolute top-0 left-0 w-12 h-12 bg-[#0f172a] opacity-70 group-hover:opacity-100 rounded-full border border-secondary/30 flex items-center justify-center text-white font-bold -mt-6">{step.num}</div>
+                <div className="absolute top-0 left-0 w-12 h-12 bg-white rounded-full border border-gray-200 flex items-center justify-center text-gray-900 font-bold -mt-6 shadow-sm">{step.num}</div>
                 <h4 className="text-xl font-headline font-bold text-white">{step.title}</h4>
                 <p className="text-on-surface-variant text-sm leading-relaxed">{step.desc}</p>
               </div>
@@ -108,6 +108,7 @@ export default function WebDev() {
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-24 px-8 relative">

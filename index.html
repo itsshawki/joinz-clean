@@ -1,18 +1,55 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="We help brands and creators get verified, protect their reputation, and build powerful digital authority across all major platforms." />
     <title>Joinz Agency | Digital Authority Agency</title>
+    
+    <!-- Critical Styles to Prevent FOUC -->
+    <style>
+      :root {
+        --bg-body: #f8fafb;
+        --text-primary: #1e293b;
+      }
+      html, body {
+        background-color: #f8fafb; /* Matches --bg-body from light theme */
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+      }
+      #root:empty {
+        background-color: #f8fafb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      /* Optional simple loader for premium feel */
+      #root:empty::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(8, 145, 178, 0.1);
+        border-top-color: #0891b2;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+
     <meta property="og:title" content="Joinz Agency | Digital Authority Agency" />
     <meta property="og:description" content="We help brands and creators get verified, protect their reputation, and build powerful digital authority across all major platforms." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://joinz.agency" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Outfit:wght@700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" /></noscript>
   </head>
   <body>
     <div id="root"></div>

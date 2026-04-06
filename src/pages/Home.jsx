@@ -90,7 +90,7 @@ export default function Home() {
   return (
     <main>
       {/* ═══════ Hero Section ═══════ */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-20 pb-8 overflow-hidden bg-slate-950">
+      <section className="relative min-h-[85vh] flex items-center justify-center pt-20 pb-8 overflow-hidden bg-surface">
         {/* Ambient Background Depth */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-secondary-container/5 rounded-full blur-[140px]" />
         <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/10 rounded-full blur-[120px]" />
@@ -98,14 +98,14 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 text-center z-10">
           <div className="mb-8 fade-in-up">
-            <span className="text-secondary-container text-[11px] sm:text-[12px] font-semibold tracking-wide">The authority in digital presence</span>
+            <span className="text-accent text-[11px] sm:text-[12px] font-bold tracking-widest uppercase">The authority in digital presence</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tighter leading-snug mb-6 max-w-5xl mx-auto fade-in-up [animation-delay:200ms]">
-            Take Full Control <br className="hidden sm:block" />of Your <span className="text-accent !text-shadow-none relative inline-block">Digital Presence</span>
+          <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-900 font-black tracking-tighter leading-[1.1] mb-6 max-w-5xl mx-auto fade-in-up [animation-delay:200ms]">
+            Take Full Control <br className="hidden sm:block" />of Your <span className="text-accent relative inline-block">Digital Presence</span>
           </h1>
 
-          <p className="text-on-surface-variant text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed fade-in-up [animation-delay:400ms] opacity-80 min-h-[3em]">
+          <p className="text-gray-500 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 font-medium leading-relaxed fade-in-up [animation-delay:400ms] min-h-[3em]">
             <Typewriter
               text="We help elite individuals and brands get verified, protect their digital assets, and build a powerful online reputation with absolute discretion."
               speed={20}
@@ -118,78 +118,124 @@ export default function Home() {
               Explore Services
             </Link>
           </div>
-
         </div>
       </section>
 
-
       {/* ═══════ Services Grid ═══════ */}
-      <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto">
+      <section className="py-16 md:py-24 px-6 max-w-7xl mx-auto scale-95 origin-top">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14 gap-4">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white tracking-tight mb-3 leading-snug">Elite Digital <span className="text-accent">Services</span></h2>
-            <p className="text-on-surface-variant text-base sm:text-lg">Curated solutions for those who demand the highest standards in digital asset management and authority.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-gray-900 tracking-tight mb-3 leading-snug">Elite Digital <span className="text-accent">Services</span></h2>
+            <div className="w-20 h-1.5 bg-accent rounded-full mb-6"></div>
+            <p className="text-gray-500 text-base sm:text-lg font-medium">Curated solutions for those who demand the highest standards in digital asset management and authority.</p>
           </div>
-          <Link to="/services" className="hidden md:inline-flex items-center gap-2 text-secondary-container text-sm font-bold hover:gap-3 transition-all duration-300 shrink-0">
+          <Link to="/services" className="hidden md:inline-flex items-center gap-2 text-accent text-sm font-bold hover:gap-3 transition-all duration-300 shrink-0">
             View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((s, i) => (
             <Link
               key={i}
               to={s.href}
-              className={`group glass-card p-6 md:p-7 rounded-2xl border transition-all duration-500 flex flex-col justify-between cursor-pointer relative ${i === 0 ? 'border-secondary-container/30 shadow-lg shadow-secondary-container/5' : 'border-transparent hover:border-white/5'
-                } hover:bg-surface-container-high hover:-translate-y-1`}
+              className={`group bg-white p-8 rounded-3xl border border-gray-100 transition-all duration-500 flex flex-col justify-between cursor-pointer relative shadow-md hover:shadow-2xl hover:border-accent/20 hover:-translate-y-2 overflow-hidden`}
             >
               {i === 0 && (
-                <span className="absolute top-4 right-5 text-[10px] font-semibold text-secondary-container whitespace-nowrap">Popular</span>
+                <div className="absolute top-0 right-0 p-3">
+                  <span className="px-3 py-1 bg-accent/10 text-[10px] font-black text-accent uppercase tracking-widest rounded-full">Popular</span>
+                </div>
               )}
               <div>
-                <div className={`w-11 h-11 rounded-xl bg-secondary-container/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300`}>
-                  <span className={`material-symbols-outlined text-secondary-container text-xl`}>{s.icon}</span>
+                <div className="w-14 h-14 rounded-2xl bg-accent/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300">
+                  <span className="material-symbols-outlined text-accent text-2xl font-bold">{s.icon}</span>
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{s.title}</h3>
-                <p className="text-on-surface-variant text-sm leading-relaxed opacity-70">{s.desc}</p>
+                <h3 className="text-lg font-black font-headline text-gray-900 mb-3 leading-tight">{s.title}</h3>
+                <p className="text-gray-500 text-sm font-medium leading-relaxed line-clamp-3">{s.desc}</p>
               </div>
-              <span className="mt-5 flex items-center gap-2 text-secondary-container text-sm font-bold group-hover:gap-3 transition-all duration-300">
-                Learn More <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </span>
+              <div className="mt-8 flex items-center gap-2 text-accent text-xs font-black uppercase tracking-widest group-hover:gap-3 transition-all duration-300">
+                Explore Service <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
             </Link>
           ))}
         </div>
         {/* Mobile "View All" link */}
-        <div className="flex md:hidden justify-center mt-8">
-          <Link to="/services" className="btn-secondary text-sm">
-            View All Services
+        <div className="flex md:hidden justify-center mt-12">
+          <Link to="/services" className="w-full py-4 bg-gray-100 text-gray-900 font-black rounded-2xl flex items-center justify-center gap-2">
+            View All Services <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
         </div>
       </section>
 
       {/* ═══════ Why Choose Section ═══════ */}
-      <section className="py-16 md:py-20 bg-surface-container-low/50">
+      <section className="py-16 md:py-24 bg-surface-low/50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-10 md:mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center mb-16">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white mb-4 tracking-tight">Built on Trust, Delivered with <span className="text-accent">Precision</span></h2>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-secondary-container to-transparent" />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-headline font-black text-gray-900 mb-6 tracking-tight leading-tight">Built on Trust, Delivered with <span className="text-accent underline decoration-8 decoration-accent/10 underline-offset-8">Precision</span></h2>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-accent to-transparent rounded-full" />
             </div>
-            <p className="text-on-surface-variant text-base sm:text-lg font-light leading-relaxed">Our methodology combines internal network access with advanced digital forensics to ensure your online identity remains impenetrable and authentic.</p>
+            <p className="text-gray-500 text-base sm:text-lg font-medium leading-[1.8]">Our methodology combines internal network access with advanced digital forensics to ensure your online identity remains impenetrable and authentic.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               { icon: 'bolt', title: 'Fast Results', desc: 'Expedited processing through direct platform partnerships and streamlined workflows.' },
               { icon: 'analytics', title: 'High Success Rate', desc: 'Proven track record in complex cases where others have failed.' },
               { icon: 'verified_user', title: 'Trusted Process', desc: 'Fully transparent and secure engagement protocols at every step.' },
               { icon: 'privacy_tip', title: 'Confidential Handling', desc: 'Extreme discretion for high-profile clients with strictly enforced NDAs.' },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col p-6 rounded-2xl glass-card border border-white/5 hover:border-secondary-container/20 hover:bg-surface-container-high/50 transition-all duration-300 group">
-                <div className="w-11 h-11 rounded-xl bg-secondary-container/10 flex items-center justify-center mb-4 border border-white/5 group-hover:scale-110 group-hover:border-secondary-container/20 transition-all duration-300">
-                  <span className="material-symbols-outlined text-secondary-container text-xl">{item.icon}</span>
+              <div key={i} className="flex flex-col p-8 rounded-3xl bg-white border border-gray-100 hover:border-accent/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
+                <div className="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300">
+                  <span className="material-symbols-outlined text-accent text-2xl font-bold">{item.icon}</span>
                 </div>
-                <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-on-surface-variant text-sm leading-relaxed opacity-70">{item.desc}</p>
+                <h4 className="text-lg font-black font-headline text-gray-900 mb-3">{item.title}</h4>
+                <p className="text-gray-500 text-sm font-medium leading-relaxed">{item.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Real Case Results */}
+      <section className="py-16 md:py-24 px-6 bg-surface">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline text-gray-900 mb-4 tracking-tight">Real Case Results</h2>
+            <div className="w-20 h-1.5 bg-accent rounded-full mx-auto mb-6"></div>
+            <p className="text-gray-500 text-base sm:text-lg font-medium">Proven success stories from real clients who dominated their digital space.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+            {[
+              { name: 'Ahmed Amwell', username: '@ahmed_amwell', platform: 'TikTok', image: '/@ahmed_amwell.jpeg', link: 'https://www.tiktok.com/@ahmed_amwell', followers: '1.9M' },
+              { name: 'Ibrahim Assad', username: '@ibrahim_assad', platform: 'TikTok', image: '/@ibrahim_assad.jpeg', link: 'https://www.tiktok.com/@ibrahim_assad', followers: '489.5K' },
+              { name: 'غازي الذيابي', username: '@gzy', platform: 'TikTok', image: '/@gzy.jpeg', link: 'https://www.tiktok.com/@gzy', followers: '1.7M' },
+              { name: 'د. سعود الشهري', username: '@s500s', platform: 'TikTok', image: '/@s500s.jpeg', link: 'https://www.tiktok.com/@s500s', followers: '1.1M' },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ animationDelay: `${i * 100}ms` }}
+                className="group relative rounded-3xl border border-gray-100 bg-white p-7 flex flex-col items-center text-center cursor-pointer transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl shadow-md overflow-hidden"
+              >
+                <div className="relative mb-4 mt-2">
+                  <div className="w-[64px] h-[64px] rounded-full p-[3px] bg-gradient-to-br from-accent to-primary group-hover:shadow-[0_0_20px_rgba(0,180,216,0.3)] transition-shadow duration-500">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-base font-black font-headline text-gray-900 leading-snug transition-colors duration-300 mb-1">{item.name}</h3>
+                <div className="flex items-center gap-1.5 mb-4">
+                  <span className="text-xs text-gray-500 font-bold tracking-tight">{item.username}</span>
+                  <span className="material-symbols-outlined text-secondary text-[16px] select-none" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                </div>
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="text-2xl font-black font-headline text-gray-900 leading-none">{item.followers}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">followers</span>
+                </div>
+                <button className="w-full py-3 bg-[#fe2c55] hover:brightness-110 !text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">Follow</button>
+              </a>
             ))}
           </div>
         </div>
@@ -243,17 +289,20 @@ export default function Home() {
       </section>
 
       {/* ═══════ Final CTA ═══════ */}
-      <section className="py-16 md:py-20 px-6">
-        <div className="max-w-4xl mx-auto rounded-3xl glass-card p-10 md:p-16 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-secondary-container/5 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3" />
+      <section className="py-24 px-6 scale-95 md:scale-90 origin-bottom">
+        <div className="max-w-6xl mx-auto rounded-[3.5rem] bg-gray-900 p-12 md:p-24 text-center relative overflow-hidden shadow-3xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2" />
+          
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-white mb-4 tracking-tighter leading-snug">Ready to Take Control of Your <span className="text-accent">Digital Presence?</span></h2>
-            <p className="text-on-surface-variant text-base sm:text-lg mb-8 md:mb-10 max-w-2xl mx-auto opacity-80">Join the exclusive list of brands and creators who trust our agency with their digital legacy.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/contact" className="w-full sm:w-auto btn-primary">
-                Get Started
+            <span className="px-4 py-2 bg-white/5 backdrop-blur-md rounded-full text-accent text-xs font-black uppercase tracking-widest mb-8 inline-block">Join the Elite</span>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-headline font-black text-white mb-8 tracking-tighter leading-tight max-w-4xl mx-auto">Ready to dominate your <span className="text-accent">digital space?</span></h2>
+            <p className="text-gray-400 text-lg sm:text-xl mb-12 max-w-2xl mx-auto font-medium">Join the exclusive list of brands and creators who trust our agency with their digital legacy and authority.</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/contact" className="w-full sm:w-auto btn-primary px-12 py-5 text-lg">
+                Secure Your Name
               </Link>
-              <Link to="/services" className="w-full sm:w-auto btn-secondary">
+              <Link to="/services" className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10 transition-all">
                 Explore Services
               </Link>
             </div>

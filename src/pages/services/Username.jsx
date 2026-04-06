@@ -242,7 +242,7 @@ export default function Username() {
                     <select
                       value={formData.platform}
                       onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
-                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none appearance-none"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none appearance-none"
                     >
                       {['TikTok', 'Instagram', 'X (Twitter)', 'Snapchat', 'YouTube', 'Facebook', 'Kick', 'Twitch', 'LinkedIn', 'Pinterest', 'Tenor'].map(p => (
                         <option key={p} value={p}>{p}</option>
@@ -256,7 +256,7 @@ export default function Username() {
                       <input
                         value={formData.customPlatform}
                         onChange={(e) => setFormData({ ...formData, customPlatform: e.target.value })}
-                        className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                        className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                         placeholder="Enter platform name"
                         type="text"
                         required
@@ -271,7 +271,7 @@ export default function Username() {
                     <input
                       value={formData.username}
                       onChange={handleUsernameChange}
-                      className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl pl-8 pr-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                      className="w-full bg-white border border-gray-100 rounded-xl pl-8 pr-4 py-3 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                       placeholder="yourbrand"
                       type="text"
                       required
@@ -283,7 +283,7 @@ export default function Username() {
                   <input
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                     placeholder="John Doe"
                     type="text"
                     required
@@ -294,7 +294,7 @@ export default function Username() {
                   <input
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none shadow-sm"
                     placeholder="john@company.com"
                     type="email"
                     required
@@ -305,7 +305,7 @@ export default function Username() {
                   <textarea
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    className="w-full bg-surface-container-low border border-outline-variant/20 rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-secondary-container/50 focus:border-secondary-container transition-all outline-none resize-none"
+                    className="w-full bg-white border border-gray-100 rounded-xl px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-secondary-container/20 focus:border-secondary-container transition-all outline-none resize-none shadow-sm"
                     placeholder="Explain your claim (trademark, inactive account, impersonation, etc.)"
                     rows="4"
                     required
@@ -349,6 +349,7 @@ export default function Username() {
           )}
         </div>
       </section>
+
 
       {/* Stats Section */}
       <section className="bg-surface-container-low rounded-lg p-12 border border-outline-variant/10 mb-32 bg-surface-container-low">

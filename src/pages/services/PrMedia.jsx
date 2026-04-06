@@ -16,7 +16,7 @@ export default function PrMedia() {
               Get Your Brand <span className="text-accent">Seen.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed min-h-[3em]">
-              <Typewriter 
+              <Typewriter
                 text="We help your brand get featured on trusted platforms, so people see you as credible and take you seriously."
                 speed={20}
                 delay={800}
@@ -29,14 +29,9 @@ export default function PrMedia() {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-surface-container p-6 rounded-xl border border-outline-variant/20 shadow-xl shadow-[0_0_40px_-10px_rgba(0,227,253,0.3)] max-w-[240px]">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-1.5 mb-2">
                 <span className="font-semibold text-[13px] text-secondary tracking-tight">Verified authority</span>
-                <span 
-                  className="material-symbols-outlined text-[14px] text-white bg-gradient-to-br from-[#00daf3] to-[#2188FF] rounded-full p-[1px] flex items-center justify-center shrink-0 ml-1 shadow-[0_0_8px_rgba(33,136,255,0.3)]"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  check
-                </span>
+                <span className="material-symbols-outlined text-secondary text-[16px] select-none" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
               </div>
               <p className="text-xs text-on-surface-variant leading-relaxed">Get featured on platforms like Forbes, TechCrunch, and more.</p>
             </div>
@@ -140,7 +135,7 @@ export default function PrMedia() {
                   <span className="material-symbols-outlined text-7xl md:text-8xl text-[#00e3fd] opacity-80 group-hover:opacity-100 group-hover:scale-110 group-hover:drop-shadow-[0_0_30px_rgba(0,227,253,0.6)] transition-all duration-700 select-none z-10" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
                     settings_input_antenna
                   </span>
-                  
+
                   {/* Surrounding Icons */}
                   <span className="absolute top-1/4 left-1/4 material-symbols-outlined text-4xl text-[#00e3fd]/60 group-hover:opacity-100 animate-float-slow select-none transition-all duration-700" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
                     newspaper
